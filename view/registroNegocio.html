@@ -6,26 +6,37 @@
         <h1>Registro Negocio</h1>
         <form action="#">
             <label for="nombre">Nombre del Local</label>
-            <input type="text" id="nombre">
+            <input type="text" id="nombre" placeholder="Ingresa el nombre del local">
             <br>
+        </p>
             <label for="correo">Correo Electronico o Numero Celular</label>
-            <input type="text" id="correo">
+            <input type="text" id="correo" placeholder="Ingresa el correo o numero celular">
+            <br>
             <br>
             <label for="direccion">Direccion del local</label>
-            <input type="text" id="direccion">
+            <input type="text" id="direccion" placeholder="Ingresa la direccion del local">
             <br>
-            <label> Foto de perfil del local o logo </label>
-            <input type="image">
+        </p>
+            <label> Foto de perfil o logo del local </label>
+            <input type="file">
             <br>
-            <label> Inserte minimo cinco (5) fotografias del local por dentro y fuera </label>
-            <input type="image"> 
+        </p>
+            <label> Cinco fotografias del local por dentro y por fuera</label>
+            <input type="file"> 
             <br>
-            <label for="contraseña">Contraseña 8 caracteres minimo</label>
-            <input type="password" minlength="8" id="contraseña">
+        </p>
+            <label for="contraseña1">Digite una contraseña de 8 o más caracteres que sean al menos un número y una letra mayúscula y minúscula</label>
+            <input type="password" id="contraseña1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
             <br>
-            <label> Acepta términos y condiciones </label>
+        </p>
+            <label for="contraseña2" > Confirme la contraseña creada</label>
+            <input type="password" id="contraseña2">
+            <br>
+        </p>
+            <label><strong>Acepto los términos y condiciones de O&T.com y autorizo el tratamiento de mis datos personales</strong></label>
             <input type="checkbox">
             <br>
+        </p>
             <input type="submit" value="Registrarse">
         </form>
     </body>
