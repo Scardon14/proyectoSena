@@ -2,6 +2,14 @@
     <head>
         <title> Registro Negocio </title>
         <style>
+            html {
+                 font-size: 16px; /* 1rem = 16px */
+                }
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 1rem; /* 16px de base */
+                }
             header {
                 background-color: #003399;
                 display: flex;
@@ -15,15 +23,14 @@
                 margin: 0;
                 color: #ffffff;
                 font-size: 80px;
-                margin-left: 60px;
+                margin-left: 6rem;
             }
             .logo {
                 display: flex;
                 align-items: center;
                 width: 10%;
-                height: 130px;
                 border-right: #ffffff 1px solid;
-                padding: 0 30px;
+                padding: 0 3rem;
             }
             .logo img{
                 width: 100%;
@@ -36,8 +43,18 @@
             }
             .formulario-registro form{
                 background-color: #d6d6d6;
-                padding: 0 100px;
+                padding: 0 10rem;
                 margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            form div input{
+                width: 25px;
+            }
+            input{
+                margin-bottom: 10px;
+                margin-top: 2px ;
+                width: 80%;
             }
             footer{
                 background-color: #003399;
@@ -47,13 +64,13 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                width: 300px;
+                width: 30rem;
             }
             footer ul{
                 display: flex;
                 flex-direction: row;
                 list-style: none;
-                height: 80px;
+                height: 8rem;
                 justify-content: space-evenly;
                 align-items: center;
                 margin: 0;
@@ -82,36 +99,22 @@
                 <h2>Registro Negocio</h2>
                 <label for="nombre">Nombre del Local</label>
                 <input type="text" id="nombre" placeholder="Ingresa el nombre del local">
-                <br>
-            </p>
                 <label for="correo">Correo Electronico o Numero Celular</label>
                 <input type="text" id="correo" placeholder="Ingresa el correo o numero celular">
-                <br>
-            </p>
                 <label for="direccion">Direccion del local</label>
-                <input type="text" id="direccion" placeholder="Ingresa la direccion del local">
-                <br>
-            </p>
+                <input type="text" id="direccion" placeholder="Ingresa la direccion del local">    
                 <label> Foto de perfil o logo del local </label>
                 <input type="file">
-                <br>
-            </p>
-                <label> Cinco fotografias del local por dentro y por fuera</label>
+                <label> Fotografias del local por dentro y fuera (5 min)</label>
                 <input type="file"> 
-                <br>
-            </p>
-                <label for="contraseña1">Digite una contraseña de 8 o más caracteres que sean <br> al menos un número y una letra mayúscula y minúscula</label>
+                <label for="contraseña1">Digite una contraseña</label>
                 <input type="password" id="contraseña1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                <br>
-            </p>
                 <label for="contraseña2" > Confirme la contraseña creada</label>
                 <input type="password" id="contraseña2">
-                <br>
-            </p>
-                <label><strong>Acepto los términos y condiciones de O&T.com <br> y autorizo el tratamiento de mis datos personales</strong></label>
-                <input type="checkbox">
-                <br>
-            </p>
+                <div>
+                    <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
+                    <input type="checkbox">
+                </div>
                 <input type="submit" value="Registrarse">
             </form>
         </div>
