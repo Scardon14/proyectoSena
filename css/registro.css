@@ -1,5 +1,5 @@
 html {
-     font-size: 16px; /* 1rem = 16px */
+     font-size: 1rem; /* 1rem = 16px */
     }
 body {
     margin: 0;
@@ -18,7 +18,7 @@ header div:last-child{
 h1{
     margin: 0;
     color: #ffffff;
-    font-size: 80px;
+    font-size: 5rem;
     margin-left: 6rem;
 }
 .logo {
@@ -42,6 +42,7 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%;
 }
 .formulario-registro form{
     background-color: #d6d6d6;
@@ -54,8 +55,8 @@ form div input{
     width: 80%;
 }
 input{
-    margin-bottom: 10px;
-    margin-top: 2px ;
+    margin-bottom: 0.625rem;
+    margin-top: 0.125rem ;
     width: 80%;
 }
 footer{
@@ -78,10 +79,13 @@ footer ul{
     margin: 0;
 }
 footer .icono-footer{
-    height: 80px;
+    height: 5rem;
     display: flex;
     align-items: center;
 }
 .icono-footer img{
     height: 50%;
+}
+button{
+    width: 45%;
 }
