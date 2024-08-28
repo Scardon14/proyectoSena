@@ -63,7 +63,7 @@ function ocultarFormulario(){
 }
 function borrar(index){
     const contraseña=document.querySelectorAll("#contraseña");
-    contraseña[index].value="";kml,ñ
+    contraseña[index].value="";
 }
 
 function pass(index){
