@@ -95,3 +95,15 @@ footer .icono-footer{
 button{
     width: 45%;
 }
+.contenedorContraseña {
+    display: inline-flex;
+    border: 2px solid #d6d6d6;
+    border-radius: 10px;
+    padding: 10 px;
+
+}
+.icon{
+    height: 1rem;
+    margin: 5px;
+    cursor: pointer;
+}

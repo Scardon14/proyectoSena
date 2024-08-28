@@ -61,4 +61,24 @@ function ocultarFormulario(){
     registroUsuario.style.display="none";
 
 }
+function borrar(index){
+    const contraseña=document.querySelectorAll("#contraseña");
+    contraseña[index].value="";kml,ñ
+}
+
+function pass(index){
+    const contraseña=document.querySelectorAll("#contraseña");
+    const closeEye=document.querySelectorAll("#verContraseña");
+    closeEye[index].src="../img/closeEye.png";
+    if(contraseña[index].getAttribute("type") == "password"){
+        contraseña[index].setAttribute("type","text");
+        
+       
+    } else {
+        contraseña[index].setAttribute("type","password");
+        closeEye[index].src="../img/openEye.png";
+       
+    }
+}
+
 
