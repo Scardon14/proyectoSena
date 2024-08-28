@@ -1,15 +1,18 @@
 html {
      font-size: 1rem; /* 1rem = 16px */
+     min-height: 100%;
     }
 body {
     margin: 0;
     padding: 0;
     font-size: 1rem; /* 16px de base */
+    min-height: 100vh;
     }
 header {
     background-color: #1554b3;
     display: flex;
     align-items: center;
+    min-height: 100%;
 }
 header div:last-child{
     width: 60%;
@@ -62,6 +65,7 @@ input{
 footer{
     background-color: #003399;
     color: #ffffff;
+    min-height: 100%;
 }
 footer div{
     display: flex;
@@ -77,11 +81,13 @@ footer ul{
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
+    
 }
 footer .icono-footer{
     height: 5rem;
     display: flex;
     align-items: center;
+    
 }
 .icono-footer img{
     height: 50%;
