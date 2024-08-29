@@ -18,6 +18,7 @@ header{
 .logo{
     display: flex;
     align-items: center;
+    left: 100px;
 }
 
 .logo img {
