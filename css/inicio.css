@@ -1,8 +1,19 @@
+html {
+    font-size: 1rem; /* 1rem = 16px */
+   }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-decoration: none;
 }
 
@@ -13,17 +24,14 @@ header{
     top: 0px;
     left: 0;
     background: #1554b3; 
+    display: flex;
 }
 
-/*HEADER SUPERIOR*/
-
-.header_superior{
-    max-width: 1400px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px ;
+h1{
+    margin: 0;
+    color: #ffffff;
+    font-size: 5rem;
+    margin-left: 6rem;
 }
 
 .logo img {
@@ -46,7 +54,7 @@ header{
 }
 
 .menu{
-    max-width:2600px;
+    max-width: 2600px;
     margin: auto;
     height: 100%;
 }
@@ -66,7 +74,7 @@ nav ul li{
     list-style: none;
     position: relative;
  }
-
+ 
  nav > ul > li > a{
     width: 250px;
     height: 100%;
@@ -81,8 +89,31 @@ nav ul li{
  nav > ul > li > a:hover{
     transform: scale(1.1);
     background: #e63838;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-}
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+ }
+
+ #presen{ 
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    text-align: center;
+    flex-direction: column;
+    height: 80vh;
+    background-image: linear-gradient(
+        0deg, 
+        rgba(0,0,0,0.5), 
+        rgba(0,0,0,0.5)) 
+        ,url("IMG/colegiopinos.jpeg");
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    } 
+
+
+
+    
+
 
 
 
