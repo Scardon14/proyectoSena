@@ -31,21 +31,21 @@
                     <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
                     <label for="nombre">Apellidos</label>
                     <input type="text" id="nombre" placeholder="Ingresa tus apellidos">
-                    <label for="correo"> Numero Celular </label>
-                    <input type="text" id="correo" placeholder="Ingresa tu numero celular">
-                    <label for="correo"> Correo Electronico </label>
-                    <input type="text" id="correo" placeholder="Ingresa tu correo electronico">    
+                    <label for="correo"> Número Celular </label>
+                    <input type="number" id="correo" placeholder="Ingresa tu numero celular">
+                    <label for="correo"> Correo Electrónico </label>
+                    <input type="email" id="correo" placeholder="Ingresa tu correo electronico">    
                     <label> Foto de perfil </label>
                     <input type="file">
-                    <label> Fotografias de tus servicios como Barbero (5 mim)</label>
+                    <label> Fotografías <small>(5 min. De los servicios que haz prestado como Barbero)</small></label>
                     <input type="file">
-                    <label for="contraseña1">Digite una contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
+                    <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
                 <div class="contenedorContraseña">
-                    <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(0)">
                     <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(0)">
                 </div>
-                    <label for="contraseña2" > Confirme la contraseña creada</label>
+                    <label for="contraseña2" >Confirme la contraseña creada</label>
                     <div class="contenedorContraseña">
                         <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                         <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(1)">
@@ -61,21 +61,23 @@
             <div class="formulario-registro" id="registroNegocio">
                 <form action="#">
                     <h2>Registro Negocio</h2>
-                    <label for="nombre">Nombre del Local</label>
-                    <input type="text" id="nombre" placeholder="Ingresa el nombre del local">
-                    <label for="correo"> Numero Celular </label>
-                    <input type="text" id="correo" placeholder="Ingresa tu numero celular">
-                    <label for="correo"> Correo Electronico </label>
-                    <input type="text" id="correo" placeholder="Ingresa tu correo electronico">
-                    <label for="direccion">Direccion del local</label>
-                    <input type="text" id="direccion" placeholder="Ingresa la direccion del local">    
-                    <label> Foto de perfil o logo del local </label>
+                    <label for="nombre">Nombre del Establecimiento</label>
+                    <input type="text" id="nombre" placeholder="Ingresa el nombre del establecimiento">
+                    <label for="correo"> NIT</label>
+                    <input type="number" id="correo" placeholder="Ingresa el NIT del establecimiento">
+                    <label for="correo"> Número Celular </label>
+                    <input type="number" id="correo" placeholder="Ingresa el número celular del establecimiento">
+                    <label for="correo"> Correo Electrónico </label>
+                    <input type="email" id="correo" placeholder="Ingresa el correo del establecimiento">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" placeholder="Ingresa la dirección del establecimiento">    
+                    <label> Foto de perfil o logo del establecimiento </label>
                     <input type="file">
-                    <label> Fotografias del local por dentro y fuera (5 min)</label>
+                    <label> Fotografías del Establecimiento <small>(5 min. Por dentro y su fachada)</small></label>
                     <input type="file"> 
-                    <label for="contraseña1">Digite una contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
+                    <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
                 <div class="contenedorContraseña">
-                    <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(2)">
                     <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(2)">
                 </div>
@@ -99,15 +101,15 @@
                     <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
                     <label for="nombre">Apellidos</label>
                     <input type="text" id="nombre" placeholder="Ingresa tus apellidos">
-                    <label for="correo"> Numero Celular </label>
-                    <input type="text" id="correo" placeholder="Ingresa tu numero celular">
-                    <label for="correo"> Correo Electronico </label>
-                    <input type="text" id="correo" placeholder="Ingresa tu correo electronico">
+                    <label for="correo"> Número Celular </label>
+                    <input type="number" id="correo" placeholder="Ingresa tu número celular">
+                    <label for="correo"> Correo Electrónico </label>
+                    <input type="email" id="correo" placeholder="Ingresa tu correo electrónico">
                     <label> Foto de perfil </label>
                     <input type="file">
-                    <label for="contraseña1">Digite una contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
+                    <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
                 <div class="contenedorContraseña">
-                    <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(4)">
                     <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(4)">
                 </div>
