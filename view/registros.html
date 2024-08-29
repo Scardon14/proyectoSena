@@ -5,144 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/registro.css">
     <script type="text/javascript" src="../js/registro.js"></script>
+    <title>Registrarse</title>
 </head>
 <body>
-    <title>Registrarse</title>
-    <header>
-        <div class="logo">
-            <img src="../img/logo.png" alt="logo">
-        </div>
-        <div>
-            <h1> O & T </h1>
-        </div>
-    </header>
-    <div class="formulario-registro-main">
-                <select name="opcionRegistro" id="opcionRegistro">
-                <option value="registroBarbero">Registrarse como Barbero</option>
-                <option value="registroNegocio">Registrarse como Negocio</option>
-                <option value="registroUsuario">Registrarse como Usuario</option>
-            </select>
+    <div class="contenedor-registros">
+        <header>
+            <div class="logo">
+                <img src="../img/logo.png" alt="logo">
+            </div>
+            <div>
+                <h1> O & T </h1>
+            </div>
+        </header>
+        <div class="formulario-registro-main">
+                    <select name="opcionRegistro" id="opcionRegistro">
+                    <option value="registroBarbero">Registrarse como Barbero</option>
+                    <option value="registroNegocio">Registrarse como Negocio</option>
+                    <option value="registroUsuario">Registrarse como Usuario</option>
+                </select>
+                
+                <button id="registrarse" onclick="mostrarForm()">Seleccionar Rol</button>
+                <div class="formulario-registro" id="registroBarbero">
+                    <form action="#">
+                        <h2>Registro Barbero</h2>
+                        <label for="nombre">Nombres</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
+                        <label for="nombre">Apellidos</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tus apellidos">
+                        <label for="correo"> Número Celular </label>
+                        <input type="number" id="correo" placeholder="Ingresa tu numero celular">
+                        <label for="correo"> Correo Electrónico </label>
+                        <input type="email" id="correo" placeholder="Ingresa tu correo electronico">    
+                        <label> Foto de perfil </label>
+                        <input type="file">
+                        <label> Fotografías <small>(5 min. De los servicios que haz prestado como Barbero)</small></label>
+                        <input type="file">
+                        <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
+                    <div class="contenedorContraseña">
+                        <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(0)">
+                        <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(0)">
+                    </div>
+                        <label for="contraseña2" >Confirme la contraseña creada</label>
+                        <div class="contenedorContraseña">
+                            <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(1)">
+                            <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(1)">
+                        </div>
+                    <div>
+                            <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
+                            <input type="checkbox">
+                    </div>
+                        <input type="submit" value="Registrarse">
+                    </form>
+                </div>
+                <div class="formulario-registro" id="registroNegocio">
+                    <form action="#">
+                        <h2>Registro Negocio</h2>
+                        <label for="nombre">Nombre del Establecimiento</label>
+                        <input type="text" id="nombre" placeholder="Ingresa el nombre del establecimiento">
+                        <label for="correo"> NIT</label>
+                        <input type="number" id="correo" placeholder="Ingresa el NIT del establecimiento">
+                        <label for="correo"> Número Celular </label>
+                        <input type="number" id="correo" placeholder="Ingresa el número celular del establecimiento">
+                        <label for="correo"> Correo Electrónico </label>
+                        <input type="email" id="correo" placeholder="Ingresa el correo del establecimiento">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" placeholder="Ingresa la dirección del establecimiento">    
+                        <label> Foto de perfil o logo del establecimiento </label>
+                        <input type="file">
+                        <label> Fotografías del Establecimiento <small>(5 min. Por dentro y su fachada)</small></label>
+                        <input type="file"> 
+                        <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
+                    <div class="contenedorContraseña">
+                        <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(2)">
+                        <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(2)">
+                    </div>
+                        <label for="contraseña2" > Confirme la contraseña creada</label>
+                        <div class="contenedorContraseña">
+                            <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(3)">
+                            <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(3)">
+                        </div>
+                        <div>
+                            <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
+                            <input type="checkbox">
+                        </div>
+                        <input type="submit" value="Registrarse">
+                    </form>
+                </div>
+                <div class="formulario-registro" id="registroUsuario">
+                    <form action="#">
+                        <h2>Registro Usuario</h2>
+                        <label for="nombre">Nombres</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
+                        <label for="nombre">Apellidos</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tus apellidos">
+                        <label for="correo"> Número Celular </label>
+                        <input type="number" id="correo" placeholder="Ingresa tu número celular">
+                        <label for="correo"> Correo Electrónico </label>
+                        <input type="email" id="correo" placeholder="Ingresa tu correo electrónico">
+                        <label> Foto de perfil </label>
+                        <input type="file">
+                        <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
+                    <div class="contenedorContraseña">
+                        <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(4)">
+                        <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(4)">
+                    </div>
+                        <label for="contraseña2" > Confirme la contraseña creada</label>
+                        <div class="contenedorContraseña">
+                            <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(5)">
+                            <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(5)">
+                        </div>
+                        <div>
+                            <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
+                            <input type="checkbox">
+                        </div>
+                        <input type="submit" value="Registrarse">
+                    </form>
+                </div>
+                <div id="form">
             
-            <button id="registrarse" onclick="mostrarForm()">Seleccionar Rol</button>
-            <div class="formulario-registro" id="registroBarbero">
-                <form action="#">
-                    <h2>Registro Barbero</h2>
-                    <label for="nombre">Nombres</label>
-                    <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
-                    <label for="nombre">Apellidos</label>
-                    <input type="text" id="nombre" placeholder="Ingresa tus apellidos">
-                    <label for="correo"> Número Celular </label>
-                    <input type="number" id="correo" placeholder="Ingresa tu numero celular">
-                    <label for="correo"> Correo Electrónico </label>
-                    <input type="email" id="correo" placeholder="Ingresa tu correo electronico">    
-                    <label> Foto de perfil </label>
-                    <input type="file">
-                    <label> Fotografías <small>(5 min. De los servicios que haz prestado como Barbero)</small></label>
-                    <input type="file">
-                    <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
-                <div class="contenedorContraseña">
-                    <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                    <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(0)">
-                    <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(0)">
                 </div>
-                    <label for="contraseña2" >Confirme la contraseña creada</label>
-                    <div class="contenedorContraseña">
-                        <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                        <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(1)">
-                        <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(1)">
-                    </div>
-                <div>
-                        <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
-                        <input type="checkbox">
-                </div>
-                    <input type="submit" value="Registrarse">
-                </form>
-            </div>
-            <div class="formulario-registro" id="registroNegocio">
-                <form action="#">
-                    <h2>Registro Negocio</h2>
-                    <label for="nombre">Nombre del Establecimiento</label>
-                    <input type="text" id="nombre" placeholder="Ingresa el nombre del establecimiento">
-                    <label for="correo"> NIT</label>
-                    <input type="number" id="correo" placeholder="Ingresa el NIT del establecimiento">
-                    <label for="correo"> Número Celular </label>
-                    <input type="number" id="correo" placeholder="Ingresa el número celular del establecimiento">
-                    <label for="correo"> Correo Electrónico </label>
-                    <input type="email" id="correo" placeholder="Ingresa el correo del establecimiento">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" id="direccion" placeholder="Ingresa la dirección del establecimiento">    
-                    <label> Foto de perfil o logo del establecimiento </label>
-                    <input type="file">
-                    <label> Fotografías del Establecimiento <small>(5 min. Por dentro y su fachada)</small></label>
-                    <input type="file"> 
-                    <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
-                <div class="contenedorContraseña">
-                    <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                    <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(2)">
-                    <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(2)">
-                </div>
-                    <label for="contraseña2" > Confirme la contraseña creada</label>
-                    <div class="contenedorContraseña">
-                        <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                        <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(3)">
-                        <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(3)">
-                    </div>
-                    <div>
-                        <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
-                        <input type="checkbox">
-                    </div>
-                    <input type="submit" value="Registrarse">
-                </form>
-            </div>
-            <div class="formulario-registro" id="registroUsuario">
-                <form action="#">
-                    <h2>Registro Usuario</h2>
-                    <label for="nombre">Nombres</label>
-                    <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
-                    <label for="nombre">Apellidos</label>
-                    <input type="text" id="nombre" placeholder="Ingresa tus apellidos">
-                    <label for="correo"> Número Celular </label>
-                    <input type="number" id="correo" placeholder="Ingresa tu número celular">
-                    <label for="correo"> Correo Electrónico </label>
-                    <input type="email" id="correo" placeholder="Ingresa tu correo electrónico">
-                    <label> Foto de perfil </label>
-                    <input type="file">
-                    <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
-                <div class="contenedorContraseña">
-                    <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                    <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(4)">
-                    <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(4)">
-                </div>
-                    <label for="contraseña2" > Confirme la contraseña creada</label>
-                    <div class="contenedorContraseña">
-                        <input type="password" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                        <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(5)">
-                        <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(5)">
-                    </div>
-                    <div>
-                        <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
-                        <input type="checkbox">
-                    </div>
-                    <input type="submit" value="Registrarse">
-                </form>
-            </div>
-            <div id="form">
-        
-            </div>
-            <button onclick="ocultarFormulario()">Volver</button>
-
+                <button onclick="ocultarFormulario()">Volver</button>
+    
+        </div>
+    
+                <footer>
+                    <ul>
+                        <li>Contactenos</li>
+                        <li>Organiacion&Tiempo@outlook.com.co</li>
+                        <div>
+                            <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
+                            <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
+                            <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
+                        </div>
+                    </ul>
+                </footer>
+    
     </div>
-
-            <footer>
-                <ul>
-                    <li>Contactenos</li>
-                    <li>Organiacion&Tiempo@outlook.com.co</li>
-                    <div>
-                        <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                        <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-                        <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                    </div>
-                </ul>
-            </footer>
-</body>
+    </body>
 </html>
