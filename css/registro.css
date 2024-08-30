@@ -8,6 +8,11 @@ body {
     font-size: 1rem; /* 16px de base */
     min-height: 100vh;
     }
+
+.contenedor-registros{
+    display: grid;
+    grid-template-rows: 0.8fr 3.6fr 0.8fr;
+}   
 header {
     background-color: #1554b3;
     display: flex;
@@ -46,7 +51,10 @@ h1{
     flex-direction: column;
     align-items: center;
     width: 50%;
-}
+    height: 100%;
+    justify-content: center;
+    background-color: #d6d6d6d6;
+    }
 .formulario-registro form{
     background-color: #d6d6d6;
     padding: 0 10rem;
@@ -77,10 +85,10 @@ footer ul{
     display: flex;
     flex-direction: row;
     list-style: none;
-    height: 8rem;
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
+    background-color: #003399; 
     
 }
 footer .icono-footer{
@@ -94,6 +102,7 @@ footer .icono-footer{
 }
 button{
     width: 45%;
+    margin: 4%;
 }
 .contenedorContraseña {
     display: inline-flex;
