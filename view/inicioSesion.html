@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> REGISTRO </title>
+        <title> Inicio de Sesion</title>
         <style>
             html {
                  font-size: 16px; /* 1rem = 16px */
@@ -35,7 +35,7 @@
             .logo img{
                 width: 100%;
             }
-            .formulario-registro{
+            .formulario-Inicio_de_sesion{
                 margin: 0 auto;
                 display: flex;
                 flex-direction: column;
@@ -86,6 +86,7 @@
         </style>
 
        <style>
+
         #Inicia sesion, #Registrate{
             background-color: blue;
         }
@@ -106,43 +107,22 @@
                 <h1>O & T</h1>
             </div>
         </header>
-        <div class="formulario-registro">
-        <div class="card shadow-lg mt-5" id="form-Registrate">
+        <div class="formulario-inicioSesion">
+        <div class="card shadow-lg mt-5" id="form-IniaSsesion">
         <div class="card body">
             <form action="#">
-                <h2 class="mt-3 mb-3 text-center">Registrate<span id="Iniciar sesion"> o Inicia sesion </span></h2>
-                <label for="nombre">Nombre del Local</label>
-                <input type="text" id="nombre" placeholder="Ingresa el nombre del local">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-                <label for="Apellidos">Apellidos</label>
-                <input type="text" id="Apellidos" placeholder="Ingresa tus apellidos">
-                <label for="correo">Correo electrónico</label>
-                <input type="text" id="correo" placeholder="Ingresa tu correo electronico">
-                <label for="numero de celular">Numero de celular</label>
-                <input type="text" id="numero de celular" placeholder="Ingresa tu numero celular">
-                <label for="direccion">Dirección del local</label>
-                <input type="text" id="direccion" placeholder="Ingresa la direccion del local">
-                <label for="nit">Nit</label>
-                <input type="text" id="Nit" placeholder="Ingresa el nit de tu negocio">
-                <label> Foto de perfíl</label>
-                <input type="file">
-                <label> Foto de perfíl o logo del local </label>
-                <input type="file">
-                <label> Fotografías del local por dentro y fuera (5 min)</label>
-                <input type="file"> 
-                <label> Fotografías de tus servicios(5 min)</label>
-                <input type="file">
-                <label for="contraseña1">Crear contraseña</label>
-                <input type="password" id="contraseña1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-                <label for="contraseña2" > Confirmar contraseña</label>
-                <input type="password" id="contraseña2">
+                <h2 class="mt-3 mb-3 text-center"InicaSesion></h2>
+                <label for="correo o numero de celular">Correo electrónico o Numero de celular</label>
+                <input type="text" id="correo o numero de celular" placeholder="Ingresa tu correo electronico o Numero de celular">
+                <label for="contraseña1">contraseña</label>
+                <input type="password" id="contraseña1" placeholder="Ingresa tu contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+    
                 <div>
-                    <label><strong>Acepto los términos y condiciones de O&T.com<br>y autorizo el tratamiento de mis datos personales</strong></label>
+                    <label><strong>Olvidaste tu contraseña?<br></strong></label>
                     <input type="checkbox">
                 </div>
-                <input type="submit" value="Registrarse">
-            </form>
+                <input type="submit" value="Iniciar Sesion">
+            </form> 
         </div>
         <footer>
             <ul>
@@ -155,20 +135,10 @@
                 </div>
             </ul>
         </footer>
-       
-        <div class="card shadow-lg mt-5" id="form-Inicia sesion">
-         <div class="card body">
-            <h2 class="mt-3 mb-5 text-center">Inicia sesion<span id="Registrate"> o Registrate</span></h2>
-            <form>
-                <label for="correo">Correo electrónico</label>
-                <input type="text" id="correo" placeholder="Ingresa tu correo electronico">
-                <label for="contraseña2" >contraseña</label>
-                <input type="password" id="contraseña2">
-                <button class="btn btn-primarymb-3" type="submit">Inicia sesion</button>
-            </form>
 
-         </div>
+
         </div>
+         </div>
 
            
     </body>
