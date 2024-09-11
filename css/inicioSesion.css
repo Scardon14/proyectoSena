@@ -79,3 +79,11 @@ footer .icono-footer{
 .icono-footer img{
    height: 50%;
 }
+.form-container{
+    background-color: #d6d6d6; /* Color gris claro */ 
+    width: 40%;
+    margin: 0px auto;
+    padding: 200px;
+    border-radius: 0px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+    }
