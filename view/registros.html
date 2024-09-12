@@ -16,7 +16,7 @@
                 <h1> O & T </h1>
             </div>
         </header>
-        <div class="formulario-registro-main">
+        <div class="formulario-registro-main" id="formulario">
                     <select name="opcionRegistro" id="opcionRegistro">
                     <option value="registroBarbero">Registrarse como Barbero</option>
                     <option value="registroNegocio">Registrarse como Negocio</option>
@@ -26,6 +26,7 @@
                 <button id="registrarse" onclick="mostrarForm()">Seleccionar Rol</button>
                 <div class="formulario-registro" id="registroBarbero">
                     <form action="#">
+<!-- FORMULARIO REGISTRO BARBERO-->
                         <h2>Registro Barbero</h2>
                         <label for="nombre">Nombres</label>
                         <input type="text" id="nombre" placeholder="Ingresa tu nombre o nombres">
@@ -41,6 +42,7 @@
                         <input type="file">
                         <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
                     <div class="contenedorContraseña">
+<!-- CONTRASEÑA Y SU VALIDACION DE CARACTERES -->
                         <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                         <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(0)">
                         <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(0)">
@@ -57,6 +59,7 @@
                     </div>
                         <input type="submit" value="Registrarse">
                     </form>
+<!-- FORMULARIO REGISTRO NEGOCIO -->
                 </div>
                 <div class="formulario-registro" id="registroNegocio">
                     <form action="#">
@@ -77,6 +80,7 @@
                         <input type="file"> 
                         <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
                     <div class="contenedorContraseña">
+<!-- CONTRASEÑA Y SU VALIDACION DE CARACTERES -->
                         <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                         <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(2)">
                         <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(2)">
@@ -93,6 +97,7 @@
                         </div>
                         <input type="submit" value="Registrarse">
                     </form>
+<!-- FORMULARIO REGISTRO USUARIO -->
                 </div>
                 <div class="formulario-registro" id="registroUsuario">
                     <form action="#">
@@ -109,6 +114,7 @@
                         <input type="file">
                         <label for="contraseña1">Contraseña.<small>(Condiciones: 8 caracteres min. Al menos una letra mayuscula y un numero)</small></label>
                     <div class="contenedorContraseña">
+<!-- CONTRASEÑA Y SU VALIDACION DE CARACTERES -->
                         <input type="password" id="contraseña" placeholder="Digite una Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                         <img src="../img/closeEye.png" id="verContraseña" class="icon" onclick="pass(4)">
                         <img src="../img/borrarCestaBasura.png" id="borrarContraseña" class="icon" onclick="borrar(4)">
@@ -132,11 +138,12 @@
                 <button onclick="ocultarFormulario()">Volver</button>
     
         </div>
-    
+<!-- FOOTER -->
                 <footer>
                     <ul>
                         <li>Contactenos</li>
                         <li>Organiacion&Tiempo@outlook.com.co</li>
+                        <li> @2024 O&T </li>
                         <div>
                             <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
                             <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
