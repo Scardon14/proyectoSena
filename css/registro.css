@@ -42,7 +42,7 @@ h1{
 }
 .formulario-registro{
     margin: auto;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -62,6 +62,9 @@ h1{
     margin: auto;
     display: flex;
     flex-direction: column;
+}
+.formulario_input-error{
+    color: #bb2929;
 }
 .formulario_grupo-correcto .formulario_validacion-estado {
 	color: #1ed12d;
@@ -135,4 +138,7 @@ button{
     height: 1rem;
     margin: 5px;
     cursor: pointer;
+}
+.ocultarDiv{
+    display: none;
 }
