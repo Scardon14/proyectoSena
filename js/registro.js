@@ -11,16 +11,14 @@ function mostrarForm() {
     const checkInput = document.querySelectorAll(`i.formulario_validacion-estado`)
     let registroSeleccionado = opcionRegistro.options[opcionRegistro.selectedIndex].value;
     mensajesError.forEach((element) => {
-        element.style.display = "none";
+        element.classList.add("ocultarDiv");
     });
     checkInput.forEach((element) => {
         element.style.display = "none";
 
     });
-    //console.log("Check: ",checkInput.length)
 
     /*AYUDA A QUE LOS FORMULARIOS TENGAN EL TAMAÑO ESTANDAR*/
-    divFormulario.style.height = "100%";
     /*ELSE IF CUANDO SELECCIONA UN FORMULARIO SE OCULTAN LOS OTROS*/
     if (registroSeleccionado == "registroBarbero") {
         registroNegocio.classList.add("ocultarDiv");
@@ -38,8 +36,8 @@ function mostrarForm() {
     opcionRegistro.classList.add("ocultarDiv");
     btnRegistrarse.classList.add("ocultarDiv");
 }
-
 /* FUNCION PARA VOLVER Y OCULTAR EL FORMULARIO DE REGISTRO*/
+
 function ocultarFormulario() {
     const divFormulario = document.getElementById("formulario");
     const btnRegistrarse = document.getElementById("registrarse");
@@ -47,7 +45,6 @@ function ocultarFormulario() {
     const registroNegocio = document.getElementById("registroNegocio");
     const registroUsuario = document.getElementById("registroUsuario");
     const opcionRegistro = document.getElementById("opcionRegistro");
-    divFormulario.style.height = "29rem";
     btnRegistrarse.classList.remove("ocultarDiv");
     opcionRegistro.classList.remove("ocultarDiv");
     registroBarbero.classList.add("ocultarDiv");
@@ -60,16 +57,13 @@ function ocultarFormulario() {
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('btnVolver').addEventListener('click', function () {
         const registroBarbero = document.getElementById("registroBarbero");
-        console.log("algo")
         const registroNegocio = document.getElementById("registroNegocio");
         const registroUsuario = document.getElementById("registroUsuario");
         if (registroBarbero.className.includes("ocultarDiv")
             && registroNegocio.className.includes("ocultarDiv")
             && registroUsuario.className.includes("ocultarDiv")) {
-            console.log("algo2")
             window.location.href = 'index.html'
         } else {
-            console.log("algo3")
             ocultarFormulario();
         }
     });
@@ -106,6 +100,7 @@ const validaciones = {
     contraseña2: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/,
     nit: /^\d{5,9}$/,
     direccion: /^(Calle|Carrera|Avenida|Diagonal|Transversal)\s\d{1,3}[A-Z]?\s?#\s?\d{1,3}[A-Z]?\-\d{1,3}$/,
+    terminos: 'true'
 }
 const campos = {
     nombre: false,
@@ -120,12 +115,16 @@ const campos = {
 document.addEventListener('DOMContentLoaded', (event) => {
     const buttonregistrar = document.querySelectorAll('#btn-registar');
     const inputs = document.querySelectorAll('input.formulario_input');
+    const checkbox = document.querySelectorAll('input.formulario_checkbox');
 
     inputs.forEach((element) => {
         element.addEventListener('keyup', validarFormulario);
         element.addEventListener('blur', validarFormulario);
     });
-
+    checkbox.forEach((element) => {
+        element.addEventListener('click', validarFormulario);
+        //element.addEventListener('blur', validarFormulario);
+    });
     buttonregistrar.forEach((btnregistar) => {
         btnregistar.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -151,74 +150,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 
-const validacionInputExitosa = (validacion, posicion, campo) => {
-
-    if (posicion.toLowerCase() === "registroUsuario".toLocaleLowerCase()) {
-        console.log("Entree", posicion);
-        if (campo === "contraseña") {
-
-        }
-        cambiarEstadoValidacion(validacion, 0, campo);
-        return 0;
-    } else if (posicion.toLowerCase() === "registroBarbero".toLocaleLowerCase()) {
-        console.log("Entree", posicion);
-
-        cambiarEstadoValidacion(validacion, 1, campo);
-        return 1;
-    } else if (posicion.toLowerCase() === "registroNegocio".toLocaleLowerCase()) {
-        console.log("Entree", posicion);
-
-        cambiarEstadoValidacion(validacion, 2, campo);
-        return 2;
-    }
-}
-const cambiarEstadoValidacion = (validacion, index, campo) => {
-    const mensajesError = document.querySelectorAll(`#grupo_${campo} p`);
-    const checkInput = document.querySelectorAll(`#grupo_${campo} i`);
-    const contendorInput = document.querySelectorAll(`#grupo_${campo}`);
-    if (validacion === true) {
-        contendorInput[index].classList.remove('formulario_grupo-incorrecto');
-        contendorInput[index].classList.add('formulario_grupo-correcto');
-        checkInput[index].classList.add('fa-check-circle');
-        checkInput[index].classList.remove('fa-times-circle');
-        mensajesError[index].classList.remove('formulario_input-error-activo');
-    } else {
-        contendorInput[index].classList.add('formulario_grupo-incorrecto');
-        contendorInput[index].classList.remove('formulario_grupo-correcto');
-        checkInput[index].classList.remove('fa-check-circle');
-        checkInput[index].classList.add('fa-times-circle');
-        mensajesError[index].classList.add('formulario_input-error-activo');
-    }
-
-}
-
-const validarCampo = (validaciones, input, campo) => {
-    const opcionRegistro = document.getElementById("opcionRegistro");
-    let registroSeleccionado = opcionRegistro.options[opcionRegistro.selectedIndex].value;
-    console.log('Option: ', registroSeleccionado);
-    const mensajesError = document.querySelectorAll(`#grupo_${campo} p`);
-    const checkInput = document.querySelectorAll(`#grupo_${campo} i`);
-    if (validaciones.test(input.value)) {
-        var count = validacionInputExitosa(true, registroSeleccionado, campo);
-        if (mensajesError[count].innerText.toLowerCase().includes(campo)) {
-            mensajesError[count].classList.add("formulario_input-error");
-            mensajesError[count].style.display = "none";
-            checkInput[count].style.display = "inline";
-        }
-        campos[campo] = true;
-    } else {
-        var count = validacionInputExitosa(false, registroSeleccionado, campo);
-        if (mensajesError[count].innerText.toLowerCase().includes(campo)) {
-            mensajesError[count].classList.add("formulario_input-error");
-            mensajesError[count].style.display = "block";
-            checkInput[count].style.display = "inline";
-        }
-        campos[campo] = false;
-    }
-}
-
+//Variables que capturas contraseña uno y dos
+var contraseña1, contraseña2;
+//Metodo que invoca los eventos para destribuir las validaciones
 const validarFormulario = (e) => {
-    var contraseña1, contraseña2;
     switch (e.target.name) {
         case "nombre":
             validarCampo(validaciones.nombre, e.target, 'nombre');
@@ -233,40 +168,169 @@ const validarFormulario = (e) => {
             validarCampo(validaciones.correo, e.target, 'correo');
             break;
         case "contraseña1":
+            contraseña1 = e.target.value;
             validarCampo(validaciones.contraseña1, e.target, 'contraseña');
             break;
         case "contraseña2":
-            contraseña1 = e.target.value;
             contraseña2 = e.target.value;
-            validarCampo(validaciones.contraseña2, e.target, 'contraseña');
             validarContraseña2(contraseña1, contraseña2);
             break;
         case "nit":
             validarCampo(validaciones.nit, e.target, 'nit');
             break;
         case "direccion":
-            validarCampo(validaciones.direccion, e.target, 'direccion');
+            validarCampo(validaciones.direccion, e.target, 'dirección');
+            break;
+        case "terminos":
+            validarCampo(validaciones.terminos, e.target, 'terminos');
             break;
     }
 }
+//Metodo que valida si los campos cumplen con las validaciones
+const validarCampo = (validaciones, input, campo) => {
+    const opcionRegistro = document.getElementById("opcionRegistro");
+    let registroSeleccionado = opcionRegistro.options[opcionRegistro.selectedIndex].value;
+    const mensajesError = document.querySelectorAll(`#grupo_${campo} p`);
+    //Verifica los terminos y condiciones ya que no se puede obtener el valor del campo
+    if (campo === "terminos") {
+        var index = validacionInputExitosa(true, registroSeleccionado, campo);
+        if (input.checked) {
+            var index = validacionInputExitosa(true, registroSeleccionado, campo);
+            if (mensajesError[index].innerText.toLowerCase().includes(campo)) {
+                validarMensajeError(true, index, campo);
+            }
+        } else {
+            var index = validacionInputExitosa(false, registroSeleccionado, campo);
+            if (mensajesError[index].innerText.toLowerCase().includes(campo)) {
+                validarMensajeError(false, index, campo);
+            }
+        }
+        //Valida que los campos que tienen datos de entrada cumplan con las validaciones
+    } else if (validaciones.test(input.value)) {
+        var index = validacionInputExitosa(true, registroSeleccionado, campo);
+        //Permite hacer las validaciones de la contraseña 1 de los 3 formularios
+        if (campo.includes("contraseña")) {
+            var index = validacionInputExitosa(true, registroSeleccionado, campo);
+            if (mensajesError[index].innerText.toLowerCase().includes(campo)) {
+                validarMensajeError(true, index, campo);
+            }
+            //Valida todos los demás campos del formulario
+        } else if (mensajesError[index].innerText.toLowerCase().includes(campo)) {
+            validarMensajeError(true, index, campo);
+        }
+        campos[campo] = true;
+        //Se activa cuando los campos no cumplen con las validaciones
+    } else {
+        var index = validacionInputExitosa(false, registroSeleccionado, campo);
+        if (campo.includes("contraseña")) {
+            if (mensajesError[index].innerText.toLowerCase().includes(campo)) {
+                validarMensajeError(false, index, campo);
+            }
+        } else if (mensajesError[index].innerText.toLowerCase().includes(campo)) {
+            validarMensajeError(false, index, campo);
+        }
+        campos[campo] = false;
+    }
+}
 
+//Variable que captura la posicion de las contraseñas 2 en el arreglo
+var aux;
+const validacionInputExitosa = (validacion, posicion, campo) => {
+    if (posicion.toLowerCase() === "registroUsuario".toLocaleLowerCase()) {
+        cambiarEstadoValidacion(validacion, 0, campo);
+        aux = 1;
+        return 0;
+    } else if (posicion.toLowerCase() === "registroBarbero".toLocaleLowerCase()) {
+        aux = 3;
+        if (campo.includes("contraseña")) {
+            cambiarEstadoValidacion(validacion, 2, campo);
+            return 2;
+        } else {
+            cambiarEstadoValidacion(validacion, 1, campo);
+            return 1;
+        }
+    } else if (posicion.toLowerCase() === "registroNegocio".toLocaleLowerCase()) {
+        aux = 5;
+        if (campo === "nit") {
+            cambiarEstadoValidacion(validacion, 0, campo);
+            return 0;
+        } else if (campo === "dirección") {
+            cambiarEstadoValidacion(validacion, 0, campo);
+            return 0;
+        } else if (campo === "contraseña") {
+            cambiarEstadoValidacion(validacion, 4, campo);
+            return 4;
+        } else {
+            cambiarEstadoValidacion(validacion, 2, campo);
+            return 2;
+        }
+    }
+}
+
+//Metodo muestra iconos exitosos y oculta los mensajes de error
+const cambiarEstadoValidacion = (validacion, index, campo) => {
+    const mensajesError = document.querySelectorAll(`#grupo_${campo} p`);
+    const checkInput = document.querySelectorAll(`#grupo_${campo} i`);
+    const contendorInput = document.querySelectorAll(`#grupo_${campo}`);
+    if (validacion === true) {
+        if (campo.includes("terminos")) {
+
+        } else {
+            contendorInput[index].classList.remove('formulario_grupo-incorrecto');
+            contendorInput[index].classList.add('formulario_grupo-correcto');
+            checkInput[index].classList.add('fa-check-circle');
+            checkInput[index].classList.remove('fa-times-circle');
+            mensajesError[index].classList.remove('formulario_input-error-activo');
+        }
+
+    } else {
+        contendorInput[index].classList.add('formulario_grupo-incorrecto');
+        contendorInput[index].classList.remove('formulario_grupo-correcto');
+        checkInput[index].classList.remove('fa-check-circle');
+        checkInput[index].classList.add('fa-times-circle');
+        mensajesError[index].classList.add('formulario_input-error-activo');
+    }
+
+}
+
+//Muestra los mensajes e iconos de error
+const validarMensajeError = (estado, index, campo) => {
+    const mensajesError = document.querySelectorAll(`#grupo_${campo} p`);
+    const checkInput = document.querySelectorAll(`#grupo_${campo} i`);
+    if (estado) {
+        mensajesError[index].classList.add("formulario_input-error");
+        mensajesError[index].classList.add("ocultarDiv");
+        checkInput[index].style.display = "inline";
+    } else {
+        mensajesError[index].classList.add("formulario_input-error");
+        mensajesError[index].classList.remove("ocultarDiv");
+        checkInput[index].style.display = "inline";
+    }
+}
+
+//Valida la contraseña  uno y la contraseña dos en los 3 formularios
 const validarContraseña2 = (contraseña1, contraseña2) => {
+    const mensajesError = document.querySelectorAll(`#grupo_contraseña p`);
+    const checkInput = document.querySelectorAll(`#grupo_contraseña i`);
+    const contraseña = document.querySelectorAll(`#grupo_contraseña`);
+    mensajesError[aux].classList.remove("ocultarDiv");
     if (contraseña1 !== contraseña2) {
-        console.log("Entre 0", contraseña1 === contraseña2);
-        document.getElementById(`grupo_contraseña`).classList.add('formulario_grupo-incorrecto');
-        document.getElementById(`grupo_contraseña`).classList.remove('formulario_grupo-correcto');
-        document.querySelector(`#grupo_contraseña i`).classList.add('fa-times-circle');
-        document.querySelector(`#grupo_contraseña i`).classList.remove('fa-check-circle');
-        document.querySelector(`#grupo_contraseña .formulario_input-error`).classList.add
+        checkInput[aux].style.display = "inline";
+        contraseña[aux].classList.add('formulario_grupo-incorrecto');
+        contraseña[aux].classList.remove('formulario_grupo-correcto');
+        checkInput[aux].classList.add('fa-times-circle');
+        checkInput[aux].classList.remove('fa-check-circle');
+        mensajesError[aux].classList.add
             ('formulario_input-error-activo');
         campos['contraseña'] = false;
     } else {
-        console.log("Entre 111")
-        document.getElementById(`grupo_contraseña`).classList.remove('formulario_grupo-incorrecto');
-        document.getElementById(`grupo_contraseña`).classList.add('formulario_grupo-correcto');
-        document.querySelector(`#grupo_contraseña`).classList.remove('fa-times-circle');
-        document.querySelector(`#grupo_contraseña i`).classList.add('fa-check-circle');
-        document.querySelector(`#grupo_contraseña .formulario_input-error`).classList.remove('formulario_input-error-activo');
+        checkInput[aux].style.display = "inline";
+        contraseña[aux].classList.remove('formulario_grupo-incorrecto');
+        contraseña[aux].classList.add('formulario_grupo-correcto');
+        checkInput[aux].classList.remove('fa-times-circle');
+        checkInput[aux].classList.add('fa-check-circle');
+        mensajesError[aux].classList.add("ocultarDiv");
+        mensajesError[aux].classList.remove('formulario_input-error-activo');
         campos['contraseña'] = true;
     }
 }
