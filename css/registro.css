@@ -165,3 +165,6 @@ button{
 .ocultarDiv{
     display: none;
 }
+button{
+    cursor: pointer;
+}
