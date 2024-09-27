@@ -1,0 +1,26 @@
+
+ /*Seccion de img y titulo*/
+
+ #presenta{ 
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(
+        0deg, 
+        rgba(0,0,0,0.5), 
+        rgba(0,0,0,0.5)) 
+        ,url("../img/logo\ 1.png");     /*IMG con capas para que se vea mas oscura la imagen*/
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    } 
+
+    .org{
+        font-size: 50px;
+        top: 50px;
+        text-align: center;
+    }
