@@ -87,3 +87,13 @@ footer .icono-footer{
     border-radius: 0px;
     box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
     }
+
+    #Inicia sesion, #Registrate{
+        background-color: blue;
+    }
+
+    #Inicia sesion, #Registrate:hover{
+        cursor: pointer;
+
+    }
+    
