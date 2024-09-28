@@ -50,21 +50,9 @@ h1{
     align-items: center;
     width: 50%;
     height: 100%;
-    /*padding: 5% 0;*/
     justify-content: center;
     background-color: #d6d6d6d6;
     }
-    /*@media(min-width:1280px){
-        .formulario-registro-main{
-            height: 43rem;
-        }
-    }
-    @media(min-width:1920){
-        .formulario-registro-main{
-            height: 40rem;
-        }
-    }*/
-
 .formulario-registro-main .contenedor-seleccion-perfil{
     width: 45%;
     margin: 4%;
