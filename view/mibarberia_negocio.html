@@ -4,14 +4,7 @@
        <meta charset="UTF-8">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content = "width=device-width", initiañ-scale=1.0>
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <title> O & T</title>
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/quienessomos.css">
+       <link rel="stylesheet" href="../css/mibarberia_negocio.css">
     </head>
     <Body> 
 
@@ -37,7 +30,7 @@
                             <li><a href="mipersonal_negocio.html">Mi personal</a></li>
                             <li><a href="mibarberia_negocio.html">Mi barberia</a></li>
                             <li><a href="quienessomos_negocio.html">¿Quienes somos?</a></li>
-                            <li><a href="locales_negocio.html">Basilos</a></li>
+                            
                         </ul>
                     </nav>
                 </div>
@@ -46,34 +39,105 @@
        <section id="presenta">  <!--Seccion de img con titulo-->   
        <h1 class="org">Style</h1>
        </section> 
+       
        <section id="organizacion">  <!--Seccion de fondo blanco, img y texto-->
-          <div class="casi">
+        <!--Boton de perfil-->
+        <div class="button-container">
+            <span class="button-text" id="buttonText" class="centered-button">STYLE</span>
+            <span class="icon" id="editIcon">&#9998;</span> <!-- Icono de lápiz -->
+        </div>
+    
+        <!-- Formulario que aparece al hacer clic en el lápiz -->
+        <div id="editForm" class="hidden">
+            <input type="text" id="textInput" value="STYLE">
+            <button id="saveButton">Guardar</button>
+        </div>
+        <script src="../js/negocio.js"></script>
+
+        <!--textos-->
+           <d1iv class="casi">
                <div class="casilla"></div>
-                <div class="texto">
-                    <h1> Somos O&T (OrganizacionyTiempo) </h1>
-                    <P>En cuanto a el objetivo del aplicativo O & T es dar una solución integral y eficiente para la gestión de turnos de barbería, optimizar el tiempo tanto para barberos como para clientes. A través de esta plataforma, buscamos facilitar la organización de horarios para los barberos, permitiendo la publicación de disponibilidad y la gestión de vínculos con cuentas de negocios. Y así mismo brindar a los clientes la capacidad de agendar y cancelar citas desde la comodidad de sus hogares, reduciendo el tiempo de espera en la barbería y mejorando la experiencia de servicio para todos los involucrados
+                <div class="text-al" >
+                    <P style="text-align: center;"> 
+                         Style es una barberia moderna y elegante especializada en cortes de cabello clasicos y contemporaneos,
+                         afeitados de precision y cuidados de la barba bindando un ambiente acogedor, Contamos con un personal 
+                         experto que te ayudara con tus cambios de looks y hara lo posible por cumplir todas tus expectativas.
+                    </p>
                 </div>
           </div>
        </section>
-       <section id="mision">
-        <div class="cassi">
-            <div class="casill"></div>
-             <div class="text">
-                 <h1> Mision O&T </h1>
-                 <P>Facilitar la gestión de citas y horarios para barberos y usuarios, mejorando la eficiencia y comodidad del servicio. Ofrecer una plataforma intuitiva que permita a los establecimientos promocionarse y optimizar su visibilidad a través de nuestra página web.
-             </div>
-       </div>
-       </section>
+
+        <!--informacion del perfil-->
+         
+
+
+       <!--Tabla de precio de servicios-->
        <section id="vision">
         <div class="cassil">
             <div class="casil"></div>
              <div class="tex">
-                 <h1> Vision O&T </h1>
-                 <P>Convertirnos en la plataforma líder en la gestión de servicios para barberos y establecimientos de belleza, proporcionando soluciones digitales que impulsen el crecimiento del sector y mejoren la experiencia del usuario.
-             </div>
+                 <h1> Precios de servicios </h1>
+            <table class="style-table">
+              <thead>
+            <tr>
+              <th>Servicios</th>
+              <th>Precios</th>
+            </tr>
+             </thead>
+             <tbody>
+            <tr>
+                <td>Corte Tradicional</td>
+                <td>$15.00</td>
+            </tr>
+            <tr>
+                <td>Corte diseños sencillos</td>
+                <td>$20.00</td>
+            </tr>
+            <tr>
+                <td>Corte diseños complejos</td>
+                <td>$30.000</td>
+            </tr>
+            <tr>
+                <td>Corte Barba</td>
+                <td>$20.000</td>
+            </tr>
+            <tr>
+                <td>Tinte</td>
+                <td>$40.000</td>
+            </tr>
+            <tr>
+                <td>Cejas</td>
+                <td>$15.000</td>
+            </tr>
+             </tbody>
+           </table>
+           </div>
        </div>
-       </section>
-       <div>
+       </section> 
+
+        <!--Gleria de establecimiento-->
+        <h1 style="text-align: center;">Galeria de fotos </h1>
+        <div class="container">
+ 
+          <div class="box">
+              <img src="../img/barberia 1.png" alt="">
+          </div>
+          <div class="box">
+              <img src="../img/barberia 2.png" alt="">
+          </div>
+          <div class="box">
+              <img src="../img/barberia 3.png" alt="">
+          </div>
+          <div class="box">
+              <img src="../img/barberia 4.png" alt="">
+          </div>
+          <div class="box">
+              <img src="../img/barberia 5.png" alt="">
+          </div>
+          <div class="box">
+              <img src="../img/barberia 6.png" alt="">
+          </div>
+        </div>
        <footer>   <!--Footer datos personales de la organizacion de la pagina-->
         <ul>
             <li>Contactenos</li>
