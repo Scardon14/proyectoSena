@@ -15,7 +15,7 @@ let btnCerrarRecuadro = document.getElementById('btn-cerrar-recuadro');
 mes.textContent = nombresMes[numeroMes]; //devuelve el texto que contiene el elemento//
 año.textContent = añoActual.toString(); //la funcion .toString() convierte un valor u objeto en cadena, en este caso mostrara en texto la fecha//
 
-// Función para calcular el día de inicio del mes
+// Función para obtener los dias de la semana de lunes a domingo
 let startDay = (mes, año) => {
     let start = new Date(año, mes, 1);
     return (start.getDay() === 0) ? 6 : start.getDay() - 1;
@@ -38,16 +38,21 @@ let getTotalDays = (mes, año) => {
 //Funcion para escribir los dias del mes
 let escribirMes = (mes1,año1) => {
     fechas.innerHTML = '';
+    // Validacion para mostrar los meses y años futuros
     if((año1>añoActual) || (mes1 > numeroMes && año1 >= añoActual)){
-        for (let i = startDay(mes1, año1); i > 0; i--) {
+
+        //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes
+        for (let i = startDay(mes1, año1); i > 0; i--){
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro">
             ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
         }
+        //Muestra los dias del mes futuros
         for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro" data-dia="${i}">${i}</div>`;
         }
     }else if(mes1 === numeroMes && año1 === añoActual){
-        // Días del mes anterior
+
+        //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes//
         console.log("Entre mes actual: ", mes1, " ", año1);
         for (let i = startDay(mes1, año1); i > 0; i--) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}"> ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
@@ -70,43 +75,17 @@ let escribirMes = (mes1,año1) => {
         }
         
     }else if((año1 < añoActual)|| (mes1 < numeroMes && año1===añoActual)){
-         // Días del mes anterior
-         console.log("Entre mes actual: ", mes1, " ", año1);
+        //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes//
+        console.log("Entre mes actual: ", mes1, " ", año1);
          for (let i = startDay(mes1, año1); i > 0; i--) {
              fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_last-dias calendario_dia-pasado">
              ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
          }
+         // Muestra los dias del mes pero inhabilitados
         for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}">${i}</div>`;
         }
     }
-
-
-    // Días del mes actual
-    /*for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
-        if (mes1 === numeroMes && añoActual === añoActual) {
-            // Si es el mes y año actual//
-            if (i < diaActual) {
-                // Deshabilitar días pasados//
-                fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado"data-dia="${i}">${i}</div>`;
-            } else if (i === diaActual) { 
-                // Día actual //
-                fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-actual" style="background-color: lightblue;" data-dia="${i}">${i}</div>`;
-            } else {
-                // Días futuros //
-                fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro" data-dia="${i}">${i}</div>`;
-            }
-        } else if (añoActual === año && mes < numeroMes) {
-            // Si es un mes anterior del mismo año
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}">${i}</div>`;
-        } else if (año < añoActual || (año === añoActual && mes < numeroMes)) {
-            // Si es un mes o año anterior
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}">${i}</div>`;
-        } else {
-            // Meses futuros
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro" data-dia="${i}">${i}</div>`;
-        }
-    }*/
         // Asociar eventos de clic solo a días futuros o al actual
         let diasFuturos = document.querySelectorAll('.calendario_dia-futuro, .calendario_dia-actual');
         diasFuturos.forEach(dia => {
@@ -116,6 +95,7 @@ let escribirMes = (mes1,año1) => {
             });
         });
     };
+
 //Horas Disponibles //
 
 // Mostrar el recuadro de horas
@@ -161,6 +141,7 @@ let isLeap = (año) => {
     return ((año % 100 !== 0) && (año % 4 === 0) || (año % 400 === 0));
 };
 let mes1 = numeroMes, año1 = añoActual;
+
 // Función para ir al mes anterior
 let lastMes = () => {
     if (mes1 > 0 && mes1 <=11) {
@@ -198,7 +179,6 @@ let setNewDate = (mes1, año1) => {
 }
 
 // Asociar eventos de clic solo a días futuros o al actual
-
 let dias = document.querySelectorAll('.calendario_fechas');
 let diaf = [];
 dias.forEach(dia => {
@@ -218,7 +198,6 @@ diaf.forEach(dia => {
 });
 
 // Asociar eventos a los días del calendario
-
 document.addEventListener('DOMContentLoaded', function () {
     diasss.forEach(auxiliar => {
         auxiliar.addEventListener('click', function () {
