@@ -1,3 +1,4 @@
+// esto es para que el icono lapiz tenga funcionalidad
 document.getElementById('editIcon').addEventListener('click', function() {
     // Mostrar el formulario para editar
     document.getElementById('editForm').classList.remove('hidden');
