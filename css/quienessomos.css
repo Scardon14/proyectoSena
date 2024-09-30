@@ -38,7 +38,7 @@ header .contenedor-encabezado{
     display: flex;
     align-items: center;
     left: 100px;
-    width: 13%;
+    width: 14%;
     border-right: #ffffff 1px solid;
     padding: 0 1rem;
 }
@@ -47,14 +47,12 @@ header .contenedor-encabezado{
     width: 100%;
 }
 
-/*Diseño del buscador*/
+/*O&T*/
 
-.search input{
-    display: flex;
-    width: 300px; 
-    padding: 5px;
+.nombre{
+    margin-right: auto;
+    padding-left: 30px;
 }
-
 
 /*Menu*/
 

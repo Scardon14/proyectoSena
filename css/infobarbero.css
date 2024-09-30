@@ -11,11 +11,12 @@ header{
     min-width: 100%;
     display: flex;
     top: 0px;
-    left: 0px;
+    left: 0;
     background: #1554b3;
     font-size: 2rem; 
     color: #fff;
     flex-direction: column;
+      
 }
 
 
@@ -27,7 +28,8 @@ h1{
 header .contenedor-encabezado{
     display: flex;
     flex-direction: row;
-    align-items: center;  
+    align-items: center;
+    
 }
 
 /*Diseño del logo*/
@@ -36,7 +38,7 @@ header .contenedor-encabezado{
     display: flex;
     align-items: center;
     left: 100px;
-    width: 14%;
+    width: 13%;
     border-right: #ffffff 1px solid;
     padding: 0 1rem;
 }
@@ -59,7 +61,7 @@ header .contenedor-encabezado{
     width: 100%;
     min-height: 75px;
     background: #b31515;
-    padding: 0px 50px ;
+    padding: 0px 100px ;
     font-family: "DM Serif Text", serif;
 }
 
@@ -72,6 +74,7 @@ header .contenedor-encabezado{
     height: 100%;
     width: 100%;
 }
+
 nav{
     display: flex;
     justify-content: space-evenly;
@@ -110,42 +113,38 @@ nav ul li{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
  }
 
- /*Seccion de img y titulo*/
-
- #presenta{ 
-    display: flex;
-    align-items: center;
-    justify-content:center ;
-    text-align: center;
-    flex-direction: column;
-    height: 100vh;
-    background-image: linear-gradient(
-        0deg, 
-        rgba(0,0,0,0.5), 
-        rgba(0,0,0,0.5)) 
-        ,url("../img/Barberia.jpg");     /*IMG con capas para que se vea mas oscura la imagen*/
-        color: white;
-        background-repeat: no-repeat;
+    /*Seccion fondo blanco, img y texto*/
+    #presenta{ 
+        width: 100%;
+        height: 135vh;
+        background-image: linear-gradient(
+            0deg, 
+            rgba(0,0,0,0.5), 
+            rgba(0,0,0,0.5)) 
+            ,url("../img/Barberia.jpg");     /*IMG con capas para que se vea mas oscura la imagen*/
+            color: white;
+            background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-    } 
+        } 
 
-    .org{
-        font-size: 50px;
-        top: 50px;
-        text-align: center;
-    }
-
-    /*Seccion fondo blanco, img y texto*/
-
-    #organizacion .casi{
+    #presenta .casi{
     text-align: center;
     padding: 150px 12px;
     display: flex;
     justify-content: space-evenly;
     }
 
-    #organizacion .texto{
+    #presenta .casti{
+    border-radius: 15px;
+    background-color: white;
+    height: 700px;
+    width: 1250px;
+    display: flex;
+    justify-content: center;
+    }
+
+    #presenta .texto{
     width: 50%;
     max-width: 600px;
     text-align: initial;
@@ -153,20 +152,35 @@ nav ul li{
     flex-direction: column;
     justify-content: center;
     font-size: 22px;
+    color: black;
+    font-size: 18px;
     }
-
-    #organizacion .casilla{
-    background-image:url("../img/foto.jpg");
+    .ovely a{
+            margin-top: 50px;
+            margin-left: 250px;
+            color: #262626;
+            text-decoration: none;
+            font-size: 20px;
+            background: #b5b5b5;
+            border-radius: 80px;
+            text-align: center;
+            padding: 5px 19px;
+    }
+    #presenta .casilla{
+    margin-top: 130px;
+    margin-right: 60PX;
+    background-image:url("../img/Chico.png");
+    border-radius: 15px;
     background-size: cover;
     background-position: center center;
-    height: 400px;
-    width:400px;
+    height: 450px;
+    width:450px;
     }
 
-    /*footer de contactos de la empresa*/
+     /*footer de contactos de la empresa*/
 
 
-    footer{
+     footer{
         background-color: #003399;
         color: #ffffff;
         min-height: 100%;
