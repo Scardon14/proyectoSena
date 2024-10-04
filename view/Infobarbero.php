@@ -2,12 +2,16 @@
 <html lang="en">
  <head>
        <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content = "width=device-width", initiañ-scale=1.0>
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/miperfil_barbero.css">
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
        <title> O & T</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="../css/infobarbero.css">
     </head>
     <Body> 
         <header>
@@ -23,9 +27,10 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                            <li><a href="index_barbero.html">Inicio</a></li>
-                            <li><a href="agenda_barbero.html">Mi Agenda</a></li>
-                            <li><a href="miperfil_barbero.html">Mi perfil</a></li>
+                         <li><a href="index_usuario.php">Inicio</a></li>
+                         <li><a href="LocalesUsuario.php">Locales</a></li>
+                         <li><a href="miperfil_usuario.php">Mi perfil</a></li>
+                         <li><a href="quienessomos.php">¿Quienes somos?</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -60,21 +65,18 @@
                     
                     <br>6. Higiene y seguridad: Mantiene altos estándares de higiene, desinfectando herramientas y áreas de trabajo, 
                     y a menudo sigue normas sanitarias rigurosas para garantizar la seguridad del cliente.
+                    <br>
+                    <br><b>Si quieres agendar tu cita dale clic al boton de Agendar Cita</b>
                     </p>
+                <div class="ovely">
+                <br><a href="#">Agendar Cita</a>  <!--Boton para ver los barberos-->
+                </div>
              </div>
             </div>
        </div>
        </section>
-       <footer>   <!--Footer datos personales de la organizacion de la pagina-->
-        <ul>
-            <li>Contactenos</li>
-            <li>Organiacion&Tiempo@outlook.com.co</li>
-            <div>
-                <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-                <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-            </div>
-        </ul>
-    </footer>
+       <footer>
+        <?php include('../view/footer.html'); ?>
+    </footer> 
     </Body>
 </html>

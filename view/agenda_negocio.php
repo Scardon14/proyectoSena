@@ -27,12 +27,12 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                            <li><a href="indexnegocio.html">Inicio</a></li>
-                            <li><a href="localesnegocio.html">Locales</a></li>
-                            <li><a href="agenda_negocio.html">Agenda</a></li>
-                            <li><a href="mipersonal_negocio.html">Mi personal</a></li>
-                            <li><a href="mibarberia_negocio.html">Mi barberia</a></li>
-                            <li><a href="quienessomos_negocio.html">¿Quienes somos?</a></li>
+                            <li><a href="indexnegocio.php">Inicio</a></li>
+                            <li><a href="localesnegocio.php">Locales</a></li>
+                            <li><a href="agenda_negocio.php">Agenda</a></li>
+                            <li><a href="mipersonal_negocio.php">Mi personal</a></li>
+                            <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
+                            <li><a href="quienessomos_negocio.php">¿Quienes somos?</a></li>
                             
                         </ul>
                     </nav>
@@ -101,18 +101,9 @@
    </div>
    </section> 
 
-<footer>   <!--Footer datos personales de la organizacion de la pagina-->
-<ul>
-    <li>Contactenos</li>
-    <li>Organiacion&Tiempo@outlook.com.co</li>
-    <li> @2024 O&T </li>
-    <div>
-        <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-        <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-        <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-    </div>
-</ul>
-</footer>
+   <footer>
+            <?php include('../view/footer.html'); ?>
+        </footer> 
 </div>
 </Body>
 </html>

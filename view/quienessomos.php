@@ -28,10 +28,10 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="index.html">Inicio</a></li>
-                         <li><a href="registros.html">Regristrate</a></li>
-                         <li><a href="inicioSesion.html">Inicia sesion</a></li>
-                         <li><a href="quienessomos.html">Quienes somos?</a></li>
+                         <li><a href="index.php">Inicio</a></li>
+                         <li><a href="registros.php">Regristrate</a></li>
+                         <li><a href="inicioSesion.php">Inicia sesion</a></li>
+                         <li><a href="quienessomos.php">Quienes somos?</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -68,18 +68,9 @@
        </div>
        </section>
        <div>
-       <footer>   <!--Footer datos personales de la organizacion de la pagina-->
-        <ul>
-            <li>Contactenos</li>
-            <li>Organiacion&Tiempo@outlook.com.co</li>
-            <li> @2024 O&T </li>
-            <div>
-                <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-                <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-            </div>
-        </ul>
-    </footer>
+        <footer>
+            <?php include('../view/footer.html'); ?>
+        </footer> 
        </div>
     </Body>
 </html>

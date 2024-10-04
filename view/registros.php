@@ -362,20 +362,10 @@
 
             <button id="btnVolver">Volver</button>
         </div>
-        <!-- FOOTER -->
+         <!-- FOOTER -->
         <footer>
-            <ul>
-                <li>Contactenos</li>
-                <li>Organiacion&Tiempo@outlook.com.co</li>
-                <li> @2024 O&T </li>
-                <div>
-                    <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                    <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram">
-                    </div>
-                    <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                </div>
-            </ul>
-        </footer>
+            <?php include('../view/footer.html'); ?>
+        </footer>       
 </body>
 </div>
 

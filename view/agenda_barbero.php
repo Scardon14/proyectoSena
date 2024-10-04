@@ -33,9 +33,9 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                            <li><a href="index_barbero.html">Inicio</a></li>
-                            <li><a href="agenda_barbero.html">Mi Agenda</a></li>
-                            <li><a href="miperfil_barbero.html">Mi perfil</a></li>
+                            <li><a href="index_barbero.php">Inicio</a></li>
+                            <li><a href="agenda_barbero.php">Mi Agenda</a></li>
+                            <li><a href="miperfil_barbero.php">Mi perfil</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -71,20 +71,9 @@
                     <div id="horas-disponibles"> </div>
                 </div>
             </div>
-            <!--Footer-->
             <footer>
-                <ul>
-                    <li>Contactenos</li>
-                    <li>Organiacion&Tiempo@outlook.com.co</li>
-                    <li> @2024 O&T </li>
-                    <div>
-                        <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                        <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram">
-                        </div>
-                        <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                    </div>
-                </ul>
-            </footer>
+                <?php include('../view/footer.html'); ?>
+            </footer> 
         </div>
         <script type="text/javascript" src="../js/agenda_Barbero.js"></script>
 </body>
