@@ -27,10 +27,10 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="index_usuario.html">Inicio</a></li>
-                         <li><a href="LocalesUsuario.html">Locales</a></li>
-                         <li><a href="miperfil_usuario.html">Mi perfil</a></li>
-                         <li><a href="quienessomos.html">¿Quienes somos?</a></li>
+                         <li><a href="index_usuario.php">Inicio</a></li>
+                         <li><a href="LocalesUsuario.php">Locales</a></li>
+                         <li><a href="miperfil_usuario.php">Mi perfil</a></li>
+                         <li><a href="quienessomos.php">¿Quienes somos?</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -70,16 +70,8 @@
             </div>
        </div>
        </section>
-       <footer>   <!--Footer datos personales de la organizacion de la pagina-->
-        <ul>
-            <li>Contactenos</li>
-            <li>Organiacion&Tiempo@outlook.com.co</li>
-            <div>
-                <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-                <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-            </div>
-        </ul>
-    </footer>
+       <footer>
+            <?php include('../view/footer.html'); ?>
+        </footer> 
     </Body>
 </html>

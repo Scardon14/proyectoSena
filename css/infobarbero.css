@@ -177,39 +177,7 @@ nav ul li{
     width:450px;
     }
 
-     /*footer de contactos de la empresa*/
-
-
-     footer{
-        background-color: #003399;
-        color: #ffffff;
-        min-height: 100%;
-    }
-    footer div{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 30rem;
-    }
-    footer ul{
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: 0;
-        background-color: #003399; 
-        
-    }
-    footer .icono-footer{
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        
-    }
-    .icono-footer img{
-        height: 50%;
-    }
+    
     button{
         width: 45%;
         margin: 4%;

@@ -11,7 +11,7 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/inicio.css">
+       <link rel="stylesheet" href="../css/indexnegocio.css">
     </head>
     <Body> 
         <header>
@@ -27,10 +27,11 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="index.html">Inicio</a></li>
-                         <li><a href="registros.html">Regristrate</a></li>
-                         <li><a href="inicioSesion.html">Inicia sesion</a></li>
-                         <li><a href="quienessomos.html">Quienes somos?</a></li>
+                         <li><a href="indexnegocio.php">Inicio</a></li>
+                         <li><a href="localesnegocio.php">Locales</a></li>
+                         <li><a href="agenda_negocio.php">Agenda</a></li>
+                         <li><a href="mipersonal_negocio.php">Mi personal</a></li>
+                         <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -60,18 +61,8 @@
           </div>
        </section>
        <div>
-       <footer>   <!--Footer datos personales de la organizacion de la pagina-->
-        <ul>
-            <li>Contactenos</li>
-            <li>Organiacion&Tiempo@outlook.com.co</li>
-            <li> @2024 O&T </li>
-            <div>
-                <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-                <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-            </div>
-        </ul>
-    </footer>
-       </div>
+        <footer>
+            <?php include('../view/footer.html'); ?>
+        </footer> 
     </Body>
 </html>
