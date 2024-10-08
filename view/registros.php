@@ -33,7 +33,7 @@
             <div class="contenedor-formularios">
             <!-- FORMULARIO REGISTRO USUARIO -->
             <div class="formulario-registro ocultarDiv" id="registroUsuario">
-                <form action="#">
+                <form action="#" method="post">
                     <h2>Registro Usuario</h2>
                     <!-- NOMBRE -->
 
@@ -135,7 +135,7 @@
 
             <!-- FORMULARIO REGISTRO BARBERO -->
             <div class="formulario-registro ocultarDiv" id="registroBarbero">
-                <form action="#">
+                <form action="../model/ProcesarBarbero.php" method="post">
                     <h2>Registro Barbero</h2>
                     <!-- NOMBRE -->
                     <div class="formulario_grupo" id="grupo_nombre">
