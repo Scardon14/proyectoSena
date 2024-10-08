@@ -6,6 +6,7 @@
     <meta charset="UTF-8"> <!--etiqueta que permite caracteres especiales como por ej:ñ-->
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        
     <!-- ayuda al tema responsive de las pantallas-->
     <link rel="stylesheet" href="../css/agenda_Barbero.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,10 +72,11 @@
                     <div id="horas-disponibles"> </div>
                 </div>
             </div>
+            </div>
             <footer>
                 <?php include('../view/footer.html'); ?>
             </footer> 
-        </div>
+        
         <script type="text/javascript" src="../js/agenda_Barbero.js"></script>
 </body>
 
