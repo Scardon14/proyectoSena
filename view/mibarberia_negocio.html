@@ -38,6 +38,7 @@
        </header>
        <section id="presenta">  <!--Seccion de img con titulo-->   
        <h1 class="org">Style</h1>
+       <img src="../img/logo 2.png" id="logo2">
        </section> 
        
        <section id="organizacion">  <!--Seccion de fondo blanco, img y texto-->
@@ -53,6 +54,7 @@
             <button id="saveButton">Guardar</button>
         </div>
         <script src="../js/negocio.js"></script>
+    </section>
 
         <!--textos-->
            <d1iv class="casi">
@@ -65,7 +67,7 @@
                     </p>
                 </div>
           </div>
-       </section>
+       
 
         <!--informacion del perfil-->
          
