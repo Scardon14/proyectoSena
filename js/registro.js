@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (registroBarbero.className.includes("ocultarDiv")
             && registroNegocio.className.includes("ocultarDiv")
             && registroUsuario.className.includes("ocultarDiv")) {
-            window.location.href = 'index.html'
+            window.location.href = 'index.php'
         } else {
             ocultarFormulario();
         }

@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="../js/registro.js"></script>
@@ -33,7 +34,7 @@
             <div class="contenedor-formularios">
             <!-- FORMULARIO REGISTRO USUARIO -->
             <div class="formulario-registro ocultarDiv" id="registroUsuario">
-                <form action="#">
+                <form action="#" method="post">
                     <h2>Registro Usuario</h2>
                     <!-- NOMBRE -->
 
@@ -135,7 +136,7 @@
 
             <!-- FORMULARIO REGISTRO BARBERO -->
             <div class="formulario-registro ocultarDiv" id="registroBarbero">
-                <form action="#">
+                <form action="../model/ProcesarBarbero.php" method="post">
                     <h2>Registro Barbero</h2>
                     <!-- NOMBRE -->
                     <div class="formulario_grupo" id="grupo_nombre">
@@ -362,20 +363,10 @@
 
             <button id="btnVolver">Volver</button>
         </div>
-        <!-- FOOTER -->
+         <!-- FOOTER -->
         <footer>
-            <ul>
-                <li>Contactenos</li>
-                <li>Organiacion&Tiempo@outlook.com.co</li>
-                <li> @2024 O&T </li>
-                <div>
-                    <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                    <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram">
-                    </div>
-                    <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                </div>
-            </ul>
-        </footer>
+            <?php include('../view/footer.html'); ?>
+        </footer>       
 </body>
 </div>
 

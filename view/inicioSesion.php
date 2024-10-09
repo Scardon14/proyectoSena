@@ -1,5 +1,7 @@
 <html>
     <head>
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <title> Inicio de Sesion</title>
         <style>
             html {
@@ -56,33 +58,6 @@
                 margin-top: 2px ;
                 width: 80%;
             }
-            footer{
-                background-color: #1554b3;
-                color: #ffffff;
-            }
-            footer div{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 30rem;
-            }
-            footer ul{
-                display: flex;
-                flex-direction: row;
-                list-style: none;
-                height: 8rem;
-                justify-content: space-evenly;
-                align-items: center;
-                margin: 0;
-            }
-            footer .icono-footer{
-                height: 80px;
-                display: flex;
-                align-items: center;
-            }
-            .icono-footer img{
-                height: 50%;
-            }
             .form-container{
             background-color: #d6d6d6; /* Color gris claro */ 
             width: 40%;
@@ -135,17 +110,9 @@
         </div>
         </div>
         </div>
-           <footer>
-              <ul>
-                    <li>Contáctanos</li>
-                    <li>Organiacion&Tiempo@outlook.com.co</li>
-                    <li> @2024 O&T </li>
-                 <div>
-                    <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                    <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram"></div>
-                    <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                  </div>
-               </ul>
-           </footer>
+          
+<footer>
+    <?php include('../view/footer.html'); ?>
+</footer> 
     </body>
 </html>

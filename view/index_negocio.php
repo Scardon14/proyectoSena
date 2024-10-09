@@ -2,6 +2,8 @@
 <html lang="en">
  <head>
        <meta charset="UTF-8">
+       <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -9,7 +11,7 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/indexbarbero.css">
+       <link rel="stylesheet" href="../css/indexnegocio.css">
     </head>
     <Body> 
         <header>
@@ -25,9 +27,11 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="index_barbero.html">Inicio</a></li>
-                         <li><a href="agenda_barbero.html">Mi Agenda</a></li>
-                         <li><a href="miperfil_barbero.html">Mi perfil</a></li>
+                         <li><a href="indexnegocio.php">Inicio</a></li>
+                         <li><a href="localesnegocio.php">Locales</a></li>
+                         <li><a href="agenda_negocio.php">Agenda</a></li>
+                         <li><a href="mipersonal_negocio.php">Mi personal</a></li>
+                         <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -57,20 +61,8 @@
           </div>
        </section>
        <div>
-        <!--Footer-->
         <footer>
-            <ul>
-                <li>Contactenos</li>
-                <li>Organiacion&Tiempo@outlook.com.co</li>
-                <li> @2024 O&T </li>
-                <div>
-                    <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                    <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram">
-                    </div>
-                    <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                </div>
-            </ul>
-        </footer>
-       </div>
+            <?php include('../view/footer.html'); ?>
+        </footer> 
     </Body>
 </html>

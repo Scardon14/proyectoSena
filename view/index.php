@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
        <meta charset="UTF-8">
-       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <meta name="viewport" content = "width=device-width", initiañ-scale=1.0>
+       <meta name="viewport"
+       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -11,7 +12,16 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/indexnegocio.css">
+       <link rel="stylesheet" href="../css/inicio.css">
+       <script>
+        // Mostrar el alert si hay un mensaje
+        window.onload = function() {
+            const mensaje = "<?php echo isset($_GET['mensaje']) ? htmlspecialchars($_GET['mensaje']) : ''; ?>";
+            if(mensaje){
+                alert(mensaje);
+            }
+        };
+    </script>
     </head>
     <Body> 
         <header>
@@ -27,11 +37,10 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="indexnegocio.html">Inicio</a></li>
-                         <li><a href="localesnegocio.html">Locales</a></li>
-                         <li><a href="agenda_negocio.html">Agenda</a></li>
-                         <li><a href="mipersonal_negocio.html">Mi personal</a></li>
-                         <li><a href="mibarberia_negocio.html">Mi barberia</a></li>
+                         <li><a href="index.php">Inicio</a></li>
+                         <li><a href="registros.php">Regristrate</a></li>
+                         <li><a href="inicioSesion.php">Inicia sesion</a></li>
+                         <li><a href="quienessomos.php">Quienes somos?</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -61,19 +70,9 @@
           </div>
        </section>
        <div>
-    <!--Footer-->
-    <footer>
-        <ul>
-            <li>Contactenos</li>
-            <li>Organiacion&Tiempo@outlook.com.co</li>
-            <li> @2024 O&T </li>
-            <div>
-                <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram">
-                </div>
-                <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-            </div>
-        </ul>
-    </footer>
+       <footer>
+            <?php include('../view/footer.html'); ?>
+        </footer> 
+       </div>
     </Body>
 </html>

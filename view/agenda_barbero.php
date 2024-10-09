@@ -6,6 +6,7 @@
     <meta charset="UTF-8"> <!--etiqueta que permite caracteres especiales como por ej:ñ-->
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        
     <!-- ayuda al tema responsive de las pantallas-->
     <link rel="stylesheet" href="../css/agenda_Barbero.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +34,9 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                            <li><a href="index_barbero.html">Inicio</a></li>
-                            <li><a href="agenda_barbero.html">Mi Agenda</a></li>
-                            <li><a href="miperfil_barbero.html">Mi perfil</a></li>
+                            <li><a href="index_barbero.php">Inicio</a></li>
+                            <li><a href="agenda_barbero.php">Mi Agenda</a></li>
+                            <li><a href="miperfil_barbero.php">Mi perfil</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -71,21 +72,11 @@
                     <div id="horas-disponibles"> </div>
                 </div>
             </div>
-            <!--Footer-->
+            </div>
             <footer>
-                <ul>
-                    <li>Contactenos</li>
-                    <li>Organiacion&Tiempo@outlook.com.co</li>
-                    <li> @2024 O&T </li>
-                    <div>
-                        <div class="icono-footer"><img src="../img/facebook.png" alt="icono facebook"></div>
-                        <div class="icono-footer"><img src="../img/instagram.png" alt="icono Instagram">
-                        </div>
-                        <div class="icono-footer"><img src="../img/whatsapp.png" alt="icono WhatsApp"></div>
-                    </div>
-                </ul>
-            </footer>
-        </div>
+                <?php include('../view/footer.html'); ?>
+            </footer> 
+        
         <script type="text/javascript" src="../js/agenda_Barbero.js"></script>
 </body>
 
