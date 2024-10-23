@@ -303,7 +303,7 @@
                         <label for="direccion" class="formulario_label">Dirección</label>
                         <div class="formulario_grupo-input">
                             <input type="text" class="formulario_input" name="direccion" id="direccion"
-                                placeholder="Avenida siempre viva" required>
+                                placeholder="calle 49a sur #92a-60" required>
                             <i class="formulario_validacion-estado fa fa-times-circle"></i>
                         </div>
                         <p class="formulario_input-error">Dirección incorrecta.</p>
