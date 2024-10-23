@@ -5,6 +5,7 @@
        <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="stylesheet" href="../css/mibarberia_negocio.css">
+       <script src="../js/mibarberia_negocio.js"></script>
     </head>
     <Body> 
 
@@ -15,9 +16,6 @@
                 </div>
                 <div class="nombre">
                     <h1> O & T </h1>
-                </div>
-                <div class="search"> 
-                    <input type="search" placeholder="¿Que deseas buscar?">
                 </div>
             </div>
            <div class="contenedor_menu"> <!--Encabezado rojo-->
@@ -140,6 +138,7 @@
               <img src="../img/barberia 6.png" alt="">
           </div>
         </div>
+    <script src="script.js"></script>
         <footer>
             <?php include('../view/footer.html'); ?>
         </footer> 

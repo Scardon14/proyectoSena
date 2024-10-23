@@ -19,9 +19,6 @@
                 <div class="nombre">
                     <h1> O & T </h1>
                 </div>
-                <div class="search"> 
-                    <input type="search" placeholder="¿Que deseas buscar?">
-                </div>
             </div>
            <div class="contenedor_menu"> <!--Encabezado rojo-->
                 <div class="menu">
@@ -40,7 +37,7 @@
            </div>
        </header>
 
- <!--Tabla de precio de servicios-->
+ <!--Tabla de agenda-->
  <section id="vision">
     <div class="cassil">
         <div class="casil"></div>
