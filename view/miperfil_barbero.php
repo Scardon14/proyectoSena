@@ -12,7 +12,7 @@
     <title> O & T</title>
 </head>
 
-<Body>
+<body>
     <header>
         <div class="contenedor-encabezado"> <!--Encabezado Azul-->
             <div class="logo">
@@ -29,30 +29,47 @@
                         <li><a href="index_barbero.php">Inicio</a></li>
                         <li><a href="agenda_barbero.php">Mi Agenda</a></li>
                         <li><a href="miperfil_barbero.php">Mi perfil</a></li>
+                        <li><a href="historial_citas.php">Historial Citas</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
     <section id="perfil">
-        <div class="contenedorFoto">
-            <div class="fotoPerfil"></div>
-        </div>
+        <div id="fotoPerfil"></div>
         <div class="nombreBarbero">
             <h2>Andres Padilla</h2>
         </div>
-        </section>
+
         <div class="infoPerfil">
-        <label>Información</label><br>
-        <label>Correo</label><br>
-        <label>Celular</label><br>
-        <label>Contraseña</label><br>
-        <label>Precios</label><br>
-        <label>Galeria</label><br>
+            <label>Información</label><br>
+            <label>Correo: andresPadilla@gmail.com</label><br>
+            <label>Celular: 3215648790</label><br>
+            <label>Contraseña: </label>
+            <input type="password" id="contraseñaPerfil" value="********" /><br>
+            <label>Precio del Corte: $ </label>
+            <input type="text" id="precio" value="" /><br>
+            <label>Galeria</label><br>
         </div>
+        <script>
+            function guardarCambios() {
+                const nuevaPassword = document.getElementById('contraseñaPerfil').value;
+                const nuevoPrecio = document.getElementById('precio').value;
+
+                // Aquí puedes hacer una llamada a tu backend (PHP, Node.js, etc.) para actualizar los valores en la base de datos.
+                console.log("Nueva contraseña: " + nuevaPassword);
+                console.log("Nuevo precio: " + nuevoPrecio);
+
+                alert('Los cambios han sido guardados.');
+            }
+        </script>
+
+        <!-- Botón para guardar cambios -->
+        <button onclick="guardarCambios()">Guardar Cambios</button>
+    </section>
     <footer>
         <?php include('../view/footer.html'); ?>
     </footer>
-</Body>
+</body>
 
 </html>

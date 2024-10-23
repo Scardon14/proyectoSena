@@ -20,12 +20,11 @@ class RegistroNegocio
         $statement = $this->conexionBD->prepare($query);
         $result = $statement->execute();
     }
-    function obtenerMaxBarbero()
+    function obtenerUsuario($query) 
     {
-        $query = "select count(*) from Negocio";
-        $statement = $this->conexionBD->prepare($query);
-        $statement->execute();
-        $result = $statement->fetchColumn();
+        $statement = $this->conexionBD->prepare($query); 
+        $statement->execute(); 
+        $result = $statement->fetchColumn(); 
         return $result;
     }
 }

@@ -30,6 +30,7 @@
                          <li><a href="index_barbero.php">Inicio</a></li>
                          <li><a href="agenda_barbero.php">Mi Agenda</a></li>
                          <li><a href="miperfil_barbero.php">Mi perfil</a></li>
+                         <li><a href="historial_citas.php">Historial Citas</a></li>
                         </ul>
                     </nav>
                 </div>

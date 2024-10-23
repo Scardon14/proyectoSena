@@ -34,6 +34,94 @@ let getTotalDays = (mes, año) => {
         return isLeap(año) ? 29 : 28; // la funcion isLeap ayuda a determinar si un año es bisiesto o no//
     }
 };
+/*
+let mostrarHoras2 = (diaSeleccionado) => {
+    let recuadroHoras = document.getElementById('recuadro-horas');
+    if (!recuadroHoras) {
+        console.error('El recuadro de horas no se encuentra en el DOM.');
+        return;
+    }
+    recuadroHoras.style.display = 'block';
+
+    let diaSeleccionadoTexto = document.getElementById('dia-seleccionado');
+    diaSeleccionadoTexto.textContent = diaSeleccionado;
+
+    let horasDisponibles = document.getElementById('horas-disponibles');
+    horasDisponibles.innerHTML = '';
+
+    let horas = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
+
+    horas.forEach(hora => {
+        let horaDiv = document.createElement('div');
+        horaDiv.className = 'hora-item';
+        horaDiv.textContent = hora;
+        horaDiv.addEventListener('click', () => {
+            window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${hora}`;
+        });
+        horasDisponibles.appendChild(horaDiv);
+    });
+
+    // Agregar opción de habilitar/deshabilitar el día
+    let habilitarDeshabilitarBtn = document.createElement('button');
+    habilitarDeshabilitarBtn.id = 'toggle-dia';
+    habilitarDeshabilitarBtn.textContent = diaHabilitado(diaSeleccionado) ? 'Deshabilitar Día' : 'Habilitar Día';
+
+    habilitarDeshabilitarBtn.addEventListener('click', () => {
+        toggleDia(diaSeleccionado);
+        habilitarDeshabilitarBtn.textContent = diaHabilitado(diaSeleccionado) ? 'Deshabilitar Día' : 'Habilitar Día';
+        actualizarCalendario();
+    });
+
+    horasDisponibles.appendChild(habilitarDeshabilitarBtn);
+};
+
+let diasInhabilitados = new Set(); // Almacena los días deshabilitados
+
+let toggleDia = (dia) => {
+    if (diasInhabilitados.has(dia)) {
+        diasInhabilitados.delete(dia); // Habilitar el día
+    } else {
+        diasInhabilitados.add(dia); // Deshabilitar el día
+    }
+};
+
+// Verifica si un día está habilitado
+let diaHabilitado = (dia) => {
+    return !diasInhabilitados.has(dia);
+};
+let escribirMes2 = (mes1, año1) => {
+    fechas.innerHTML = '';
+
+    if ((año1 > añoActual) || (mes1 > numeroMes && año1 >= añoActual)) {
+        for (let i = startDay(mes1, año1); i > 0; i--) {
+            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro">
+            ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
+        }
+
+        for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
+            let claseDia = diaHabilitado(i) ? 'calendario_dia-futuro' : 'calendario_dia-inhabilitado';
+            fechas.innerHTML += `<div class="calendario_fechas calendario_item ${claseDia}" data-dia="${i}">${i}</div>`;
+        }
+    } else if (mes1 === numeroMes && año1 === añoActual) {
+        for (let i = startDay(mes1, año1); i > 0; i--) {
+            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado">
+            ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
+        }
+
+        for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
+            let claseDia;
+            if (i < diaActual) {
+                claseDia = 'calendario_dia-pasado';
+            } else if (i === diaActual) {
+                claseDia = 'calendario_dia-actual';
+            } else {
+                claseDia = diaHabilitado(i) ? 'calendario_dia-futuro' : 'calendario_dia-inhabilitado';
+            }
+            fechas.innerHTML += `<div class="calendario_fechas calendario_item ${claseDia}" data-dia="${i}">${i}</div>`;
+        }
+    }
+};*/
+
 
 //Funcion para escribir los dias del mes
 let escribirMes = (mes1,año1) => {
@@ -124,7 +212,9 @@ let mostrarHoras = (diaSeleccionado) => {
 
         // Puedes agregar eventos de clic si necesitas seleccionar una hora
         horaDiv.addEventListener('click', () => {
-            alert(`Has seleccionado la hora: ${hora}`);
+            let diaSeleccionado = document.getElementById('dia-seleccionado').textContent;
+            // Redirigir a la página "Historial Citas" con parámetros de fecha y hora seleccionada
+            window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${hora}`;
         });
         horasDisponibles.appendChild(horaDiv);
     });
