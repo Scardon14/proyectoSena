@@ -32,7 +32,7 @@
                 <button id="registrarse" onclick="mostrarForm()">Seleccionar Rol</button>
             </div>
             <div class="contenedor-formularios">
-            <!-- FORMULARIO REGISTRO USUARIO -->
+            <!-- FORMULARIO REGISTRO CLIENTE -->
             <div class="formulario-registro ocultarDiv" id="registroUsuario">
                 <form action="../model/ProcesarUsuario.php" method="post">
                     <h2>Registro Usuario</h2>
@@ -246,7 +246,7 @@
             <!-- NOMBRE -->
             <div class="formulario-registro ocultarDiv" id="registroNegocio">
                 <h2>Registro Negocio</h2>
-                <form action="#">
+                <form action="../model/ProcesarNegocio.php" method="post">
 
                     <div class="formulario_grupo" id="grupo_nombre">
                         <label for="nombre" class="formulario_label">Nombre del Establecimiento</label>

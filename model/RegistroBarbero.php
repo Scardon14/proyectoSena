@@ -22,9 +22,8 @@ class RegistroBarbero
         $statement = $this->conexionBD->prepare($query); /*prepara el $query para ser ejecutado*/
         $result = $statement->execute(); /*Hace el insert en la BD si todo esta bien*/
     }
-    function obtenerMaxBarbero() /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
+    function obtenerUsuario($query) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
     {
-        $query = "select count(*) from persona"; /*Sentencia sql que se ejecuta*/
         $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
         $statement->execute(); /*Se ejecuta la sentencia sql*/
         $result = $statement->fetchColumn(); /*obtiene el conteo de usuarios en la tabla*/

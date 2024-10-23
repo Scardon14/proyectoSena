@@ -229,5 +229,11 @@ nav>ul>li>a:hover {
     background-color: lightblue;
     cursor: pointer; /* Permite clic en el día actual */
 }
-
+/*.calendario_dia-inhabilitado {
+    background-color: #f8d7da;
+    color: #721c24;
+    text-decoration: line-through;
+    pointer-events: none; /* Desactiva clics 
+} 
+*/
 
