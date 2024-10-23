@@ -13,8 +13,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     try{    
         $query = "insert into persona (idPerfil,idNegocio,apellidos,nombres,
                                         correoElectronico,numeroCelular,estado,fechaCreacion)
-                                        values(2,1,'{$apellido}','{$nombre}','{$correo}','{$celular}',1,now())";
-        $insertarBarbero = $barbero->insertarDatos($query);
+                                        values(1,null,'{$apellido}','{$nombre}','{$correo}','{$celular}',1,now())";
+        $insertarUsuario = $usuario->insertarDatos($query);
         $mensaje = 'Registro Exitoso.';
         
     }catch(PDOException $e){

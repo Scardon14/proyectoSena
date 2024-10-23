@@ -94,12 +94,12 @@ function pass(index) {
 const validaciones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{3,50}$/,
     apellido: /^[a-zA-ZÀ-ÿ\s]{3,50}$/,
-    celular: /^\d{7,10}$/,
+    celular: /^3\d{9}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.-]+\.[a-zA-Z]{2,}$/,
     contraseña1: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/,
     contraseña2: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/,
     nit: /^\d{5,9}$/,
-    direccion: /^(Calle|Carrera|Avenida|Diagonal|Transversal)\s\d{1,3}[A-Z]?\s?#\s?\d{1,3}[A-Z]?\-\d{1,3}$/,
+    direccion: /^(Calle|Carrera|Avenida|Diagonal|Transversal)\s\d{1,3}[A-Za-z]?\s?(sur|norte|este|oeste)?\s?#\s?\d{1,3}[A-Za-z]?\-\d{1,3}$/i,
     terminos: 'true'
 }
 const campos = {
