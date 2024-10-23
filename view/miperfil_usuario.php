@@ -54,11 +54,7 @@
                     responsable y comprometido. Me registre en esta pagina porque me gusta tener siempre mi corte de pelo perfecto,
                     Y gracias a O&T, cuido mi belleza.
                 </p>
-                <ul class="lista-perfil">
-                    <li>35 Seguidores</li>
-                    <li>7 Seguidos</li>
-                    <li>32 Publicaciones</li>
-                </ul>
+
             </div>
             <div class="opcciones-perfil">
                 <button type="">Cambiar portada</button>
@@ -66,9 +62,7 @@
         </div>
         <div class="menu-perfil">
             <ul>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-bullhorn"></i> Publicaciones</a></li>
                 <li><a href="#" title=""><i class="icono-perfil fas fa-info-circle"></i> Informacion</a></li>
-                <li><a href="#" title=""><i class="icono-perfil fas fa-grin"></i> Amigos 43</a></li>
                 <li><a href="#" title=""><i class="icono-perfil fas fa-camera"></i> Fotos</a></li>
             </ul>
         </div>
