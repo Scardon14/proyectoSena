@@ -34,7 +34,7 @@
             <div class="contenedor-formularios">
             <!-- FORMULARIO REGISTRO USUARIO -->
             <div class="formulario-registro ocultarDiv" id="registroUsuario">
-                <form action="#" method="post">
+                <form action="../model/ProcesarUsuario.php" method="post">
                     <h2>Registro Usuario</h2>
                     <!-- NOMBRE -->
 
