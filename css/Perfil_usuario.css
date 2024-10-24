@@ -150,7 +150,7 @@ height: 230px;
     border-radius: 0 0 20px 20px;
 }
 .perfil-usuario img {
-    width: 100vh;
+    width: 100%;
 }
 .contenedor-perfil {
     max-width: 1024px;
@@ -174,11 +174,11 @@ height: 230px;
 }
 .perfil-usuario .avatar-perfil {
     display: block;
-    width: 230px;
-    height: 230px;
+    width: 150px;
+    height: 150px;
     background-color: #D9DCF1;
     position: absolute;
-    bottom: -65px;
+    bottom: 65px;
     left: 4rem;
     border-radius: 50%;
     overflow: hidden;
