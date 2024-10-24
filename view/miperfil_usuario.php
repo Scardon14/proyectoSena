@@ -11,7 +11,7 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/Perfil_usuario.css">
+       <link rel="stylesheet" href="../css/perfil_usuario.css">
     </head>
     <Body> 
         <header>
@@ -27,12 +27,17 @@
                 <div class="menu">
                     <div class="menu">
                         <nav>
-                            <ul>
+                        <ul>
+                         <li><a href="../view/index_usuario.php">Inicio</a></li>
+                         <li><a href="../view/localesUsuario.php">Locales</a></li>
+                         <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
+                        </ul>
+                           <!-- <ul>
                              <li><a href="index_usuario.php">Inicio</a></li>
                              <li><a href="LocalesUsuario.php">Locales</a></li>
                              <li><a href="miperfil_usuario.php">Mi perfil</a></li>
                              <li><a href="quienessomos.php">¿Quienes somos?</a></li>
-                            </ul>
+                            </ul> -->
                         </nav>
                 </div>
            </div>

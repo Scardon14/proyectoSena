@@ -6,7 +6,7 @@
     <meta charset="UTF-8"> <!--etiqueta que permite caracteres especiales como por ej:ñ-->
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        
+
     <!-- ayuda al tema responsive de las pantallas-->
     <link rel="stylesheet" href="../css/agenda_Barbero.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,10 +34,10 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                            <li><a href="index_barbero.php">Inicio</a></li>
-                            <li><a href="agenda_barbero.php">Mi Agenda</a></li>
-                            <li><a href="miperfil_barbero.php">Mi perfil</a></li>
-                            <li><a href="historial_citas.php">Historial Citas</a></li>
+                            <li><a href="../view/index_barbero.php">Inicio</a></li>
+                            <li><a href="/model/ProcesarCalendarioBarbero.php">Mi Agenda</a></li>
+                            <li><a href="../view/miPerfil_barbero.php">Mi perfil</a></li>
+                            <li><a href="../view/historial_citas.php">Historial Citas</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -45,6 +45,17 @@
         </header>
 
         <div>
+            <?php session_start();
+            if (isset($_SESSION['listaReserva'])) {
+                $listado = $_SESSION['listaReserva'];
+                foreach ($listado as $fila) {
+                    print_r($fila['idReserva']); // Muestra cada fila
+                }
+            ?>
+                <div class="">12:00</div>
+            <?php
+            }
+            ?>
             <h1 class="titulo_MiAgenda">Mi Agenda Barbero</h1>
 
             <div class="calendario">
@@ -70,14 +81,26 @@
                 <div id="recuadro-horas" style="display: none;">
                     <button id="btn-cerrar-recuadro">x</button>
                     <h3>Seleccione la hora del día <span id="dia-seleccionado"></span></h3>
-                    <div id="horas-disponibles"> </div>
+                    <div id="horas-disponibles">
+                        <?php session_start();
+                        if (isset($_SESSION['listaReserva'])) {
+                            $listado = $_SESSION['listaReserva'];
+                            foreach ($listado as $fila) {
+                                print_r($fila); // Muestra cada fila
+                            }
+                        ?>
+                            <div class="hora-item">12:00</div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
-            </div>
-            <footer>
-                <?php include('../view/footer.html'); ?>
-            </footer> 
-        
+        </div>
+        <footer>
+            <?php include('../view/footer.html'); ?>
+        </footer>
+
         <script type="text/javascript" src="../js/agenda_Barbero.js"></script>
 </body>
 

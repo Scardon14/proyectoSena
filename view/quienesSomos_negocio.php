@@ -28,13 +28,20 @@
            <div class="contenedor_menu"> <!--Encabezado rojo-->
                 <div class="menu">
                     <nav>
-                        <ul>
+                      <!--  <ul>
                          <li><a href="index.php">Inicio</a></li>
                          <li><a href="localesnegocio.php">Locales</a></li>
                             <li><a href="agenda_negocio.php">Agenda</a></li>
                             <li><a href="mipersonal_negocio.php">Mi personal</a></li>
                             <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
-                            <li><a href="quienessomos_negocio.php">¿Quienes somos?</a></li>
+                            <li><a href="quienessomos_negocio.php">¿Quienes somos?</a></li> 
+                        </ul> -->
+                        <ul>
+                         <li><a href="../view/index_negocio.php">Inicio</a></li>
+                         <li><a href="../view/locales_negocio.php">Locales</a></li>
+                         <li><a href="../view/agenda_negocio.php">Agenda</a></li>
+                         <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
+                         <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
                         </ul>
                     </nav>
                 </div>

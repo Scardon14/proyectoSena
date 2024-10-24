@@ -27,10 +27,9 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="index_usuario.php">Inicio</a></li>
-                         <li><a href="LocalesUsuario.php">Locales</a></li>
-                         <li><a href="miperfil_usuario.php">Mi perfil</a></li>
-                         <li><a href="quienessomos.php">¿Quienes somos?</a></li>
+                         <li><a href="../view/index_usuario.php">Inicio</a></li>
+                         <li><a href="../view/localesUsuario.php">Locales</a></li>
+                         <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -46,7 +45,7 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
         <img src="../img/Chico.png">
        </div>
@@ -60,7 +59,7 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
        </div>
        <div class="section">
@@ -72,7 +71,7 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
         <img src="../img/Chico3.png">
        </div>
@@ -86,7 +85,7 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
        </div>
     </section>

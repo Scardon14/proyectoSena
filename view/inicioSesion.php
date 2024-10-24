@@ -79,6 +79,15 @@
 
         }
         </style>
+            <script>
+        // Mostrar el alert si hay un mensaje
+        window.onload = function() {
+            const mensaje = "<?php echo isset($_GET['mensaje']) ? htmlspecialchars($_GET['mensaje']) : ''; ?>";
+            if(mensaje){
+                alert(mensaje);
+            }
+        };
+    </script>
     </head>
     <body>
 
@@ -94,13 +103,13 @@
         <div class="formulario-inicioSesion">
         <div class="card shadow-lg mt-5" id="form-IniaSsesion">
         <div class="card body">
-            <form action="#">
+            <form action="../model/procesarInicioSesion.php" method="post">
                 <h2 class="mt-3 mb-3 text-center"InicaSesion></h2>
                 <h2>Inicia Sesion</h2>
                 <label for="correo o numero de celular">Correo electrónico o Numero de celular</label>
-                <input type="text" id="correo o numero de celular" placeholder="Ingresa tu correo electronico o Numero de celular">
+                <input type="text" id="correo o numero de celular" name="correo" placeholder="Ingresa tu correo electronico o Numero de celular">
                 <label for="contraseña"><br>contraseña</br></label>
-                <input type="password" id="contraseña" placeholder="Ingresa tu contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <input type="password" id="contraseña" placeholder="Ingresa tu contraseña"name="contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                 <input type="submit" value="Iniciar Sesion">
                 <div>
                     <label for="forgot-password">¿Olvidaste tu contraseña?</label><input type="checkbox">

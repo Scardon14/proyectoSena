@@ -4,7 +4,7 @@
        <meta charset="UTF-8">
        <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-       <link rel="stylesheet" href="../css/mibarberia_negocio.css">
+       <link rel="stylesheet" href="../css/mi_barberia_negocio.css">
        <script src="../js/mibarberia_negocio.js"></script>
     </head>
     <Body> 
@@ -21,7 +21,14 @@
            <div class="contenedor_menu"> <!--Encabezado rojo-->
                 <div class="menu">
                     <nav>
-                        <ul>
+                    <ul>
+                         <li><a href="../view/index_negocio.php">Inicio</a></li>
+                         <li><a href="../view/locales_negocio.php">Locales</a></li>
+                         <li><a href="../view/agenda_negocio.php">Agenda</a></li>
+                         <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
+                         <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
+                        </ul>
+                       <!-- <ul>
                             <li><a href="indexnegocio.php">Inicio</a></li>
                             <li><a href="localesnegocio.php">Locales</a></li>
                             <li><a href="agenda_negocio.php">Agenda</a></li>
@@ -29,7 +36,7 @@
                             <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
                             <li><a href="quienessomos_negocio.php">¿Quienes somos?</a></li>
                             
-                        </ul>
+                        </ul> -->
                     </nav>
                 </div>
            </div>
