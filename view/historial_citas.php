@@ -24,23 +24,24 @@ $horaSeleccionada = isset($_GET['hora']) ? $_GET['hora'] : 'No seleccionado';
                 <img src="../img/logo.png" alt="logo">
             </div>
             <div class="nombre">
-                <h1>Historial de Citas</h1>
+                <h1>O & T</h1>
             </div>
         </div>
         <div class="contenedor_menu"> <!--Encabezado rojo-->
             <div class="menu">
                 <nav>
                     <ul>
-                        <li><a href="index_barbero.php">Inicio</a></li>
-                        <li><a href="agenda_barbero.php">Mi Agenda</a></li>
-                        <li><a href="miperfil_barbero.php">Mi perfil</a></li>
-                        <li><a href="historial_citas.php">Historial Citas</a></li>
+                        <li><a href="../view/index_barbero.php">Inicio</a></li>
+                        <li><a href="../view/agenda_barbero.php">Mi Agenda</a></li>
+                        <li><a href="../view/miPerfil_barbero.php">Mi perfil</a></li>
+                        <li><a href="../view/historial_citas.php">Historial Citas</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
     <div class="historialCita">
+        <h2>Historial de Citas</h2>
         <div class="textoCita">
             <p>Has agendado una cita el día <strong><?php echo $diaSeleccionado; ?>
                 </strong> a las <strong><?php echo $horaSeleccionada; ?></strong></p>

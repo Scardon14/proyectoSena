@@ -1,13 +1,13 @@
 footer{
     background-color: #003399;
     color: #ffffff;
-    height: 25%;
+    height: 20%;
 }
 footer div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 30rem;
+    width: 20rem;
 }
 footer ul{
     display: flex;

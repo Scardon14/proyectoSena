@@ -142,9 +142,15 @@ nav>ul>li>a:hover {
 }
 
 .infoPerfil {
-    margin-top: 10px;
-    font-size: 18px;
+    margin-bottom: 10rem;
+    font-size: 1rem;
     color: #555;
+}
+#informacion{
+    text-align: center;
+    margin-left: 6rem;
+    color: hsl(0, 0%, 2%);
+    font-weight:bold;
 }
 
 

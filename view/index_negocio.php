@@ -11,8 +11,7 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="../css/indexnegocio.css">
-       <link rel="styleindex" href="../php/index.php">
+       <link rel="stylesheet" href="../css/index_negocio.css">
     </head>
     <Body> 
         
@@ -29,11 +28,11 @@
                 <div class="menu">
                     <nav>
                         <ul>
-                         <li><a href="indexnegocio.php">Inicio</a></li>
-                         <li><a href="localesnegocio.php">Locales</a></li>
-                         <li><a href="agenda_negocio.php">Agenda</a></li>
-                         <li><a href="mipersonal_negocio.php">Mi personal</a></li>
-                         <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
+                         <li><a href="../view/index_negocio.php">Inicio</a></li>
+                         <li><a href="../view/locales_negocio.php">Locales</a></li>
+                         <li><a href="../view/agenda_negocio.php">Agenda</a></li>
+                         <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
+                         <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
                         </ul>
                     </nav>
                 </div>

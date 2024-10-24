@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/miperfil_barbero.css">
+    <link rel="stylesheet" href="../css/mi_perfil_barbero.css">
     <title> O & T</title>
 </head>
 
@@ -26,10 +26,10 @@
             <div class="menu">
                 <nav>
                     <ul>
-                        <li><a href="index_barbero.php">Inicio</a></li>
-                        <li><a href="agenda_barbero.php">Mi Agenda</a></li>
-                        <li><a href="miperfil_barbero.php">Mi perfil</a></li>
-                        <li><a href="historial_citas.php">Historial Citas</a></li>
+                        <li><a href="../view/index_barbero.php">Inicio</a></li>
+                        <li><a href="/model/ProcesarCalendarioBarbero.php">Mi Agenda</a></li>
+                        <li><a href="../view/miPerfil_barbero.php">Mi perfil</a></li>
+                        <li><a href="../view/historial_citas.php">Historial Citas</a></li>
                     </ul>
                 </nav>
             </div>
@@ -42,13 +42,13 @@
         </div>
 
         <div class="infoPerfil">
-            <label>Información</label><br>
+            <label id= "informacion">Información</label><br>
             <label>Correo: andresPadilla@gmail.com</label><br>
             <label>Celular: 3215648790</label><br>
             <label>Contraseña: </label>
             <input type="password" id="contraseñaPerfil" value="********" /><br>
             <label>Precio del Corte: $ </label>
-            <input type="text" id="precio" value="" /><br>
+            <input type="text" id="precio" value="30.000" /><br>
             <label>Galeria</label><br>
         </div>
         <script>

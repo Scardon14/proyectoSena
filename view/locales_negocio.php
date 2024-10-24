@@ -14,14 +14,18 @@
                 <div class="nombre">
                     <h1> O & T </h1>
                 </div>
-                <div class="search"> 
-                    <input type="search" placeholder="¿Que deseas buscar?">
-                </div>
             </div>
            <div class="contenedor_menu"> <!--Encabezado rojo-->
                 <div class="menu">
                     <nav>
-                        <ul>
+                    <ul>
+                         <li><a href="../view/index_negocio.php">Inicio</a></li>
+                         <li><a href="../view/locales_negocio.php">Locales</a></li>
+                         <li><a href="../view/agenda_negocio.php">Agenda</a></li>
+                         <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
+                         <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
+                        </ul>
+                       <!--<ul>
                             <li><a href="indexnegocio.php">Inicio</a></li>
                             <li><a href="localesnegocio.php">Locales</a></li>
                             <li><a href="agenda_negocio.php">Agenda</a></li>
@@ -29,7 +33,7 @@
                             <li><a href="mibarberia_negocio.php">Mi barberia</a></li>
                             <li><a href="quienessomos_negocio.php">¿Quienes somos?</a></li>
                             
-                        </ul>
+                        </ul> -->
                     </nav>
                 </div>
            </div>
@@ -43,7 +47,7 @@
                                <h3>BarbStyle</h3> <!--Informacion del local-->
                                <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                                 dale clic en el boton de VER MAS</p>
-                                <a href="Infolocal.html"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
+                                <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
                            </div>
                        </div>
                        <div class="box">   <!--Carta de presentacion del local-->
@@ -52,7 +56,7 @@
                             <h3>BarbStyle</h3>    <!--Informacion del local-->
                             <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                              dale clic en el boton de VER MAS</p>
-                             <a href="Infolocal.html"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
+                             <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
                         </div>
                     </div>
                     <div class="box">   <!--Carta de presentacion del local-->
@@ -61,7 +65,7 @@
                             <h3>BarbStyle</h3>   <!--Informacion del local-->
                             <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                              dale clic en el boton de VER MAS</p>
-                             <a href="Infolocal.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
+                             <a href="../view/info_local.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
                         </div>
                     </div>
                    </div>
@@ -78,7 +82,7 @@
                           <h3>BarbStyle</h3> <!--Informacion del local-->
                           <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                            dale clic en el boton de VER MAS</p>
-                           <a href="Infolocal.html"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
+                           <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
                       </div>
                   </div>
                   <div class="box">   <!--Carta de presentacion del local-->
@@ -87,7 +91,7 @@
                        <h3>BarbStyle</h3>    <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-                        <a href="Infolocal.html">VER MAS..</a>  <!--Boton para ver sobre el local-->
+                        <a href="../view/info_local.php">VER MAS..</a>  <!--Boton para ver sobre el local-->
                    </div>
                </div>
                <div class="box">   <!--Carta de presentacion del local-->
@@ -96,7 +100,7 @@
                        <h3>BarbStyle</h3>   <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-                        <a href="Infolocal.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
+                        <a href="../view/info_local.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
                    </div>
                </div>
               </div>
@@ -113,7 +117,7 @@
                           <h3>BarbStyle</h3> <!--Informacion del local-->
                           <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                            dale clic en el boton de VER MAS</p>
-                           <a href="Infolocal.html"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
+                           <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
                       </div>
                   </div>
                   <div class="box">   <!--Carta de presentacion del local-->
@@ -122,7 +126,7 @@
                        <h3>BarbStyle</h3>    <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-                        <a href="Infolocal.html"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
+                        <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
                    </div>
                </div>
                <div class="box">   <!--Carta de presentacion del local-->
@@ -131,7 +135,7 @@
                        <h3>BarbStyle</h3>   <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-                        <a href="Infolocal.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
+                        <a href="../view/info_local.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
                    </div>
                </div>
               </div>
