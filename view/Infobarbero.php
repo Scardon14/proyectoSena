@@ -68,7 +68,7 @@
                     <br><b>Si quieres agendar tu cita dale clic al boton de Agendar Cita</b>
                     </p>
                 <div class="ovely">
-                <br><a href="#">Agendar Cita</a>  <!--Boton para ver los barberos-->
+                <br><a href="Agenda_Cliente.php">Agendar Cita</a>  <!--Boton para ver los barberos-->
                 </div>
              </div>
             </div>
