@@ -5,7 +5,7 @@
        <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
        <link rel="stylesheet" href="../css/info_negocio.css">
-       <script src="../js/mibarberia_negocio.js"></script>
+       <script src="../js/Info_negocio.css"></script>
     </head>
     <Body> 
 
@@ -25,7 +25,6 @@
                          <li><a href="index_usuario.php">Inicio</a></li>
                          <li><a href="LocalesUsuario.php">Locales</a></li>
                          <li><a href="miperfil_usuario.php">Mi perfil</a></li>
-                         <li><a href="quienessomos.php">¿Quienes somos?</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -111,7 +110,7 @@
            </div>
        </div>
        </section> 
-
+       <section id= "fotos">
         <!--Gleria de establecimiento-->
         <h1 style="text-align: center;">Galeria de fotos </h1>
         <div class="container">
@@ -135,10 +134,30 @@
               <img src="../img/barberia 6.png" alt="">
           </div>
         </div>
-    <script src="script.js"></script>
-    <div class="ovely">
-                <br><a href="#">Agendar Cita</a>  <!--Boton para ver los barberos-->
-                </div>
+</section>
+    <section id="organizacion">  <!--Seccion de fondo blanco, img y texto-->
+          <div class="casi">
+               <div class="casilla"></div>
+                <div class="texto">
+                    <h1> O&T (OrganizacionyTiempo) </h1>
+                    <P>Prueba Gratis el software que te ayudara a optimizar tiempo y <br>
+                     tu trabajo aumenta tu rentabilidad y automatiza la gestion de agendamiento,<br> 
+                     clientes y pagos en un momento.</P>
+                     <p>Te ayudaremos a resolver: </p>
+                     <nav class="lista">
+                         <ol>
+                          <li>Elegir la barberia de tu preferencia.</li>
+                          <li>Reservar y cancelar citas.</li>
+                          <li>Vinculacion de tus barberos.</li>
+                          <li>Automatiza las tareas.</li>
+                         </ol>
+                     </nav>
+                     <div class="ovely">
+                     <br><a href="#">Agendar Cita</a>  <!--Boton para ver los barberos-->
+                </div> 
+                </div> 
+          </div>
+       </section>
         <footer>
             <?php include('../view/footer.html'); ?>
         </footer> 

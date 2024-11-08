@@ -28,7 +28,7 @@
                     <nav>
                     <ul>
                          <li><a href="../view/index_usuario.php">Inicio</a></li>
-                         <li><a href="../view/localesUsuario.php">Locales</a></li>
+                         <li><a href="../view/LocalesUsuario.php">Locales</a></li>
                          <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
                         </ul>
                     </nav>

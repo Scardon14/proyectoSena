@@ -22,9 +22,6 @@
                 <div class="nombre">
                     <h1> O & T </h1>
                 </div>
-                <div class="search"> 
-                    <input type="search" placeholder="¿Que deseas buscar?">
-                </div>
             </div>
            <div class="contenedor_menu"> <!--Encabezado rojo-->
                 <div class="menu">
@@ -49,7 +46,6 @@
                 </div>
            </div>
        </header> 
-       <Body> 
        <section id="presenta">
        <div class="section">
         <div class="parrafo">
@@ -60,7 +56,7 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
         <img src="../img/Chico.png">
        </div>
@@ -74,8 +70,21 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
+       </div>
+       <div class="section">
+        <div class="parrafo">
+              <h1>Barbero Felipe</h1>
+              <p>Mi nombre es Felipe Andrade soy reconocido como barbero y estilista con más 
+                 de 15 años de experiencia en la industria de la barbería.A los 18 años, Juan Carlos inició su carrera como aprendiz en
+                 una pequeña barbería de su barrio. Durante ese tiempo, no solo aprendió los secretos del oficio, sino que también 
+                 desarrolló un enfoque único hacia el cuidado personal masculino.
+                 <br>
+                 <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+        </div>
+        <img src="../img/Chico3.png">
        </div>
        <div class="sectio">
         <img src="../img/Chico4.png">
@@ -87,7 +96,7 @@
                  desarrolló un enfoque único hacia el cuidado personal masculino.
                  <br>
                  <br><b>si quieres conocer un poco de mi trabajo dale clicl en ver mas..</b></p>
-              <br><a href="Infobarbero.html"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
+              <br><a href="../view/infoBarbero.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el barbero-->
         </div>
        </div>
     </section>

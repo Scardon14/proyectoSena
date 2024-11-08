@@ -50,11 +50,7 @@
                                <h3>BarbStyle</h3> <!--Informacion del local-->
                                <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                                 dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                                <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
-=======
                                 <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                            </div>
                        </div>
                        <div class="box">   <!--Carta de presentacion del local-->
@@ -63,11 +59,7 @@
                             <h3>BarbStyle</h3>    <!--Informacion del local-->
                             <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                              dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                             <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
-=======
                              <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                         </div>
                     </div>
                     <div class="box">   <!--Carta de presentacion del local-->
@@ -76,11 +68,7 @@
                             <h3>BarbStyle</h3>   <!--Informacion del local-->
                             <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                              dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                             <a href="../view/info_local.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
-=======
                              <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                         </div>
                     </div>
                    </div>
@@ -97,11 +85,7 @@
                           <h3>BarbStyle</h3> <!--Informacion del local-->
                           <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                            dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                           <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
-=======
                            <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                       </div>
                   </div>
                   <div class="box">   <!--Carta de presentacion del local-->
@@ -110,11 +94,8 @@
                        <h3>BarbStyle</h3>    <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                        <a href="../view/info_local.php">VER MAS..</a>  <!--Boton para ver sobre el local-->
-=======
                         <a href="InfolocalUsuario.php">VER MAS..</a>  <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
+
                    </div>
                </div>
                <div class="box">   <!--Carta de presentacion del local-->
@@ -123,11 +104,7 @@
                        <h3>BarbStyle</h3>   <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                        <a href="../view/info_local.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
-=======
                         <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                    </div>
                </div>
               </div>
@@ -144,11 +121,7 @@
                           <h3>BarbStyle</h3> <!--Informacion del local-->
                           <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                            dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                           <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
-=======
                            <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                       </div>
                   </div>
                   <div class="box">   <!--Carta de presentacion del local-->
@@ -157,11 +130,7 @@
                        <h3>BarbStyle</h3>    <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                        <a href="../view/info_local.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
-=======
                         <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>  <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                    </div>
                </div>
                <div class="box">   <!--Carta de presentacion del local-->
@@ -170,11 +139,7 @@
                        <h3>BarbStyle</h3>   <!--Informacion del local-->
                        <p>Esta barberia fue creada en el 2017, si quieres conocer mas de nuestro local, 
                         dale clic en el boton de VER MAS</p>
-<<<<<<< Updated upstream
-                        <a href="../view/info_local.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
-=======
                         <a href="InfolocalUsuario.php"><b>VER MAS..</b></a>    <!--Boton para ver sobre el local-->
->>>>>>> Stashed changes
                    </div>
                </div>
               </div>
