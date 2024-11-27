@@ -22,11 +22,11 @@ class CalendarioBarbero
         $statement = $this->conexionBD->prepare($query); /*prepara el $query para ser ejecutado*/
         $result = $statement->execute(); /*Hace el insert en la BD si todo esta bien*/
     }
-    function obenerReservas($idEmpleado) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
+    function obenerReservas($idEmpleado,$fechaReserva) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
     {
-        $query = "Select * from reserva where idEmpleado = '{$idEmpleado}'";
+        $query = "Select * from reserva where idEmpleado = '{$idEmpleado}' and fechaReserva between '{$fechaReserva} 08:00:00' AND '{$fechaReserva} 23:00:00'";
         $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
-       // $statement->execute(); /*Se ejecuta la sentencia sql*/
+        $statement->execute(); /*Se ejecuta la sentencia sql*/
         $result = $statement->fetchAll(PDO::FETCH_ASSOC); /*obtiene el conteo de usuarios en la tabla*/
         return $result;
     }

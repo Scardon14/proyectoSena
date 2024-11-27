@@ -45,17 +45,7 @@
         </header>
 
         <div>
-            <?php session_start();
-            if (isset($_SESSION['listaReserva'])) {
-                $listado = $_SESSION['listaReserva'];
-                foreach ($listado as $fila) {
-                    print_r($fila['idReserva']); // Muestra cada fila
-                }
-            ?>
-                <div class="">12:00</div>
-            <?php
-            }
-            ?>
+            <div class="">12:00</div>
             <h1 class="titulo_MiAgenda">Mi Agenda Barbero</h1>
 
             <div class="calendario">
@@ -81,18 +71,7 @@
                 <div id="recuadro-horas" style="display: none;">
                     <button id="btn-cerrar-recuadro">x</button>
                     <h3>Seleccione la hora del día <span id="dia-seleccionado"></span></h3>
-                    <div id="horas-disponibles">
-                        <?php session_start();
-                        if (isset($_SESSION['listaReserva'])) {
-                            $listado = $_SESSION['listaReserva'];
-                            foreach ($listado as $fila) {
-                                print_r($fila); // Muestra cada fila
-                            }
-                        ?>
-                            <div class="hora-item">12:00</div>
-                        <?php
-                        }
-                        ?>
+                    <div id="horas-disponibles">     
                     </div>
                 </div>
             </div>

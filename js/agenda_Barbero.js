@@ -22,7 +22,7 @@ let startDay = (mes, año) => {
 };
 // Función para obtener la cantidad de días en el mes
 let getTotalDays = (mes, año) => {
-    if (mes === -1){ mes = 11;}
+    if (mes === -1) { mes = 11; }
     if (mes === 0 || mes === 2 || mes === 4 || mes === 6 ||
         mes === 7 || mes === 9 || mes === 11) {
         return 31;
@@ -124,13 +124,13 @@ let escribirMes2 = (mes1, año1) => {
 
 
 //Funcion para escribir los dias del mes
-let escribirMes = (mes1,año1) => {
+let escribirMes = (mes1, año1) => {
     fechas.innerHTML = '';
     // Validacion para mostrar los meses y años futuros
-    if((año1>añoActual) || (mes1 > numeroMes && año1 >= añoActual)){
+    if ((año1 > añoActual) || (mes1 > numeroMes && año1 >= añoActual)) {
 
         //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes
-        for (let i = startDay(mes1, año1); i > 0; i--){
+        for (let i = startDay(mes1, año1); i > 0; i--) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro">
             ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
         }
@@ -138,51 +138,54 @@ let escribirMes = (mes1,año1) => {
         for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro" data-dia="${i}">${i}</div>`;
         }
-    }else if(mes1 === numeroMes && año1 === añoActual){
+    } else if (mes1 === numeroMes && año1 === añoActual) {
 
         //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes//
         console.log("Entre mes actual: ", mes1, " ", año1);
         for (let i = startDay(mes1, año1); i > 0; i--) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}"> ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
         }
-        
+
         for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
             if (mes1 === numeroMes && añoActual === añoActual) {
                 // Si es el mes y año actual//
                 if (i < diaActual) {
                     // Deshabilitar días pasados//
                     fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado"data-dia="${i}">${i}</div>`;
-                } else if (i === diaActual) { 
+                } else if (i === diaActual) {
                     // Día actual //
                     fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-actual" style="background-color: lightblue;" data-dia="${i}">${i}</div>`;
                 } else {
                     // Días futuros //
                     fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro" data-dia="${i}">${i}</div>`;
                 }
-            } 
+            }
         }
-        
-    }else if((año1 < añoActual)|| (mes1 < numeroMes && año1===añoActual)){
+
+    } else if ((año1 < añoActual) || (mes1 < numeroMes && año1 === añoActual)) {
         //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes//
         console.log("Entre mes actual: ", mes1, " ", año1);
-         for (let i = startDay(mes1, año1); i > 0; i--) {
-             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_last-dias calendario_dia-pasado">
+        for (let i = startDay(mes1, año1); i > 0; i--) {
+            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_last-dias calendario_dia-pasado">
              ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
-         }
-         // Muestra los dias del mes pero inhabilitados
+        }
+        // Muestra los dias del mes pero inhabilitados
         for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}">${i}</div>`;
         }
     }
-        // Asociar eventos de clic solo a días futuros o al actual
-        let diasFuturos = document.querySelectorAll('.calendario_dia-futuro, .calendario_dia-actual');
-        diasFuturos.forEach(dia => {
-            dia.addEventListener('click', function () {
-                let diaSeleccionado = dia.getAttribute('data-dia');
-                mostrarHoras(diaSeleccionado);
-            });
+    // Asociar eventos de clic solo a días futuros o al actual
+    let diasFuturos = document.querySelectorAll('.calendario_dia-futuro, .calendario_dia-actual');
+    diasFuturos.forEach(dia => {
+        dia.addEventListener('click', async function () {
+            let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth()+1) +"-"+dia.textContent;
+            console.log("Fecha: ", fecha);
+            await reservaBarberoDia(27, fecha);
+            let diaSeleccionado = dia.getAttribute('data-dia');
+            mostrarHoras(diaSeleccionado);
         });
-    };
+    });
+};
 
 //Horas Disponibles //
 
@@ -218,9 +221,35 @@ let mostrarHoras = (diaSeleccionado) => {
         });
         horasDisponibles.appendChild(horaDiv);
     });
+    reservas.forEach(horaReserva => {
+        let horaReservada = new Date(horaReserva.fechaReserva);
+        let horaInicio= horaReservada.getHours();
+        let horaReservadaFin = new Date(horaReserva.fechaFinalizacion);
+        let horaFin= horaReservadaFin.getHours();
+        let horaDivReservado = document.querySelectorAll('.hora-item'); //reservado
+        horaDivReservado.forEach(a =>{
+            let comprarHora= a.textContent.substring(0,2);
+            /*if(a.textContent.includes(`${horaInicio}`)
+            || a.textContent.includes(`${horaFin}:`)){*/
+            if(comprarHora>=horaInicio && comprarHora<=horaFin){
+                a.classList.add('reservado');
+            }
+        });
+
+        //horaDivReservado.className = 'hora-item';
+        //horaDiv.textContent = `${hora}:${minutos < 10 ? '0' + minutos : minutos}`;
+
+        // Puedes agregar eventos de clic si necesitas seleccionar una hora
+        horaDivReservado.addEventListener('click', () => {
+            let diaSeleccionado = document.getElementById('dia-seleccionado').textContent;
+            // Redirigir a la página "Historial Citas" con parámetros de fecha y hora seleccionada
+            window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${horaReserva.fechaReserva}`;
+        });
+        horasDisponibles.appendChild(horaDiv);
+    });
 };
 // Llamar a la función de escribir mes en el mes actual
-escribirMes(numeroMes,añoActual);
+escribirMes(numeroMes, añoActual);
 
 // Manejo de eventos para cambiar de mes
 prevMesDom.addEventListener('click', () => lastMes()); //addEventListener('click', ()=>nextMes()) escucha el evento de clic en un elemento y ejecuta la función nextMes() cuando ocurre el clic//
@@ -234,27 +263,26 @@ let mes1 = numeroMes, año1 = añoActual;
 
 // Función para ir al mes anterior
 let lastMes = () => {
-    if (mes1 > 0 && mes1 <=11) {
-        mes1 = mes1 -1;
+    if (mes1 > 0 && mes1 <= 11) {
+        mes1 = mes1 - 1;
         console.log("Entre", mes1);
     } else {
         mes1 = 11;
         año1 = año1 - 1;
     }
-    setNewDate(mes1,año1);
+    setNewDate(mes1, año1);
 };
 
 // Función para ir al siguiente mes
 let nextMes = () => {
-    console.log("mes1: ", mes1);
-    if(mes1 === 11) {
+    if (mes1 === 11) {
         mes1 = 0;
         año1 = año1 + 1;
-    }else if (mes1 <11 && mes1>=0) {
+    } else if (mes1 < 11 && mes1 >= 0) {
         mes1 = mes1 + 1;
-    } 
-    console.log("mes2: ", mes1 , año1);
-    setNewDate(mes1,año1);
+    }
+    console.log("mes2: ", mes1, año1);
+    setNewDate(mes1, año1);
 };
 
 // Función para establecer la nueva fecha y escribir el mes
@@ -265,7 +293,7 @@ let setNewDate = (mes1, año1) => {
     mes.textContent = nombresMes[mes1];
     año.textContent = año1.toString();
     fechas.textContent = '';
-    escribirMes(mes1,año1);
+    escribirMes(mes1, año1);
 }
 
 // Asociar eventos de clic solo a días futuros o al actual
@@ -281,7 +309,6 @@ dias.forEach(dia => {
 });
 
 let diasss = []
-var count = 0;
 diaf.forEach(dia => {
     diasss = Array.from(document.querySelectorAll('.calendario_fechas .calendario_item'))
         .filter(e => e.classList.length === 2);
@@ -292,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
     diasss.forEach(auxiliar => {
         auxiliar.addEventListener('click', function () {
             let diaSeleccionado = auxiliar.getAttribute('data-dia');
-            mostrarHoras(diaSeleccionado)
+            mostrarHoras(diaSeleccionado);
         });
     });
 });
@@ -302,3 +329,42 @@ btnCerrarRecuadro.addEventListener('click', () => {
     let recuadroHoras = document.getElementById('recuadro-horas');
     recuadroHoras.style.display = 'none';
 });
+
+let reservas = null;
+async function reservaBarberoDia(idEmpleado, fecha) {
+    try {
+        // Realiza la solicitud a través de fetch
+        const response = await fetch('../model/ProcesarCalendarioBarbero.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: idEmpleado,
+                fechaReserva: fecha
+            })
+        });
+
+        // Verifica si la respuesta fue exitosa
+        if (!response.ok) {
+            throw new Error('Error en la respuesta de la red');
+        }
+
+        // Espera a que la respuesta sea convertida a JSON
+        reservas = await response.json(); // Ya se convierte en arreglo de objetos automáticamente
+
+        console.log("Response:", reservas);
+
+        // Puedes trabajar con "reservas" directamente como un arreglo
+        reservas.forEach(reserva => {
+            console.log(`Reserva ID: ${reserva.idReserva}, Fecha: ${reserva.fechaReserva}`);
+        });
+
+        return reservas; // Devuelve el arreglo de objetos si es necesario
+
+    } catch (error) {
+        console.error('Error:', error);
+        return null; // Devuelve null en caso de error
+    }
+}
+

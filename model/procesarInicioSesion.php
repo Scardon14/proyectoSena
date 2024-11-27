@@ -24,6 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
     }else{
         header("Location: ../view/inicioSesion.php?mensaje="  . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
     }
-
+ }
+ if ($_SERVER["REQUEST_METHOD"] == "GET"){
+    require("logout.php");
+    $logout = new Logout();
+    $logout->logout();
+    header("Location: ../view/index.php");
  }
 ?>

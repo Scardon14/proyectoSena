@@ -14,6 +14,12 @@
        <link rel="stylesheet" href="../css/index_usuario.css">
     </head>
     <Body> 
+    <?php
+    session_start();
+    if($_SESSION['usuarioLogueado'] == null){
+        header("Location: ./index.php");
+    }
+    ?>
         <header>
             <div class="contenedor-encabezado">  <!--Encabezado Azul-->
                 <div class="logo">
@@ -30,6 +36,7 @@
                          <li><a href="../view/index_usuario.php">Inicio</a></li>
                          <li><a href="../view/LocalesUsuario.php">Locales</a></li>
                          <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
+                         <a href="../model/procesarInicioSesion.php">Cerrar Sesión</a>
                         </ul>
                     </nav>
                 </div>

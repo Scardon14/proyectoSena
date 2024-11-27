@@ -212,7 +212,13 @@ nav>ul>li>a:hover {
     text-align: center;
     cursor: pointer;
 }
-
+.reservado{
+    background-color: #1554b3;
+    color: #FFF;
+}
+.reservado{
+    background-color: #1554b3;
+}
 .hora-item:hover {
     background-color: #c0c0c0;
 }

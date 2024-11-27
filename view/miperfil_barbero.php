@@ -13,6 +13,13 @@
 </head>
 
 <body>
+<?php
+    session_start();
+    $usuarioLogueado = $_SESSION['usuarioLogueado'];
+    if($usuarioLogueado == null){
+        header("Location: ./index.php");
+    }
+    ?>
     <header>
         <div class="contenedor-encabezado"> <!--Encabezado Azul-->
             <div class="logo">
@@ -43,7 +50,10 @@
 
         <div class="infoPerfil">
             <label id= "informacion">Información</label><br>
-            <label>Correo: andresPadilla@gmail.com</label><br>
+            <label>
+                <?php 
+                echo("Correo: ".$usuarioLogueado[0]['correoElectronico']);
+                ?></label><br>
             <label>Celular: 3215648790</label><br>
             <label>Contraseña: </label>
             <input type="password" id="contraseñaPerfil" value="********" /><br>

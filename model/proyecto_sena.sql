@@ -32,13 +32,18 @@ CREATE TABLE empleado(idEmpleado INT AUTO_INCREMENT, idNegocio INT,
                      FOREIGN KEY (idNegocio) REFERENCES negocio(idNegocio),
                      FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario));
 
-CREATE TABLE fotografia(idFotografia INT AUTO_INCREMENT, idEmpleado INT, idCliente int, fotoPerfil_Logo LONGBLOB NOT NULL, 
-                        foto1 LONGBLOB, foto2 LONGBLOB, 
-                        foto3 LONGBLOB, foto4 LONGBLOB, 
-                        foto5 LONGBLOB, fechaCreacion DATETIME NOT NULL,
+CREATE TABLE foto_perfil(idFotoPerfil INT AUTO_INCREMENT, idUsuario INT, fotoPerfil_Logo LONGBLOB NOT NULL, 
+                        fechaCreacion DATETIME NOT NULL,
+                        PRIMARY KEY (idFotoPerfil),
+                        FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario));
+
+CREATE TABLE fotografia(idFotografia INT AUTO_INCREMENT, idEmpleado INT, idNegocio INT,
+                        foto1 LONGBLOB NOT NULL, foto2 LONGBLOB NOT NULL, 
+                        foto3 LONGBLOB NOT NULL, foto4 LONGBLOB NOT NULL, 
+                        foto5 LONGBLOB NOT NULL, fechaCreacion DATETIME NOT NULL,
                         PRIMARY KEY (idFotografia),
                         FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
-                        FOREIGN KEY (idCliente) REFERENCES cliente(idCliente));       
+                        FOREIGN KEY (idNegocio) REFERENCES negocio(idNegocio));       
 
 create table reserva (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente int, 
                         estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME,
