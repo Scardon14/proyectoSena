@@ -9,7 +9,7 @@
 <body>
     <!--Header-->
     <header>
-        <?php include('../view/headerBarbero.php'); ?>
+        <?php include('../view/header.php'); ?>
     </header>
     <section id="perfil">
         <div id="fotoPerfil"></div>

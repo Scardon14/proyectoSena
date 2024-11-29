@@ -11,7 +11,7 @@
     <div class="main">
         <!--Header-->
         <header>
-            <?php include('../view/headerBarbero.php'); ?>
+            <?php include('../view/header.php'); ?>
         </header>
 
         <div>
