@@ -41,6 +41,7 @@
                          <li><a href="registros.php">Regristrate</a></li>
                          <li><a href="inicioSesion.php">Inicia sesion</a></li>
                          <li><a href="quienessomos.php">Quienes somos?</a></li>
+                         <li><a href="../model/listadoClientes.php">administrador</a></li>
                         </ul>
                     </nav>
                 </div>
