@@ -72,8 +72,7 @@
                                 <td><?= $cliente['nombres']; ?></td>
                                 <td><?= $cliente['apellidos']; ?></td>
                                 <td><?= $cliente['numeroCelular']; ?></td>
-                                <td><?= $cliente['correoElectronico']; ?>
-                                <td>
+                                <td><?= $cliente['correoElectronico']; ?></td>
                                 <td><?= $cliente['idUsuario']; ?></td>
                                 <td><?= $cliente['fechaCreacion']; ?></td>
                                 <td><?= $cliente['estado']; ?></td>
