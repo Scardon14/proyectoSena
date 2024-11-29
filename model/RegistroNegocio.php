@@ -18,7 +18,7 @@ class RegistroNegocio
     function insertarDatos($query)
     {
         $statement = $this->conexionBD->prepare($query);
-        $result = $statement->execute();
+        $statement->execute();
     }
     function obtenerUsuario($query) 
     {
@@ -26,5 +26,9 @@ class RegistroNegocio
         $statement->execute(); 
         $result = $statement->fetchColumn(); 
         return $result;
+    }
+    function getConexionBD()
+    {
+        return $this->conexionBD;
     }
 }
