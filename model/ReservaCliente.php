@@ -1,6 +1,6 @@
 <?php
 /*Tiene las consultas que ejecutará la BD, llama la conexion para insertar los datos en la BD*/
-require("conexionBD.php"); /* Importa la coenxion de la BD */
+include_once "conexionBD.php"; /* Importa la coenxion de la BD */
 class ReservaCliente
 {
 
