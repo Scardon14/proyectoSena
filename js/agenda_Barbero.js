@@ -11,6 +11,9 @@ let año = document.getElementById('año');
 let prevMesDom = document.getElementById('prev_mes');
 let nextMesDom = document.getElementById('next_mes');
 let btnCerrarRecuadro = document.getElementById('btn-cerrar-recuadro');
+let btnCerrarDetalle = document.getElementById('btn-cerrar-detalle');
+let btnActualizarReserva = document.getElementById('btn-finalizar-reserva');
+
 
 mes.textContent = nombresMes[numeroMes]; //devuelve el texto que contiene el elemento//
 año.textContent = añoActual.toString(); //la funcion .toString() convierte un valor u objeto en cadena, en este caso mostrara en texto la fecha//
@@ -174,13 +177,15 @@ let escribirMes = (mes1, año1) => {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}">${i}</div>`;
         }
     }
+    let calendario = document.querySelector(".calendario");
     // Asociar eventos de clic solo a días futuros o al actual
     let diasFuturos = document.querySelectorAll('.calendario_dia-futuro, .calendario_dia-actual');
     diasFuturos.forEach(dia => {
         dia.addEventListener('click', async function () {
-            let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth()+1) +"-"+dia.textContent;
+            let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + dia.textContent;
             console.log("Fecha: ", fecha);
             await reservaBarberoDia(27, fecha);
+            calendario.classList.add("ocultarDiv");
             let diaSeleccionado = dia.getAttribute('data-dia');
             mostrarHoras(diaSeleccionado);
         });
@@ -207,7 +212,8 @@ let mostrarHoras = (diaSeleccionado) => {
     horasDisponibles.innerHTML = '';
 
     let horas = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
-
+    let recuadroDetalleReserva = document.querySelector('.recuadro-detalle-reserva');
+    let detalleReserva = document.querySelector('.detalle-reserva');
     horas.forEach(hora => {
         let horaDiv = document.createElement('div');
         horaDiv.className = 'hora-item';
@@ -217,35 +223,56 @@ let mostrarHoras = (diaSeleccionado) => {
         horaDiv.addEventListener('click', () => {
             let diaSeleccionado = document.getElementById('dia-seleccionado').textContent;
             // Redirigir a la página "Historial Citas" con parámetros de fecha y hora seleccionada
-            window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${hora}`;
+            //window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${hora}`;
+            recuadroHoras.style.display = 'none';
+            recuadroDetalleReserva.classList.remove("ocultarDiv");
+            reservas.forEach(horaReserva => {
+                let horaReservada = new Date(horaReserva.fechaReserva);
+                let horaInicio = horaReservada.getHours();
+                let horaReservadaFin = new Date(horaReserva.fechaFinalizacion);
+                let horaFin = horaReservadaFin.getHours();
+                let compararHora = horaDiv.textContent.substring(0, 2);
+                let estado;
+                if (horaReserva.estado === 1){
+                    estado = 'Completado';
+                }else if(horaReserva.estado === 2){
+                    estado = 'Reservado';
+                }
+                else if(horaReserva.estado === 0){
+                    estado = 'Pendiente';
+                }
+                if (compararHora >= horaInicio && compararHora <= horaFin) {
+                    detalleReserva.innerHTML = `
+                    <p id="idReserva" hidden>${horaReserva.idReserva}</p>
+                    <p><strong> Nombre: </strong> ${horaReserva.nombres} ${horaReserva.apellidos}</p>
+                    <p><strong>Correo: </strong> ${horaReserva.correoElectronico}</p>
+                    <p><strong>celular: </strong> ${horaReserva.numeroCelular}</p>
+                    <p><strong>Hora inicio: </strong> ${horaReserva.fechaReserva}</p>
+                    <p><strong>Hora Fin: </strong> ${horaReserva.fechaFinalizacion}</p>
+                    <p><strong>Estado</strong> ${estado}</p>`;
+                    //detalleReserva.textContent = `Nombre: ${horaReserva.nombres} ${horaReserva.apellidos}`;
+                    //detalleReserva.textContent = `Nombre: ${horaReserva.nombres} ${horaReserva.apellidos}`;
+                }
+            });
         });
         horasDisponibles.appendChild(horaDiv);
     });
     reservas.forEach(horaReserva => {
         let horaReservada = new Date(horaReserva.fechaReserva);
-        let horaInicio= horaReservada.getHours();
+        let horaInicio = horaReservada.getHours();
         let horaReservadaFin = new Date(horaReserva.fechaFinalizacion);
-        let horaFin= horaReservadaFin.getHours();
+        let horaFin = horaReservadaFin.getHours();
         let horaDivReservado = document.querySelectorAll('.hora-item'); //reservado
-        horaDivReservado.forEach(a =>{
-            let comprarHora= a.textContent.substring(0,2);
+        horaDivReservado.forEach(a => {
+            let comprarHora = a.textContent.substring(0, 2);
             /*if(a.textContent.includes(`${horaInicio}`)
             || a.textContent.includes(`${horaFin}:`)){*/
-            if(comprarHora>=horaInicio && comprarHora<=horaFin){
+            if (comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 2) {
                 a.classList.add('reservado');
+            }else if(comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 1){
+                a.classList.add('completado');
             }
         });
-
-        //horaDivReservado.className = 'hora-item';
-        //horaDiv.textContent = `${hora}:${minutos < 10 ? '0' + minutos : minutos}`;
-
-        // Puedes agregar eventos de clic si necesitas seleccionar una hora
-        horaDivReservado.addEventListener('click', () => {
-            let diaSeleccionado = document.getElementById('dia-seleccionado').textContent;
-            // Redirigir a la página "Historial Citas" con parámetros de fecha y hora seleccionada
-            window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${horaReserva.fechaReserva}`;
-        });
-        horasDisponibles.appendChild(horaDiv);
     });
 };
 // Llamar a la función de escribir mes en el mes actual
@@ -327,7 +354,27 @@ document.addEventListener('DOMContentLoaded', function () {
 // Ocultar recuadro horas
 btnCerrarRecuadro.addEventListener('click', () => {
     let recuadroHoras = document.getElementById('recuadro-horas');
+    let calendario = document.querySelector(".calendario");
+    calendario.classList.remove("ocultarDiv");
     recuadroHoras.style.display = 'none';
+});
+
+btnActualizarReserva.addEventListener('click', () => {
+    let idReserva = document.getElementById("idReserva");
+    if(idReserva.textContent.trim !== ""){
+        finalizarReserva(idReserva.textContent,1);
+        window.location.href = `agenda_barbero.php`;
+    }
+});
+// Ocultar recuadro horas
+btnCerrarDetalle.addEventListener('click', () => {
+    let recuadroHoras = document.getElementById('recuadro-horas');
+    let recuadroDetalleReserva = document.querySelector('.recuadro-detalle-reserva');
+    //let calendario = document.querySelector(".calendario");
+    let detalleReserva = document.querySelector('.detalle-reserva');
+    detalleReserva.innerHTML = ''
+    recuadroDetalleReserva.classList.add("ocultarDiv");
+    recuadroHoras.style.display = 'block';
 });
 
 let reservas = null;
@@ -352,6 +399,7 @@ async function reservaBarberoDia(idEmpleado, fecha) {
 
         // Espera a que la respuesta sea convertida a JSON
         reservas = await response.json(); // Ya se convierte en arreglo de objetos automáticamente
+        console.log("IDEMPLEADO:", idEmpleado);
 
         console.log("Response:", reservas);
 
@@ -365,6 +413,54 @@ async function reservaBarberoDia(idEmpleado, fecha) {
     } catch (error) {
         console.error('Error:', error);
         return null; // Devuelve null en caso de error
+    }
+}
+let respuestaActualizar = null;
+async function finalizarReserva(idReserva, nuevoEstado) {
+    try {
+        // Realiza la solicitud PUT
+        const response = await fetch('../model/ProcesarCalendarioBarbero.php', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: idReserva,
+                estado: nuevoEstado
+            })
+        });
+
+        // Verifica si la respuesta fue exitosa
+        if (!response.ok) {
+            throw new Error('Error en la respuesta de la red');
+        }
+
+        // Obtén el texto de la respuesta
+        const responseText = await response.text();  // Usa text() en lugar de json()
+        console.log('Response text:', responseText);  // Muestra la respuesta como texto
+
+        // Si la respuesta es un JSON válido, la convierte a JSON
+        try {
+            const respuestaActualizar = JSON.parse(responseText);
+            console.log("Response:", respuestaActualizar);
+
+            // Verifica si la actualización fue exitosa
+            if (respuestaActualizar.success) {
+                alert(respuestaActualizar.message);  // Muestra el mensaje de éxito
+            } else {
+                alert('No se pudo actualizar la reserva');
+            }
+
+        } catch (error) {
+            console.error('Error al parsear el JSON:', error);
+            alert('Hubo un problema al procesar la respuesta');
+        }
+
+        return responseText;  // Devuelve el texto de la respuesta para verificación
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al procesar la solicitud');
+        return null;  // Devuelve null en caso de error
     }
 }
 

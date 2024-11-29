@@ -1,15 +1,27 @@
 <?php
-
 require("CalendarioBarbero.php"); // Importa el archivo
+$calendario = new CalendarioBarbero();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $data = json_decode(file_get_contents('php://input'), true);  // Recibe los datos JSON
 
-    $calendario = new CalendarioBarbero();
-    $data = json_decode(file_get_contents('php://input'), true);  // Recibe los datos JSON
-
-    if (isset($data['id']) && isset($data['fechaReserva'])) {
-        $id = $data['id'];
-        $fechaReserva = $data['fechaReserva'];
-        $obtenerHorasAgendadas = $calendario->obenerReservas($id,$fechaReserva);
-        // Simula una respuesta JSON
-        echo json_encode($obtenerHorasAgendadas);
+        if (isset($data['id']) && isset($data['fechaReserva'])) {
+            $id = $data['id'];
+            $fechaReserva = $data['fechaReserva'];
+            $obtenerHorasAgendadas = $calendario->obenerReservas($id,$fechaReserva);
+            // Simula una respuesta JSON
+            echo json_encode($obtenerHorasAgendadas);
+        }
+    }else if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+        $data = json_decode(file_get_contents('php://input'), true);
+        if (isset($data['id']) && isset($data['estado'])) {
+            $id = $data['id'];
+            $estado = $data['estado'];
+            $actualizar = $calendario->actualizarReservas($id,$estado);
+            echo json_encode($actualizar);
+        }else {
+            // Si no llegan los datos esperados, devuelve un error JSON
+            echo json_encode(["error" => "Datos no válidos"]);
+        }
     }
+
 ?>

@@ -32,7 +32,7 @@ class Login
         // Obtener el resultado como un arreglo asociativo
         $result = $statement->fetch();
         echo $result['idPerfil']; 
-        if($this->esEmpleado($result['idPerfil'])){
+        if($this->esEmpleado($result['idPerfil']) !== 3){
             $query = "SELECT u.idPerfil, e.* FROM usuario u INNER JOIN empleado e ON u.idUsuario = e.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
             //$query = "SELECT * FROM empleado WHERE idUsuario = '{$result['idUsuario']}'";
             return $this->ejecutarConsulta($query);
@@ -51,7 +51,7 @@ class Login
     private function ejecutarConsulta($query){
         $statement = $this->conexionBD->prepare($query); // Preparar la consulta
         $statement->execute(); // Ejecutar la consulta
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetch();
         return $result;
     }
 }

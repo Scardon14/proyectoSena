@@ -51,4 +51,29 @@ create table reserva (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente in
                         FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
                         FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)); 
 
+create table reserva_historico (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente int, 
+                        estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME,
+                        PRIMARY KEY (idReserva)); 
+
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER historico_reserva
+AFTER UPDATE ON reserva
+FOR EACH ROW
+BEGIN
+    IF NEW.estado = 1 THEN
+        INSERT INTO reserva_historico (`idReserva`, `idEmpleado`, `idCliente`, `estado`, `fechaReserva`, `fechaFinalizacion`) select * from reserva where idReserva =  OLD.idReserva;
+    END IF;
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER eliminar_reserva
+AFTER INSERT ON reserva_historico
+FOR EACH ROW
+BEGIN
+	DELETE FROM reserva where idReserva = NEW.idReserva;
+END//
+DELIMITER ;   
+
 INSERT INTO rol (perfil)VALUES ('negocio'),('barbero'),('cliente');
