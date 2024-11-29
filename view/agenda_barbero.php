@@ -15,6 +15,7 @@
         </header>
 
         <div>
+        <div id="sessionData" data-usuario="<?php echo $_SESSION['usuarioLogueado']['idEmpleado']; ?>"></div>
             <div class="">12:00</div>
             <h1 class="titulo_MiAgenda">Mi Agenda Barbero</h1>
             <div class="contenedor-">

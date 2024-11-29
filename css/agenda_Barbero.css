@@ -102,9 +102,6 @@
     background-color: #1554b3;
     color: #FFF;
 }
-.reservado{
-    background-color: #1554b3;
-}
 .completado{
     background-color: #5bb100;
     color: #FFF;}
@@ -151,4 +148,8 @@
 
 .ocultarDiv{
     display: none;
+}
+
+.bloquear-eventos{
+    pointer-events: none;
 }
