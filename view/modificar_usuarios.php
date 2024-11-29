@@ -8,14 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-<form>
+<?php
+  session_start();
+  $cliente = $_SESSION['clienteActual'];
+?>
+<form action="../model/actualizarCliente.php" method="POST">
+<div class="idCliente" hidden>
+    <input type="text" class="form-control" id="exampleInputname1" name="idCliente" aria-describedby="nameHelp" value="<?=$cliente['idCliente']?>"hidden>
+  </div>
   <div class="nombres">
     <label for="exampleInputName1" class="nombre">Nombres</label>
-    <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp">
+    <input type="text" class="form-control" id="exampleInputname1" name="nombre" aria-describedby="nameHelp" value="<?=$cliente['nombres']?>">
   </div>
   <div class="apellidos">
     <label for="exampleInputLastname1" class="apellido">Apellidos</label>
-    <input type="text" class="form-control" id="exampleInputLastname1" aria-describedby="lastnameHelp">
+    <input type="text" class="form-control" id="exampleInputLastname1" name="apellido" aria-describedby="lastnameHelp" value="<?=$cliente['apellidos']?>">
   </div>
   <div class="numeros">
     <label for="exampleInputPhone1" class="celular">Numero De Celular</label>
