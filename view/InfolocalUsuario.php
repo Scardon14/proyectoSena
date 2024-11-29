@@ -158,7 +158,7 @@
                          </ol>
                      </nav>
                      <div class="ovely">
-                     <br><a href="#">Agendar Cita</a>  <!--Boton para ver los barberos-->
+                     <br><a href="Agenda_Cliente.php">Agendar Cita</a>  <!--Boton para ver los barberos-->
                 </div> 
                 </div> 
           </div>
