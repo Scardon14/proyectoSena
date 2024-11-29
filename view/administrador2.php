@@ -77,10 +77,17 @@
                                 <td><?= $cliente['fechaCreacion']; ?></td>
                                 <td><?= $cliente['estado']; ?></td>
                                 <td>
-                                    <a href="modificar_usuarios.php" class="btn btn-small btn-success"><i
-                                            class="bi bi-pencil-square">Editar</i></a> <!--Boton editar-->
-                                    <a href="" class="btn btn-small btn-danger"><i
-                                            class="bi bi-trash3-fill">Eliminar</i></a> <!-- Boton eliminar-->
+                                    <a href="../model/actualizarCliente.php?id=<?= $cliente['idCliente']; ?>"
+                                        class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>
+                                    <!--Boton editar-->
+                                    <form action="../model/eliminarCliente.php" method="POST">
+                                        <div class="idCliente" hidden>
+                                            <input type="text" class="form-control" id="exampleInputname1" name="idCliente"
+                                                aria-describedby="nameHelp" value="<?= $cliente['idCliente'] ?>" hidden>
+                                        </div>
+                                        <button type="submit" class="btn btn-small btn-danger"><i
+                                                class="bi bi-trash3-fill">Eliminar</i></button> <!-- Boton eliminar-->
+                                    </form>
                                 </td>
                             </tr>
                             <?php
