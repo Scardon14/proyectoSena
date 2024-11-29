@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <!--Head-->
-
 <head>
-    <meta charset="UTF-8"> <!--etiqueta que permite caracteres especiales como por ej:ñ-->
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-    <!-- ayuda al tema responsive de las pantallas-->
     <link rel="stylesheet" href="../css/agenda_Barbero.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-
     <title>Mi Agenda</title>
 </head>
 
@@ -22,26 +10,8 @@
     <div class="main">
         <!--Header-->
         <header>
-            <div class="contenedor-encabezado"> <!--Encabezado Azul-->
-                <div class="logo">
-                    <img src="../img/logo.png" alt="logo">
-                </div>
-                <div class="nombre">
-                    <h1> O & T </h1>
-                </div>
-            </div>
-            <div class="contenedor_menu"> <!--Encabezado rojo-->
-                <div class="menu">
-                    <nav>
-                        <ul>
-                         <li><a href="../view/index_usuario.php">Inicio</a></li>
-                         <li><a href="../view/localesUsuario.php">Locales</a></li>
-                         <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+<?php include('../view/headerUsuario.php'); ?>
+</header>
 
         <div>
             <?php session_start();

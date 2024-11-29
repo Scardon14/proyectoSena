@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+
 }
 
 /*Encabezado azul*/
@@ -162,19 +163,4 @@ nav ul li{
     height: 400px;
     width:400px;
     }
-    /*button{
-        width: 45%;
-        margin: 4%;
-    }
-    .contenedorContraseña {
-        display: inline-flex;
-        border: 2px solid #d6d6d6;
-        border-radius: 10px;
-        padding: 10 px;
     
-    }
-    .icon{
-        height: 1rem;
-        margin: 5px;
-        cursor: pointer;
-    }*/
