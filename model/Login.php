@@ -29,10 +29,30 @@ class Login
         $statement->bindValue(':estado', '1');
 
         $statement->execute(); // Ejecutar la consulta
-
         // Obtener el resultado como un arreglo asociativo
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+        $result = $statement->fetch();
+        echo $result['idPerfil']; 
+        if($this->esEmpleado($result['idPerfil']) !== 3){
+            $query = "SELECT u.idPerfil, e.* FROM usuario u INNER JOIN empleado e ON u.idUsuario = e.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
+            //$query = "SELECT * FROM empleado WHERE idUsuario = '{$result['idUsuario']}'";
+            return $this->ejecutarConsulta($query);
+        }else{
+            $query = "SELECT u.idPerfil, c.* FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
+            //$query = "SELECT * FROM cliente WHERE idUsuario = '{$result['idUsuario']}'";
+            return $this->ejecutarConsulta($query);
+        }
         return $result; // Devolver los resultados
     }
+
+    private function esEmpleado($rol){
+        return $rol != 1; 
+    }
+
+    private function ejecutarConsulta($query){
+        $statement = $this->conexionBD->prepare($query); // Preparar la consulta
+        $statement->execute(); // Ejecutar la consulta
+        $result = $statement->fetch();
+        return $result;
+    }
 }
+?>

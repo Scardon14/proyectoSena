@@ -32,18 +32,48 @@ CREATE TABLE empleado(idEmpleado INT AUTO_INCREMENT, idNegocio INT,
                      FOREIGN KEY (idNegocio) REFERENCES negocio(idNegocio),
                      FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario));
 
-CREATE TABLE fotografia(idFotografia INT AUTO_INCREMENT, idEmpleado INT, idCliente int, fotoPerfil_Logo LONGBLOB NOT NULL, 
-                        foto1 LONGBLOB, foto2 LONGBLOB, 
-                        foto3 LONGBLOB, foto4 LONGBLOB, 
-                        foto5 LONGBLOB, fechaCreacion DATETIME NOT NULL,
+CREATE TABLE foto_perfil(idFotoPerfil INT AUTO_INCREMENT, idUsuario INT, fotoPerfil_Logo LONGBLOB NOT NULL, 
+                        fechaCreacion DATETIME NOT NULL,
+                        PRIMARY KEY (idFotoPerfil),
+                        FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario));
+
+CREATE TABLE fotografia(idFotografia INT AUTO_INCREMENT, idEmpleado INT, idNegocio INT,
+                        foto1 LONGBLOB NOT NULL, foto2 LONGBLOB NOT NULL, 
+                        foto3 LONGBLOB NOT NULL, foto4 LONGBLOB NOT NULL, 
+                        foto5 LONGBLOB NOT NULL, fechaCreacion DATETIME NOT NULL,
                         PRIMARY KEY (idFotografia),
                         FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
-                        FOREIGN KEY (idCliente) REFERENCES cliente(idCliente));       
+                        FOREIGN KEY (idNegocio) REFERENCES negocio(idNegocio));       
 
 create table reserva (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente int, 
                         estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME,
                         PRIMARY KEY (idReserva),
                         FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
                         FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)); 
+
+create table reserva_historico (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente int, 
+                        estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME,
+                        PRIMARY KEY (idReserva)); 
+
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER historico_reserva
+AFTER UPDATE ON reserva
+FOR EACH ROW
+BEGIN
+    IF NEW.estado = 1 THEN
+        INSERT INTO reserva_historico (`idReserva`, `idEmpleado`, `idCliente`, `estado`, `fechaReserva`, `fechaFinalizacion`) select * from reserva where idReserva =  OLD.idReserva;
+    END IF;
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE OR REPLACE TRIGGER eliminar_reserva
+AFTER INSERT ON reserva_historico
+FOR EACH ROW
+BEGIN
+	DELETE FROM reserva where idReserva = NEW.idReserva;
+END//
+DELIMITER ;   
 
 INSERT INTO rol (perfil)VALUES ('negocio'),('barbero'),('cliente');
