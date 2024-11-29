@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Login = new Login();
     $sesionActiva = $Login->login($correo, $contraseña);
     if (!empty($sesionActiva)) {
-        echo 'Entreee aaa';
         session_start();
         $_SESSION['usuarioLogueado'] = $sesionActiva;
         $usuario = $sesionActiva['idPerfil'];
@@ -21,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../view/index_usuario.php");
         }
     } else {
-        //header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
+        header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
