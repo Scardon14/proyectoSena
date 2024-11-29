@@ -51,7 +51,7 @@
                         }else if($usuario['idPerfil'] === '1'|| $usuario['idPerfil'] === 1){?>
                             <li><a href="../view/index_negocio.php">Inicio</a></li>
                             <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
-                            <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
+                            <li><a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $usuario['idNegocio'];?>&idCliente=<?= $usuario['idEmpleado'];?>">Mi personal</a></li>
                             <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
                         <?php
                         }                        
