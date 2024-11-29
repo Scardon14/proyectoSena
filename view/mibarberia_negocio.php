@@ -8,7 +8,12 @@
        <script src="../js/mibarberia_negocio.js"></script>
     </head>
     <Body> 
-
+    <?php
+    session_start();
+    if($_SESSION['usuarioLogueado'] == null){
+        header("Location: ./index.php");
+    }
+    ?>
         <header>
             <div class="contenedor-encabezado">  <!--Encabezado Azul-->
                 <div class="logo">

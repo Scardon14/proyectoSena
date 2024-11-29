@@ -14,6 +14,12 @@
        <link rel="stylesheet" href="../css/locales_negocio.css">
     </head>
     <Body> 
+    <?php
+    session_start();
+    if($_SESSION['usuarioLogueado'] == null){
+        header("Location: ./index.php");
+    }
+    ?>
         <header>
             <div class="contenedor-encabezado">  <!--Encabezado Azul-->
                 <div class="logo">
