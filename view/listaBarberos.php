@@ -51,6 +51,7 @@
           <th scope="col">CORREO ELECTRONICO</th>
           <th scope="col">FECHA DE CREACION</th>
           <th scope="col">ESTADO</th>
+          <th scope="col">ACCION</th>
       </tr>
    </thead>
    <tbody>
@@ -66,7 +67,7 @@
       <td><?= $barbero['nombres'];?></td>
       <td><?= $barbero['apellidos'];?></td>
       <td><?= $barbero['numeroCelular'];?></td>
-      <td><?= $barbero['correoElectronico'];?><td>
+      <td><?= $barbero['correoElectronico'];?></td>
       <td><?= $barbero['fechaCreacion'];?></td>
       <td><?= $barbero['estado'];?></td>
       <td>

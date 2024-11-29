@@ -25,10 +25,6 @@
     <label for="exampleInputEmail1" class="correo">Correro Electronico</label>
     <input type="email" class="form-control" id="exampleInputEmail1">
   </div>
-  <div class="fecha-creacion">
-    <label for="exampleInputDate1" class="fecha">Fecha De Creacion</label>
-    <input type="datetime-local" class="fecha-tiempo" id="exampleInputDate1">
-  </div>
   <div class="estados">
     <label for="exampleInputState1" class="estado">Estado</label>
     <input type="number" class="state" id="exampleInputState1">

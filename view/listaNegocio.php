@@ -61,10 +61,10 @@
     ?>
     
     <tr>   <!-- Fila de datos de la persona-->
-      <td><?= $negocio['idNergocio'];?></td>
+      <td><?= $negocio['idNegocio'];?></td>
       <td><?= $negocio['nombreEstablecimiento'];?></td>
       <td><?= $negocio['numeroCelular'];?></td>
-      <td><?= $negocio['correoElectronico'];?><td>
+      <td><?= $negocio['correoElectronico'];?></td>
       <td><?= $negocio['direccion'];?></td>
       <td><?= $negocio['nit'];?></td>
       <td><?= $negocio['fechaCreacion'];?></td>
