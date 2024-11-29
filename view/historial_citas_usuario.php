@@ -14,7 +14,7 @@ $horaSeleccionada = isset($_GET['hora']) ? $_GET['hora'] : 'No seleccionado';
 <body>
     <!--Header-->
     <header>
-        <?php include('../view/headerUsuario.php'); ?>
+        <?php include('../view/header.php'); ?>
     </header>
     </header>
     <div class="historialCita">

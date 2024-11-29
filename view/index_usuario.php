@@ -8,7 +8,7 @@
 
 <Body>
     <header>
-        <?php include('../view/headerUsuario.php'); ?>
+        <?php include('../view/header.php'); ?>
     </header>
     <section id="presenta"> <!--Seccion de img con titulo-->
         <h1 class="org">ORGANIZACION Y TIEMPO</h1>

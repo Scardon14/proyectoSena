@@ -7,7 +7,7 @@
     <Body> 
    <!--Header-->
    <header>
-        <?php include('../view/headerUsuario.php'); ?>
+        <?php include('../view/header.php'); ?>
     </header>
 <section class="perfil-usuario">
     <div class="contenedor-perfil">

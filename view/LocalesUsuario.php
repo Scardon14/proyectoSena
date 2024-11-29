@@ -9,7 +9,7 @@
 <Body>
     <!--Header-->
     <header>
-        <?php include('../view/headerUsuario.php'); ?>
+        <?php include('../view/header.php'); ?>
     </header>
     <section id="presenta"> <!--Carta de presentacion del local-->
         <div class="wrapper">
