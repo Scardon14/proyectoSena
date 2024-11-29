@@ -11,19 +11,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
     if(!empty($sesionActiva)){
         session_start();
         $_SESSION['usuarioLogueado'] = $sesionActiva;
-        foreach ($sesionActiva as $fila) {
-            if($fila['idPerfil'] == 1){
+        $usuario = $sesionActiva['idPerfil'];
+        echo "<script>console.log('Hola desde PHP a la consola del navegador');</script>";
+            if($usuario['idPerfil'] === 1){
                 header("Location: ../view/index_negocio.php"); 
-            }else if($fila['idPerfil'] == 2){
+            }else if($usuario['idPerfil'] === 2){
                 header("Location: ../view/index_barbero.php"); 
-            }else if($fila['idPerfil'] == 3){
+            }else if($usuario['idPerfil'] === 3){
                 header("Location: ../view/index_usuario.php"); 
             }
-        }
-
-    }else{
+        }else{
         header("Location: ../view/inicioSesion.php?mensaje="  . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
-    }
-
+        }
+}
+ if ($_SERVER["REQUEST_METHOD"] == "GET"){
+    require("logout.php");
+    $logout = new Logout();
+    $logout->logout();
+    header("Location: ../view/index.php");
  }
 ?>

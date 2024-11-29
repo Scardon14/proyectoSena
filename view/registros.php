@@ -136,7 +136,7 @@
 
             <!-- FORMULARIO REGISTRO BARBERO -->
             <div class="formulario-registro ocultarDiv" id="registroBarbero">
-                <form action="../model/ProcesarBarbero.php" method="post">
+                <form action="../model/ProcesarBarbero.php" method="post" enctype="multipart/form-data">
                     <h2>Registro Barbero</h2>
                     <!-- NOMBRE -->
                     <div class="formulario_grupo" id="grupo_nombre">
@@ -191,10 +191,10 @@
                     </div>
                     <!-- FOTO DE PERFIL -->
                     <label> Foto de perfil </label>
-                    <input type="file" required>
+                    <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" required>
                     <label> Fotografías <small>(5 min. De los servicios que haz
                             prestado como Barbero)</small></label>
-                    <input type="file" required>
+                    <input type="file" name="fotos" accept="image/*" required>
                     <!-- CONTRASEÑA1 -->
                     <div class="formulario_grupo" id="grupo_contraseña">
                         <label for="contraseña1" class="formulario_label">Contraseña.</label>

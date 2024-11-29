@@ -16,6 +16,12 @@
 </head>
 
 <Body>
+    <?php
+    session_start();
+    if($_SESSION['usuarioLogueado'] == null){
+        header("Location: ./index.php");
+    }
+    ?>
     <header>
         <div class="contenedor-encabezado"> <!--Encabezado Azul-->
             <div class="logo">
@@ -30,9 +36,10 @@
                 <nav>
                     <ul>
                         <li><a href="../view/index_barbero.php">Inicio</a></li>
-                        <li><a href="../view/agenda_barbero.php">Mi Agenda</a></li>
+                        <li><a href="./agenda_barbero.php">Mi Agenda</a></li>
                         <li><a href="../view/miPerfil_barbero.php">Mi perfil</a></li>
                         <li><a href="../view/historial_citas.php">Historial Citas</a></li>
+                        <a href="../model/procesarInicioSesion.php">Cerrar Sesión</a>
                     </ul>
                 </nav>
             </div>

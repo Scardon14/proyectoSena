@@ -14,7 +14,12 @@
        <link rel="stylesheet" href="../css/index_negocio.css">
     </head>
     <Body> 
-        
+    <?php
+    session_start();
+    if($_SESSION['usuarioLogueado'] == null){
+        header("Location: ./index.php");
+    }
+    ?>        
         <header>
             <div class="contenedor-encabezado">  <!--Encabezado Azul-->
                 <div class="logo">
@@ -33,6 +38,7 @@
                          <li><a href="../view/agenda_negocio.php">Agenda</a></li>
                          <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
                          <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
+                         <a href="../model/procesarInicioSesion.php">Cerrar Sesión</a>
                         </ul>
                     </nav>
                 </div>
