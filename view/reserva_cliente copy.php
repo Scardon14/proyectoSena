@@ -105,39 +105,39 @@
         </div>
         <h2 class="titulo_MiAgenda">Reservar</h2>
         <div class="container-fluid row">
-            <div class="">
-                <table class="table"> <!-- Fila de titulos-->
-                    <thead class="">
-                        <tr class="">
-                            <th scope="col">Nombre Establecimiento</th>
-                            <th scope="col">Numero Celular</th>
-                            <th scope="col">Dirección</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $negocios = $_SESSION['negocios'];
-                        foreach ($negocios as $negocio) {
-                            ?>
-
-                            <tr> <!-- Fila de datos de la persona-->
-                                <td><?= $negocio['nombreEstablecimiento']; ?></td>
-                                <td><?= $negocio['numeroCelular']; ?></td>
-                                <td><?= $negocio['direccion']; ?></td>
-                                <td>
-                                    <a href="../model/ProcesarServicio.php" class="btn btn-small btn-success"><i
-                                            class="bi bi-pencil-square">Seleccionar</i></a>
-                                    <!--Boton editar-->
-                                </td>
+                <div class="">
+                    <table class="table"> <!-- Fila de titulos-->
+                        <thead class="">
+                            <tr class="">
+                                <th scope="col">Nombre Establecimiento</th>
+                                <th scope="col">Numero Celular</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Acciones</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                            $negocios = $_SESSION['negocios'];
+                            foreach ($negocios as $negocio) {
+                                ?>
+
+                                <tr> <!-- Fila de datos de la persona-->
+                                    <td><?= $negocio['nombreEstablecimiento']; ?></td>
+                                    <td><?= $negocio['numeroCelular']; ?></td>
+                                    <td><?= $negocio['direccion']; ?></td>
+                                    <td>
+                                        <a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $negocio['idNegocio'];?>&idCliente=<?= $usuario['idCliente'];?>"
+                                            class="btn btn-small btn-success"><i class="bi bi-pencil-square">Reservar</i></a>
+                                        <!--Boton editar-->
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
         <footer>
             <?php include('../view/footer.html'); ?>
         </footer>

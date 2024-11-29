@@ -12,10 +12,6 @@
                 header(header: "Location: ./ProcesarReservaCliente.php?idCliente=<?= $idCliente");
             }
             $_SESSION['barberos'] = $resultado;
-            $barberos = $_SESSION['barberos'];
-            foreach ($barberos as $barbero) {
-                echo ($barbero['nombres']. $barbero['idNegocio']);
-            }
             header(header: "Location: ../view/MiPersonal_negocio.php");
         }
     }

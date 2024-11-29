@@ -13,7 +13,7 @@ let nextMesDom = document.getElementById('next_mes');
 let btnCerrarRecuadro = document.getElementById('btn-cerrar-recuadro');
 let btnCerrarDetalle = document.getElementById('btn-cerrar-detalle');
 let btnActualizarReserva = document.getElementById('btn-finalizar-reserva');
-
+var usuario = document.getElementById('sessionData').getAttribute('data-usuario');
 
 mes.textContent = nombresMes[numeroMes]; //devuelve el texto que contiene el elemento//
 año.textContent = añoActual.toString(); //la funcion .toString() convierte un valor u objeto en cadena, en este caso mostrara en texto la fecha//
@@ -184,7 +184,7 @@ let escribirMes = (mes1, año1) => {
         dia.addEventListener('click', async function () {
             let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + dia.textContent;
             console.log("Fecha: ", fecha);
-            await reservaBarberoDia(27, fecha);
+            await reservaBarberoDia(usuario, fecha);
             calendario.classList.add("ocultarDiv");
             let diaSeleccionado = dia.getAttribute('data-dia');
             mostrarHoras(diaSeleccionado);

@@ -13,6 +13,7 @@ let nextMesDom = document.getElementById('next_mes');
 let btnCerrarRecuadro = document.getElementById('btn-cerrar-recuadro');
 let btnCerrarDetalle = document.getElementById('btn-cerrar-detalle');
 let btnActualizarReserva = document.getElementById('btn-finalizar-reserva');
+var usuario = document.getElementById('sessionData').getAttribute('data-usuario');
 
 
 mes.textContent = nombresMes[numeroMes]; //devuelve el texto que contiene el elemento//
@@ -96,7 +97,7 @@ let escribirMes = (mes1, año1) => {
         dia.addEventListener('click', async function () {
             let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + dia.textContent;
             console.log("Fecha: ", fecha);
-            await reservaBarberoDia(27, fecha);
+            await reservaBarberoDia(usuario, fecha);
             calendario.classList.add("ocultarDiv");
             let diaSeleccionado = dia.getAttribute('data-dia');
             mostrarHoras(diaSeleccionado);
@@ -180,7 +181,7 @@ let mostrarHoras = (diaSeleccionado) => {
             /*if(a.textContent.includes(`${horaInicio}`)
             || a.textContent.includes(`${horaFin}:`)){*/
             if (comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 2) {
-                a.classList.add('reservado');
+                a.classList.add('ocultarDiv');
             }else if(comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 1){
                 a.classList.add('completado');
             }
