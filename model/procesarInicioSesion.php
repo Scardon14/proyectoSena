@@ -12,11 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['usuarioLogueado'] = $sesionActiva;
         $usuario = $sesionActiva['idPerfil'];
-        if ($usuario === 1) {
+        if ($usuario === '1' || $usuario === 1) {
+            echo("". $usuario);
             header("Location: ../view/index_negocio.php");
-        } else if ($usuario === 2) {
+        } else if ($usuario === '2' || $usuario === 2) {
+            echo("". $usuario);
             header("Location: ../view/index_barbero.php");
-        } else if ($usuario === 3) {
+        } else if ($usuario === '3'|| $usuario === 3) {
+            echo("". $usuario);
             header("Location: ../view/index_usuario.php");
         }
     } else {
