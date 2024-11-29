@@ -123,7 +123,7 @@
 
                                 <tr> <!-- Fila de datos de la persona-->
                                     <td><?= $negocio['nombreEstablecimiento']; ?></td>
-                                    <td><?= $negocio['numeroCelular']; ?>     <?= $reserva['apellidos']; ?></td>
+                                    <td><?= $negocio['numeroCelular']; ?></td>
                                     <td><?= $negocio['direccion']; ?></td>
                                     <td>
                                         <a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $negocio['idNegocio'];?>&idCliente=<?= $usuario['idCliente'];?>"
