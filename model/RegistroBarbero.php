@@ -29,4 +29,16 @@ class RegistroBarbero
         $result = $statement->fetchColumn(); /*obtiene el conteo de usuarios en la tabla*/
         return $result;
     }
+    function obtenerBarberosPorNegocio($idNegocio) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
+    {
+        $query = "SELECT e.*, fp.fotoPerfil_Logo FROM empleado e 
+        INNER JOIN usuario u ON u.idUsuario = e.idUsuario 
+        INNER JOIN foto_perfil fp ON u.idUsuario = fp.idUsuario
+        WHERE e.idNegocio = '{$idNegocio}' and u.idPerfil = 2
+        ";
+        $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
+        $statement->execute(); /*Se ejecuta la sentencia sql*/
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC); /*obtiene el conteo de usuarios en la tabla*/
+        return $result;
+    }
 }

@@ -67,7 +67,6 @@
                             session_start();
                             $reservas = $_SESSION['reservas_cliente'];
                             $estado = null;
-                            $usuario = $_SESSION["usuarioLogueado"];
                             foreach ($reservas as $reserva) {
                                 if ($reserva['estado'] === 2) {
                                     $estado = 'Pendiente';
@@ -126,7 +125,7 @@
                                     <td><?= $negocio['numeroCelular']; ?>     <?= $reserva['apellidos']; ?></td>
                                     <td><?= $negocio['direccion']; ?></td>
                                     <td>
-                                        <a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $negocio['idNegocio'];?>&idCliente=<?= $usuario['idCliente'];?>"
+                                        <a href="../model/actualizarreserva.php?id=<?= $reserva['idReserva']; ?>"
                                             class="btn btn-small btn-success"><i class="bi bi-pencil-square">Reservar</i></a>
                                         <!--Boton editar-->
                                     </td>

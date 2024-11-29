@@ -45,14 +45,19 @@ CREATE TABLE fotografia(idFotografia INT AUTO_INCREMENT, idEmpleado INT, idNegoc
                         FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
                         FOREIGN KEY (idNegocio) REFERENCES negocio(idNegocio));       
 
+create table servicio (idServicio INT AUTO_INCREMENT, nombre INT, detalle int, precio int, 
+                        estado boolean,
+                        PRIMARY KEY (idServicio)); 
+
 create table reserva (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente int, 
-                        estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME,
+                        estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME, idServicio INT, 
                         PRIMARY KEY (idReserva),
                         FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado),
+                        FOREIGN KEY (idServicio) REFERENCES servicio(idServicio),
                         FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)); 
 
 create table reserva_historico (idReserva INT AUTO_INCREMENT, idEmpleado INT, idCliente int, 
-                        estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME,
+                        estado boolean,fechaReserva DATETIME NOT NULL, fechaFinalizacion DATETIME, idServicio INT,
                         PRIMARY KEY (idReserva)); 
 
 
