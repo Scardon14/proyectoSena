@@ -56,8 +56,7 @@
                                     <td><?= $servicio['precio']; ?></td>
                                     <td><?= $servicio['duracion']; ?></td>
                                     <td>
-                                        <a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $servicio['idNegocio']; ?>&idCliente=<?= $usuario['idCliente']; ?>"
-                                            class="btn btn-small btn-success"><i
+                                        <a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $servicio['idNegocio']; ?>&idCliente=<?= $usuario['idCliente']; ?>&idServicio=<?= $servicio['idServicio']; ?>&duracion=<?= $servicio['duracion']; ?>" class="btn btn-small btn-success"><i
                                                 class="bi bi-pencil-square">Seleccionar</i></a>
                                         <!--Boton editar-->
                                     </td>
