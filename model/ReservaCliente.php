@@ -48,4 +48,12 @@ class ReservaCliente
         }
         return ["success" => false, "message" => "No se pudo actualizar la reserva"];
     }
+    function crearReserva($idEmpleado, $idCliente, $fechaReserva, $fechaFinReserva, $idServicio){
+        $query = "INSERT INTO reserva (idEmpleado, idCliente, estado, fechaReserva, fechaFinalizacion, idServicio) values ('{$idEmpleado}','{$idCliente}','2','{$fechaReserva}','{$fechaFinReserva}','{$idServicio}')";
+        $statement = $this->conexionBD->prepare($query);
+        if($statement->execute()){
+            return ["success" => true, "message" => "Reserva creada correctamente"];
+        }
+        return ["success" => false, "message" => "No se pudo crear la reserva"];
+    }
 }
