@@ -49,6 +49,7 @@
                     <h3>Detalle de la reserva</h3>
                     <p class="detalle-reserva"></p>
                     <button id="btn-finalizar-reserva">Finalizar</button>
+                    <button id="btn-cancelar-reserva">Cancelar</button>
                     <button id="btn-cerrar-detalle">Cerrar</button>
                 </div>
             </div>

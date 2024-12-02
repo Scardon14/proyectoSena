@@ -56,4 +56,13 @@ class ReservaCliente
         }
         return ["success" => false, "message" => "No se pudo crear la reserva"];
     }
+    function eliminarReserva($idReserva){
+        $query = "DELETE FROM reserva WHERE idReserva = '{$idReserva}'";
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        if($statement->rowCount() > 0){            
+            return "Reserva Cancelada Exitosamente";
+        }
+        return "No se ha podido cancelar la reserva";
+    }
 }

@@ -14,6 +14,7 @@ let btnCerrarRecuadro = document.getElementById('btn-cerrar-recuadro');
 let btnCerrarDetalle = document.getElementById('btn-cerrar-detalle');
 let btnActualizarReserva = document.getElementById('btn-finalizar-reserva');
 var usuario = document.getElementById('sessionData').getAttribute('data-usuario');
+let cancelarReserva = document.getElementById('btn-cancelar-reserva');
 
 mes.textContent = nombresMes[numeroMes]; //devuelve el texto que contiene el elemento//
 año.textContent = añoActual.toString(); //la funcion .toString() convierte un valor u objeto en cadena, en este caso mostrara en texto la fecha//
@@ -37,94 +38,6 @@ let getTotalDays = (mes, año) => {
         return isLeap(año) ? 29 : 28; // la funcion isLeap ayuda a determinar si un año es bisiesto o no//
     }
 };
-/*
-let mostrarHoras2 = (diaSeleccionado) => {
-    let recuadroHoras = document.getElementById('recuadro-horas');
-    if (!recuadroHoras) {
-        console.error('El recuadro de horas no se encuentra en el DOM.');
-        return;
-    }
-    recuadroHoras.style.display = 'block';
-
-    let diaSeleccionadoTexto = document.getElementById('dia-seleccionado');
-    diaSeleccionadoTexto.textContent = diaSeleccionado;
-
-    let horasDisponibles = document.getElementById('horas-disponibles');
-    horasDisponibles.innerHTML = '';
-
-    let horas = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
-
-    horas.forEach(hora => {
-        let horaDiv = document.createElement('div');
-        horaDiv.className = 'hora-item';
-        horaDiv.textContent = hora;
-        horaDiv.addEventListener('click', () => {
-            window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${hora}`;
-        });
-        horasDisponibles.appendChild(horaDiv);
-    });
-
-    // Agregar opción de habilitar/deshabilitar el día
-    let habilitarDeshabilitarBtn = document.createElement('button');
-    habilitarDeshabilitarBtn.id = 'toggle-dia';
-    habilitarDeshabilitarBtn.textContent = diaHabilitado(diaSeleccionado) ? 'Deshabilitar Día' : 'Habilitar Día';
-
-    habilitarDeshabilitarBtn.addEventListener('click', () => {
-        toggleDia(diaSeleccionado);
-        habilitarDeshabilitarBtn.textContent = diaHabilitado(diaSeleccionado) ? 'Deshabilitar Día' : 'Habilitar Día';
-        actualizarCalendario();
-    });
-
-    horasDisponibles.appendChild(habilitarDeshabilitarBtn);
-};
-
-let diasInhabilitados = new Set(); // Almacena los días deshabilitados
-
-let toggleDia = (dia) => {
-    if (diasInhabilitados.has(dia)) {
-        diasInhabilitados.delete(dia); // Habilitar el día
-    } else {
-        diasInhabilitados.add(dia); // Deshabilitar el día
-    }
-};
-
-// Verifica si un día está habilitado
-let diaHabilitado = (dia) => {
-    return !diasInhabilitados.has(dia);
-};
-let escribirMes2 = (mes1, año1) => {
-    fechas.innerHTML = '';
-
-    if ((año1 > añoActual) || (mes1 > numeroMes && año1 >= añoActual)) {
-        for (let i = startDay(mes1, año1); i > 0; i--) {
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-futuro">
-            ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
-        }
-
-        for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
-            let claseDia = diaHabilitado(i) ? 'calendario_dia-futuro' : 'calendario_dia-inhabilitado';
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item ${claseDia}" data-dia="${i}">${i}</div>`;
-        }
-    } else if (mes1 === numeroMes && año1 === añoActual) {
-        for (let i = startDay(mes1, año1); i > 0; i--) {
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado">
-            ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
-        }
-
-        for (let i = 1; i <= getTotalDays(mes1, añoActual); i++) {
-            let claseDia;
-            if (i < diaActual) {
-                claseDia = 'calendario_dia-pasado';
-            } else if (i === diaActual) {
-                claseDia = 'calendario_dia-actual';
-            } else {
-                claseDia = diaHabilitado(i) ? 'calendario_dia-futuro' : 'calendario_dia-inhabilitado';
-            }
-            fechas.innerHTML += `<div class="calendario_fechas calendario_item ${claseDia}" data-dia="${i}">${i}</div>`;
-        }
-    }
-};*/
-
 
 //Funcion para escribir los dias del mes
 let escribirMes = (mes1, año1) => {
@@ -366,6 +279,15 @@ btnActualizarReserva.addEventListener('click', () => {
         window.location.href = `agenda_barbero.php`;
     }
 });
+
+cancelarReserva.addEventListener('click', async () =>{
+    let idReserva = document.getElementById("idReserva");
+    if(idReserva.textContent.trim !== ""){
+        await eliminarReserva(idReserva.textContent);
+        window.location.href = `agenda_barbero.php`;
+    }
+});
+
 // Ocultar recuadro horas
 btnCerrarDetalle.addEventListener('click', () => {
     let recuadroHoras = document.getElementById('recuadro-horas');
@@ -464,3 +386,40 @@ async function finalizarReserva(idReserva, nuevoEstado) {
     }
 }
 
+let respuestaEliminar = null;
+async function eliminarReserva(idReserva){
+    const data = {
+        idReserva: idReserva
+    };
+
+    console.log("DATA: " , data);
+    const response = await fetch('../model/ProcesarCalendarioBarbero.php',{
+        method: 'DELETE',
+        headers:{
+            'Content-Type': 'Application/json'
+        },
+        body: JSON.stringify({
+            idReserva: idReserva
+        })
+    });
+
+    if(!response.ok){
+        throw new Error('Error en el consumo de la api');
+    }
+    try{
+        console.log("Respouesta Eliminacion: " , response);
+
+        respuestaEliminar = JSON.parse((await response.text()));
+        if(respuestaEliminar.success){
+            alert(respuestaEliminar.message);
+        }else{
+            alert("No se pudo eliminar la reserva")
+        }
+    }catch(error){
+        console.error('Error:', error);
+        alert('Hubo un error al procesar la solicitud');
+        return null;  // Devuelve null en caso de error
+    }
+
+
+}

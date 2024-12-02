@@ -35,6 +35,7 @@ function mostrarForm() {
     }
     opcionRegistro.classList.add("ocultarDiv");
     btnRegistrarse.classList.add("ocultarDiv");
+
 }
 /* FUNCION PARA VOLVER Y OCULTAR EL FORMULARIO DE REGISTRO*/
 

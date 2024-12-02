@@ -17,9 +17,9 @@ class Servicio
          return $this->conexionBD;
      }*/
     /*Metodo de insetar datos, $query recibe el insert desde el archivo ProcesarBarbero.php para insertar el usuario en la BD*/
-    function obtenerServicios() /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
+    function obtenerServicios($idNegocio) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
     {
-        $query = "SELECT * FROM servicio where estado = 1";
+        $query = "SELECT * FROM servicio where estado = 1 and idNegocio= {$idNegocio}";
         $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
         $statement->execute(); /*Se ejecuta la sentencia sql*/
         $result = $statement->fetchAll(PDO::FETCH_ASSOC); /*obtiene el conteo de usuarios en la tabla*/

@@ -81,14 +81,12 @@
                                     <td><?= $reserva['fechaReserva']; ?></td>
                                     <td><?= $reserva['fechaFinalizacion']; ?></td>
                                     <td>
-                                        <a href="../model/actualizarreserva.php?id=<?= $reserva['idReserva']; ?>"
-                                            class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>
-                                        <!--Boton editar-->
-                                        <form action="../model/eliminarreserva.php" method="POST">
+                                        <form action="../model/EliminarReserva.php" method="POST">
                                             <div class="idreserva" hidden>
                                                 <input type="text" class="form-control" id="exampleInputname1"
-                                                    name="idreserva" aria-describedby="nameHelp"
-                                                    value="<?= $reserva['idreserva'] ?>" hidden>
+                                                    name="idReserva" aria-describedby="nameHelp"
+                                                    value="<?= $reserva['idReserva'] ?>" hidden>
+                                                <input name="idCliente" hidden value ="<?= $usuario['idCliente']?>">
                                             </div>
                                             <button type="submit" class="btn btn-small btn-danger"><i
                                                     class="bi bi-trash3-fill">Cancelar</i></button> <!-- Boton eliminar-->
@@ -126,7 +124,7 @@
                                 <td><?= $negocio['numeroCelular']; ?></td>
                                 <td><?= $negocio['direccion']; ?></td>
                                 <td>
-                                    <a href="../model/ProcesarServicio.php" class="btn btn-small btn-success"><i
+                                    <a href="../model/ProcesarServicio.php?idNegocio=<?=$negocio['idNegocio'];?>" class="btn btn-small btn-success"><i
                                             class="bi bi-pencil-square">Seleccionar</i></a>
                                     <!--Boton editar-->
                                 </td>
@@ -142,7 +140,6 @@
             <?php include('../view/footer.html'); ?>
         </footer>
 
-        <script type="text/javascript" src="../js/agenda_Barbero.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>

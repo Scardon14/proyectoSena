@@ -16,22 +16,24 @@ class RegistroNegocio
         $statement = $this->conexionBD->prepare($query);
         $statement->execute();
     }
-    function obtenerUsuario($query) 
+    function obtenerUsuario($query)
     {
-        $statement = $this->conexionBD->prepare($query); 
-        $statement->execute(); 
-        $result = $statement->fetchColumn(); 
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchColumn();
         return $result;
     }
 
-    function obetenerBarberias() 
+    function obetenerBarberias()
     {
         $query = "SELECT * FROM negocio";
-        $statement = $this->conexionBD->prepare($query); 
-        $statement->execute(); 
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC); 
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    
     function getConexionBD()
     {
         return $this->conexionBD;
