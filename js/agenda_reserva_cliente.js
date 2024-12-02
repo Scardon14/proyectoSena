@@ -338,15 +338,17 @@ async function agendarReserva(idEmpleado, idCliente, fechaReserva, duracion, idS
     let hora = horaReservadaCliente.split(":");
     let formatoMinuto = (duracion / 60).toString().split(".");
     let segundos = (duracion % 60);
-    let tratarFecha = fechaReserva.substring(0,11)
+    let tratarFecha = fechaReserva.substring(0,10)
     if(formatoMinuto[1] >0){
-        formatoMinuto[0] =+ 1;
+        formatoMinuto[0] = parseInt(formatoMinuto[0]) + parseInt(1);
         formatoMinuto[1] = segundos;
     }
     hora[0] = parseInt(formatoMinuto[0])+ parseInt(hora[0]);
     hora[1] = parseInt(formatoMinuto[1])+ parseInt(hora[1]);
     hora[0] = hora[0].toString().padStart(2, "0");
     hora[1] = hora[1].toString().padStart(2, "0");
+    console.log("AAA", formatoMinuto[0] ," BB " , hora[0] , " ccc " , tratarFecha );
+
     let fechaFin = tratarFecha + hora[0]+":"+hora[1]+":00";
     fechaReserva = fechaReserva+":00";
     const bodyData = {
@@ -356,6 +358,8 @@ async function agendarReserva(idEmpleado, idCliente, fechaReserva, duracion, idS
         fechaFinReserva: fechaFin,
         idServicio: idServicio
     };
+
+    console.log('Rquest: ', bodyData);
     try {
         // Realiza la solicitud PUT
         const response = await fetch('../model/ProcesarReservaCliente.php', {

@@ -1,5 +1,4 @@
 <?php
-
 class conexionBD{
     //Funcion que permite hacer la conexion a la BD
     function conectarBD(){
