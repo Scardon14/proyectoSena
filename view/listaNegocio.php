@@ -70,8 +70,17 @@
       <td><?= $negocio['fechaCreacion'];?></td>
       <td><?= $negocio['estado'];?></td>
       <td>
-         <a href="" class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>  <!--Boton editar-->
-         <a href="" class="btn btn-small btn-danger"><i class="bi bi-trash3-fill">Eliminar</i></a>   <!-- Boton eliminar-->
+              <a href="../model/actualizarNegocio.php?id=<?= $negocio['idNegocio']; ?>"
+                class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>
+                <!--Boton editar-->
+               <form action="../model/eliminarNegocio.php" method="POST">
+                       <div class="idNegocio" hidden>
+                                <input type="text" class="form-control" id="exampleInputname1" name="idNegocio"
+                                aria-describedby="nameHelp" value="<?= $negocio['idNegocio'] ?>" hidden>
+                       </div>
+                                <button type="submit" class="btn btn-small btn-danger"><i
+                                 class="bi bi-trash3-fill">Eliminar</i></button> <!-- Boton eliminar-->
+               </form>
       </td>
     </tr>
     <?php
