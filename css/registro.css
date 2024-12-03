@@ -97,6 +97,10 @@ h1{
 form div input{
     width: 80%;
 }
+.seeccionar-negocio{
+    width: 80%;
+    text-align: center;
+}
 input{
     margin-bottom: 0.625rem;
     margin-top: 0.125rem ;

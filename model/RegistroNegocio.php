@@ -1,5 +1,5 @@
 <?php
-require("conexionBD.php");
+include_once "conexionBD.php";
 class RegistroNegocio
 {
 
@@ -11,20 +11,31 @@ class RegistroNegocio
         $this->conexionBD = $this->conexionBD->conectarBD();
     }
 
-    function obtenerConexion()
-    {
-        return $this->conexionBD;
-    }
     function insertarDatos($query)
     {
         $statement = $this->conexionBD->prepare($query);
-        $result = $statement->execute();
+        $statement->execute();
     }
-    function obtenerUsuario($query) 
+    function obtenerUsuario($query)
     {
-        $statement = $this->conexionBD->prepare($query); 
-        $statement->execute(); 
-        $result = $statement->fetchColumn(); 
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchColumn();
         return $result;
+    }
+
+    function obetenerBarberias()
+    {
+        $query = "SELECT * FROM negocio";
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    
+    function getConexionBD()
+    {
+        return $this->conexionBD;
     }
 }

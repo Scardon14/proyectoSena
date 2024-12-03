@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Login = new Login();
     $sesionActiva = $Login->login($correo, $contraseña);
     if (!empty($sesionActiva)) {
+        echo "entre";
         session_start();
         $_SESSION['usuarioLogueado'] = $sesionActiva;
         $usuario = $sesionActiva['idPerfil'];

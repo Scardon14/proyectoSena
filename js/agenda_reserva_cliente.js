@@ -13,8 +13,11 @@ let nextMesDom = document.getElementById('next_mes');
 let btnCerrarRecuadro = document.getElementById('btn-cerrar-recuadro');
 let btnCerrarDetalle = document.getElementById('btn-cerrar-detalle');
 let btnActualizarReserva = document.getElementById('btn-finalizar-reserva');
-var usuario = document.getElementById('sessionData').getAttribute('data-usuario');
-let cancelarReserva = document.getElementById('btn-cancelar-reserva');
+var servicio = document.getElementById('servicio').getAttribute('id-servicio');
+var duracion = document.getElementById('duracion').getAttribute('duracion');
+var cliente = document.getElementById('cliente').getAttribute('id-cliente');
+var empleado = document.getElementById('empleado').getAttribute('id-empleado');
+
 
 mes.textContent = nombresMes[numeroMes]; //devuelve el texto que contiene el elemento//
 año.textContent = añoActual.toString(); //la funcion .toString() convierte un valor u objeto en cadena, en este caso mostrara en texto la fecha//
@@ -40,6 +43,7 @@ let getTotalDays = (mes, año) => {
 };
 
 //Funcion para escribir los dias del mes
+let diaReserva = null;
 let escribirMes = (mes1, año1) => {
     fechas.innerHTML = '';
     // Validacion para mostrar los meses y años futuros
@@ -95,19 +99,21 @@ let escribirMes = (mes1, año1) => {
     let diasFuturos = document.querySelectorAll('.calendario_dia-futuro, .calendario_dia-actual');
     diasFuturos.forEach(dia => {
         dia.addEventListener('click', async function () {
+            diaReserva = dia.textContent;
+            console.log("Dia Reserva: " , diaReserva)
             let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + dia.textContent;
             console.log("Fecha: ", fecha);
-            await reservaBarberoDia(usuario, fecha);
+            await reservaBarberoDia(empleado, fecha);
             calendario.classList.add("ocultarDiv");
             let diaSeleccionado = dia.getAttribute('data-dia');
             mostrarHoras(diaSeleccionado);
         });
     });
 };
-
 //Horas Disponibles //
 
 // Mostrar el recuadro de horas
+let horaReservadaCliente = null;
 let mostrarHoras = (diaSeleccionado) => {
     let recuadroHoras = document.getElementById('recuadro-horas');
     if (!recuadroHoras) {
@@ -134,7 +140,6 @@ let mostrarHoras = (diaSeleccionado) => {
 
         // Puedes agregar eventos de clic si necesitas seleccionar una hora
         horaDiv.addEventListener('click', () => {
-            let diaSeleccionado = document.getElementById('dia-seleccionado').textContent;
             // Redirigir a la página "Historial Citas" con parámetros de fecha y hora seleccionada
             //window.location.href = `historial_citas.php?dia=${diaSeleccionado}&hora=${hora}`;
             recuadroHoras.style.display = 'none';
@@ -167,6 +172,7 @@ let mostrarHoras = (diaSeleccionado) => {
                     //detalleReserva.textContent = `Nombre: ${horaReserva.nombres} ${horaReserva.apellidos}`;
                 }
             });
+            horaReservadaCliente = horaDiv.textContent;
         });
         horasDisponibles.appendChild(horaDiv);
     });
@@ -181,7 +187,7 @@ let mostrarHoras = (diaSeleccionado) => {
             /*if(a.textContent.includes(`${horaInicio}`)
             || a.textContent.includes(`${horaFin}:`)){*/
             if (comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 2) {
-                a.classList.add('reservado');
+                a.classList.add('ocultarDiv');
             }else if(comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 1){
                 a.classList.add('completado');
             }
@@ -272,22 +278,12 @@ btnCerrarRecuadro.addEventListener('click', () => {
     recuadroHoras.style.display = 'none';
 });
 
-btnActualizarReserva.addEventListener('click', () => {
-    let idReserva = document.getElementById("idReserva");
-    if(idReserva.textContent.trim !== ""){
-        finalizarReserva(idReserva.textContent,1);
-        window.location.href = `agenda_barbero.php`;
-    }
+btnActualizarReserva.addEventListener('click', async () => {
+    let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + diaReserva + " " + horaReservadaCliente;
+    console.log("AAA: " + horaReservadaCliente);    
+    await agendarReserva(empleado, cliente, fecha,duracion,servicio);
+    window.location.href = `reserva_cliente_barbero.php?idEmpleado=${empleado}`;
 });
-
-cancelarReserva.addEventListener('click', async () =>{
-    let idReserva = document.getElementById("idReserva");
-    if(idReserva.textContent.trim !== ""){
-        await eliminarReserva(idReserva.textContent);
-        window.location.href = `agenda_barbero.php`;
-    }
-});
-
 // Ocultar recuadro horas
 btnCerrarDetalle.addEventListener('click', () => {
     let recuadroHoras = document.getElementById('recuadro-horas');
@@ -338,19 +334,42 @@ async function reservaBarberoDia(idEmpleado, fecha) {
     }
 }
 let respuestaActualizar = null;
-async function finalizarReserva(idReserva, nuevoEstado) {
+async function agendarReserva(idEmpleado, idCliente, fechaReserva, duracion, idServicio) {
+    let hora = horaReservadaCliente.split(":");
+    let formatoMinuto = (duracion / 60).toString().split(".");
+    let segundos = (duracion % 60);
+    let tratarFecha = fechaReserva.substring(0,10)
+    if(formatoMinuto[1] >0){
+        formatoMinuto[0] = parseInt(formatoMinuto[0]) + parseInt(1);
+        formatoMinuto[1] = segundos;
+    }
+    hora[0] = parseInt(formatoMinuto[0])+ parseInt(hora[0]);
+    hora[1] = parseInt(formatoMinuto[1])+ parseInt(hora[1]);
+    hora[0] = hora[0].toString().padStart(2, "0");
+    hora[1] = hora[1].toString().padStart(2, "0");
+    console.log("AAA", formatoMinuto[0] ," BB " , hora[0] , " ccc " , tratarFecha );
+
+    let fechaFin = tratarFecha + hora[0]+":"+hora[1]+":00";
+    fechaReserva = fechaReserva+":00";
+    const bodyData = {
+        idEmpleado: idEmpleado,
+        idCliente: idCliente,
+        fechaReserva: fechaReserva,
+        fechaFinReserva: fechaFin,
+        idServicio: idServicio
+    };
+
+    console.log('Rquest: ', bodyData);
     try {
         // Realiza la solicitud PUT
-        const response = await fetch('../model/ProcesarCalendarioBarbero.php', {
-            method: 'PUT',
+        const response = await fetch('../model/ProcesarReservaCliente.php', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                id: idReserva,
-                estado: nuevoEstado
-            })
+            body: JSON.stringify(bodyData)
         });
+        console.log("Datos enviados en el cuerpo:", bodyData);
 
         // Verifica si la respuesta fue exitosa
         if (!response.ok) {
@@ -386,40 +405,3 @@ async function finalizarReserva(idReserva, nuevoEstado) {
     }
 }
 
-let respuestaEliminar = null;
-async function eliminarReserva(idReserva){
-    const data = {
-        idReserva: idReserva
-    };
-
-    console.log("DATA: " , data);
-    const response = await fetch('../model/ProcesarCalendarioBarbero.php',{
-        method: 'DELETE',
-        headers:{
-            'Content-Type': 'Application/json'
-        },
-        body: JSON.stringify({
-            idReserva: idReserva
-        })
-    });
-
-    if(!response.ok){
-        throw new Error('Error en el consumo de la api');
-    }
-    try{
-        console.log("Respouesta Eliminacion: " , response);
-
-        respuestaEliminar = JSON.parse((await response.text()));
-        if(respuestaEliminar.success){
-            alert(respuestaEliminar.message);
-        }else{
-            alert("No se pudo eliminar la reserva")
-        }
-    }catch(error){
-        console.error('Error:', error);
-        alert('Hubo un error al procesar la solicitud');
-        return null;  // Devuelve null en caso de error
-    }
-
-
-}

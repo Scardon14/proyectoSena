@@ -3,7 +3,7 @@ require("registroFotos.php");
 class ProcesarFotos{
     function guardarFotoPerfil($fotoPerfil, $obtenerUsuario){
         $registroFotos = new RegistroFotos();
-        $directorio = 'C:/xampp/htdocs/proyectoSena/imagenes/' .$obtenerUsuario."/";
+        $directorio = '../imagenes/' .$obtenerUsuario."/";
         $rutaFoto = $directorio.basename($fotoPerfil['name']);
         // Verificar si el directorio existe, si no, crearlo
         if (!file_exists($directorio)) {

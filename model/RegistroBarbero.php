@@ -12,10 +12,6 @@ class RegistroBarbero
         $this->conexionBD = $this->conexionBD->conectarBD(); /*Invoca la funcion de conectar la BD*/
     }
 
-   /* function obtenerConexion()
-    {
-        return $this->conexionBD;
-    }*/
     /*Metodo de insetar datos, $query recibe el insert desde el archivo ProcesarBarbero.php para insertar el usuario en la BD*/
     function insertarDatos($query)
     {
@@ -27,6 +23,18 @@ class RegistroBarbero
         $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
         $statement->execute(); /*Se ejecuta la sentencia sql*/
         $result = $statement->fetchColumn(); /*obtiene el conteo de usuarios en la tabla*/
+        return $result;
+    }
+    function obtenerBarberosPorNegocio($idNegocio) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
+    {
+        $query = "SELECT e.*, fp.fotoPerfil_Logo FROM empleado e 
+        INNER JOIN usuario u ON u.idUsuario = e.idUsuario 
+        INNER JOIN foto_perfil fp ON u.idUsuario = fp.idUsuario
+        WHERE e.idNegocio = '{$idNegocio}' and u.idPerfil = 2
+        ";
+        $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
+        $statement->execute(); /*Se ejecuta la sentencia sql*/
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC); /*obtiene el conteo de usuarios en la tabla*/
         return $result;
     }
 }

@@ -13,9 +13,13 @@
         <header>
             <?php include('../view/header.php'); ?>
         </header>
-
+        <?php
+        $idServicio = $_SESSION['idServicio'];
+        $idEmpleado = $_GET['idEmpleado'];
+        $duracion = $_SESSION['duracion'];
+        ?>
         <div>
-        <div id="sessionData" data-usuario="<?php echo $_SESSION['usuarioLogueado']['idEmpleado']; ?>"></div>
+            <div id="sessionData" data-usuario="<?php echo $_GET['idEmpleado']; ?>"></div>
             <div class="">12:00</div>
             <h1 class="titulo_MiAgenda">Mi Agenda Barbero</h1>
             <div class="contenedor-">
@@ -45,12 +49,16 @@
                     <div id="horas-disponibles">
                     </div>
                 </div>
+
                 <div class="recuadro-detalle-reserva ocultarDiv">
                     <h3>Detalle de la reserva</h3>
-                    <p class="detalle-reserva"></p>
-                    <button id="btn-finalizar-reserva">Finalizar</button>
-                    <button id="btn-cancelar-reserva">Cancelar</button>
-                    <button id="btn-cerrar-detalle">Cerrar</button>
+                    <div id ="servicio" id-servicio="<?= $idServicio ?>"></div>
+                    <div id ="empleado" id-empleado="<?= $idEmpleado ?>"></div>
+                    <div id ="duracion" duracion="<?= $duracion ?>"></div>
+                    <div id ="cliente" id-cliente="<?= $usuario['idCliente'] ?>"></div>
+                    <p class="detalle-reserva">Deseas Tomar el servicio?</p>
+                    <button id="btn-finalizar-reserva">Aceptar</button>
+                    <button id="btn-cerrar-detalle">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -58,7 +66,7 @@
             <?php include('../view/footer.html'); ?>
         </footer>
 
-        <script type="text/javascript" src="../js/agenda_Barbero.js"></script>
+        <script type="text/javascript" src="../js/agenda_reserva_cliente.js"></script>
 </body>
 
 </html>
