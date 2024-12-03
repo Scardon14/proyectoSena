@@ -44,7 +44,6 @@
     <thead class="p-3 mb-2 bg-danger">
       <tr class="p-3 mb-2 bg-danger">
           <th scope="col">idEmpleado</th>
-          <th scope="col">idNegocio</th>
           <th scope="col">NOMBRES</th>
           <th scope="col">APELLIDOS</th>
           <th scope="col">NUMERO CELULAR</th>
@@ -63,7 +62,6 @@
     
     <tr>   <!-- Fila de datos de la persona-->
       <td><?= $barbero['idEmpleado'];?></td>
-      <td><?= $barbero['idNegocio'];?></td>
       <td><?= $barbero['nombres'];?></td>
       <td><?= $barbero['apellidos'];?></td>
       <td><?= $barbero['numeroCelular'];?></td>
@@ -71,9 +69,18 @@
       <td><?= $barbero['fechaCreacion'];?></td>
       <td><?= $barbero['estado'];?></td>
       <td>
-         <a href="" class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>  <!--Boton editar-->
-         <a href="" class="btn btn-small btn-danger"><i class="bi bi-trash3-fill">Eliminar</i></a>   <!-- Boton eliminar-->
-      </td>
+      <a href="../model/actualizarBarbero.php?id=<?= $barbero['idEmpleado']; ?>"
+                                        class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>
+                                    <!--Boton editar-->
+                                    <form action="../model/eliminarBarbero.php" method="POST">
+                                        <div class="idEmpleado" hidden>
+                                            <input type="text" class="form-control" id="exampleInputname1" name="idEmpleado"
+                                                aria-describedby="nameHelp" value="<?= $barbero['idEmpleado'] ?>" hidden>
+                                        </div>
+                                        <button type="submit" class="btn btn-small btn-danger"><i
+                                                class="bi bi-trash3-fill">Eliminar</i></button> <!-- Boton eliminar-->
+                                    </form>
+        </td>
     </tr>
     <?php
     }
