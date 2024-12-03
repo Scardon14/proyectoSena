@@ -12,7 +12,9 @@
         <?php include('../view/header.php'); ?>
     </header>
     <section id="perfil">
-        <div id="fotoPerfil"></div>
+        <div id="fotoPerfil">
+            <img src="<?=$_SESSION['foto-perfil']['fotoPerfil_Logo'];?>" alt="foto perfil">
+        </div>
         <div class="nombreBarbero">
             <h2> <?= $usuario['nombres'];?> <?= $usuario['apellidos'];?></h2>
         </div>

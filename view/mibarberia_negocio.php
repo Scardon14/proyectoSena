@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Mi Barberia</title>
     <link rel="stylesheet" href="../css/mi_barberia_negocio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="../js/mibarberia_negocio.js"></script>
 </head>
+
 <Body>
     <header>
-        <?php include('../view/header.php'); ?>
+        <?php include('../view/header.php');
+            $servicios = $_SESSION['servicios'];
+        ?>
     </header>
     <section id="presenta"> <!--Seccion de img con titulo-->
         <h1 class="org">Style</h1>
-        <img src="../img/logo 2.png" id="logo2">
+        <div id="fotoPerfil">
+            <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto perfil">
+        </div>
     </section>
 
     <section id="organizacion"> <!--Seccion de fondo blanco, img y texto-->
@@ -56,34 +65,40 @@
                         <thead>
                             <tr>
                                 <th>Servicios</th>
+                                <th>Descripción</th>
+                                <th>Duración</th>
                                 <th>Precios</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                foreach ($servicios as $servicio){
+                            ?>
                             <tr>
-                                <td>Corte Tradicional</td>
-                                <td>$15.00</td>
+
+                                <td><?=$servicio['nombre']?></td>
+                                <td><?=$servicio['detalle']?></td>
+                                <td><?=$servicio['duracion']?> minutos</td>
+                                <td>$<?=$servicio['precio']?></td>
+                                <td>
+                                    <a href="../model/actualizarCliente.php?id=<?= $servicio['idServicio']; ?>"
+                                        class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>
+                                    <!--Boton editar-->
+                                    <form action="../model/eliminarCliente.php" method="POST">
+                                        <div class="idCliente" hidden>
+                                            <input type="text" class="form-control" id="exampleInputname1"
+                                                name="idCliente" aria-describedby="nameHelp"
+                                                value="<?= $servicio['idServicio'] ?>" hidden>
+                                        </div>
+                                        <button type="submit" class="btn btn-small btn-danger"><i
+                                                class="bi bi-trash3-fill">Eliminar</i></button> <!-- Boton eliminar-->
+                                    </form>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>Corte diseños sencillos</td>
-                                <td>$20.00</td>
-                            </tr>
-                            <tr>
-                                <td>Corte diseños complejos</td>
-                                <td>$30.000</td>
-                            </tr>
-                            <tr>
-                                <td>Corte Barba</td>
-                                <td>$20.000</td>
-                            </tr>
-                            <tr>
-                                <td>Tinte</td>
-                                <td>$40.000</td>
-                            </tr>
-                            <tr>
-                                <td>Cejas</td>
-                                <td>$15.000</td>
-                            </tr>
+                            <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>

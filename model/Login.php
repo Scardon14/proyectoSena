@@ -37,7 +37,7 @@ class Login
             return $this->ejecutarConsulta($query);
         }else{
             echo $this->esEmpleado($result['idPerfil']);
-            $query = "SELECT u.idPerfil, c.* FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
+            $query = "SELECT u.contraseña, u.idPerfil, c.* FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
             //$query = "SELECT * FROM cliente WHERE idUsuario = '{$result['idUsuario']}'";
             return $this->ejecutarConsulta($query);
         }

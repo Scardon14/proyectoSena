@@ -14,23 +14,13 @@
         <div class="portada-perfil" >
             <div class="sombra"></div>
             <div class="avatar-perfil">
-                <img src="../img/Chico5.png" alt="">
-                <a href="#" class="cambiar-foto">
-                    <i class="fas fa-camera"></i> 
-                    <span>Cambiar foto</span>
-                </a>
+                <img src="<?=$_SESSION['foto-perfil']['fotoPerfil_Logo'];?>" alt="foto perfil">
             </div>
             <div class="datos-perfil">
-                <h4 class="titulo-usuario">Matias Andres Guerrero</h4>
-                <p class="bio-usuario">Hola soy Matias tengo 22 años, soy una persona dedicada y perseverante. Desde pequeño, he sido 
-                    responsable y comprometido. Me registre en esta pagina porque me gusta tener siempre mi corte de pelo perfecto,
-                    Y gracias a O&T, cuido mi belleza.
-                </p>
+                <h4 class="titulo-usuario"><?=$usuario['nombres'];?> <?=$usuario['apellidos'];?></h4>
+                <p class="bio-usuario"> Correo: <?= $usuario['correoElectronico'];?></p>
+                <p class="bio-usuario">Celular: <?= $usuario['numeroCelular'];?></label></p>
 
-            </div>
-            <div class="opcciones-perfil">
-                <button type="">Cambiar portada</button>
-            </div>
         </div>
         <div class="menu-perfil">
             <ul>
