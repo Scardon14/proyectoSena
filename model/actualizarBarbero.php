@@ -1,31 +1,30 @@
 <?php
-require('clientes.php');
-/*require('ClienteModel');*/
-$obtener = new Clientes(); /*Acceder a las acciones de la clase*/
+require('barberos.php');
+$obtener = new Barberos(); /*Acceder a las acciones de la clase*/
 if($_SERVER["REQUEST_METHOD"] == "GET")      
 {
-    $idCliente = $_GET['id'];
+    $idEmpleado = $_GET['id'];
      /*Esta variable llama la tabla cliente*/
-    $cliente = $obtener->obtenerClientePorId($idCliente);
+    $barbero = $obtener->obtenerBarberoPorId($idEmpleado);
     session_start();
-    $_SESSION['clienteActual'] = $cliente;
-    header("Location: ../view/modificar_usuarios.php");
+    $_SESSION['barberoActual'] = $barbero;
+    header("Location: ../view/modificar_barberos.php");
 }
 if($_SERVER["REQUEST_METHOD"] == "POST")      
 {
-    $idCliente = $_POST['idCliente'];
+    $idEmpleado = $_POST['idEmpleado'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     //$cliente = new ClienteModel($idCliente,$nombre,$apellido,null,null,null,null);
     //$actualizarCliente = $obtener->actualziarCliente($cliente);
-    $actualizarCliente = $obtener->actualziarCliente($idCliente, $nombre, $apellido);
-    echo $actualizarCliente;
+    $actualizarBarbero = $obtener->actualziarBarbero($idEmpleado, $nombre, $apellido);
+    echo $actualizarBarbero;
      /*Esta variable llama la tabla cliente*/
     /*$obtener = new Clientes(); /*Acceder a las acciones de la clase*/
     /*$cliente = $obtener->obtenerClientePorId($idCliente);
     session_start();
     $_SESSION['clienteActual'] = $cliente;
     header("Location: ../view/modificar_usuarios.php");*/
-    header("Location: ./listadoClientes.php?mensaje={$actualizarCliente}");
+    header("Location: ./listadoBarbero.php?mensaje={$actualizarBarbero}");
 }
 ?>
