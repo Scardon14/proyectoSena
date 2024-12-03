@@ -3,17 +3,16 @@
 
 <head>
     <title>Mi Barberia</title>
-    <link rel="stylesheet" href="../css/mi_barberia_negocio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="../js/mibarberia_negocio.js"></script>
+    <link rel="stylesheet" href="../css/mi_barberia_negocio.css">
 </head>
 
 <Body>
     <header>
         <?php include('../view/header.php');
-            $servicios = $_SESSION['servicios'];
+        $servicios = $_SESSION['servicios'];
         ?>
     </header>
     <section id="presenta"> <!--Seccion de img con titulo-->
@@ -72,32 +71,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                                foreach ($servicios as $servicio){
-                            ?>
-                            <tr>
+                            <div id="usuario" usuario="<?=$usuario['idUsuario'];?>" hidden></div>
+                            <div id="perfil" perfil="<?=$usuario['idPerfil'];?>" hidden></div>
+                            <div id="negocio" negocio="<?=$usuario['idNegocio'];?>" hidden></div>
 
-                                <td><?=$servicio['nombre']?></td>
-                                <td><?=$servicio['detalle']?></td>
-                                <td><?=$servicio['duracion']?> minutos</td>
-                                <td>$<?=$servicio['precio']?></td>
-                                <td>
-                                    <a href="../model/actualizarCliente.php?id=<?= $servicio['idServicio']; ?>"
-                                        class="btn btn-small btn-success"><i class="bi bi-pencil-square">Editar</i></a>
-                                    <!--Boton editar-->
-                                    <form action="../model/eliminarCliente.php" method="POST">
-                                        <div class="idCliente" hidden>
-                                            <input type="text" class="form-control" id="exampleInputname1"
-                                                name="idCliente" aria-describedby="nameHelp"
-                                                value="<?= $servicio['idServicio'] ?>" hidden>
-                                        </div>
-                                        <button type="submit" class="btn btn-small btn-danger"><i
-                                                class="bi bi-trash3-fill">Eliminar</i></button> <!-- Boton eliminar-->
-                                    </form>
-                                </td>
-                            </tr>
                             <?php
-                                }
+                            foreach ($servicios as $servicio) {
+                                ?>
+                                <tr id="servicio-<?=$servicio['idServicio']?>">
+                                    <td id = "servicio" servicio="<?= $servicio['idServicio'] ?>"> <?= $servicio['nombre'] ?></td>
+                                    <td id = "detalle" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['detalle'] ?></td>
+                                    <td id = "duracion" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['duracion'] ?> minutos</td>
+                                    <td id = "precio" servicio="<?= $servicio['idServicio'] ?>" ><?= $servicio['precio'] ?></td>
+                                    <td id = "accion" servicio="<?= $servicio['idServicio'] ?>" >
+                                        <button servicio="<?= $servicio['idServicio'] ?>" class="btn btn-small btn-success" type="submit"><i class="bi bi-pencil-square">Editar</i></button>
+                                        <!--Boton editar-->
+                                            <div class="idCliente" hidden>
+                                                <input type="text" class="form-control" id="exampleInputname1"
+                                                    name="idCliente" aria-describedby="nameHelp"
+                                                    value="<?= $servicio['idServicio'] ?>" hidden>
+                                            </div>
+                                            <button servicio="<?= $servicio['idServicio'] ?>" type="submit" class="btn btn-small btn-danger"><i
+                                                    class="bi bi-trash3-fill"></i></button> <!-- Boton eliminar-->
+                                    </td>
+                                </tr>
+                                <?php
+                            }
                             ?>
                         </tbody>
                     </table>
@@ -128,7 +127,8 @@
                 <img src="../img/barberia 6.png" alt="">
             </div>
         </div>
-        <script src="script.js"></script>
+        <script src="../js/servicios.js"></script>
+
         <footer>
             <?php include('../view/footer.html'); ?>
         </footer>

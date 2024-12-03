@@ -229,9 +229,8 @@ nav ul li{
                             }
 
                     
-    button{
-        width: 45%;
-        margin: 4%;
+    .btn{
+        width: 100%;
     }
     .contenedorContraseña {
         display: inline-flex;

@@ -24,27 +24,9 @@
 <body>
     <div class="main">
         <!--Header-->
-        <header>
-            <div class="contenedor-encabezado"> <!--Encabezado Azul-->
-                <div class="logo">
-                    <img src="../img/logo.png" alt="logo">
-                </div>
-                <div class="nombre">
-                    <h1> O & T </h1>
-                </div>
-            </div>
-            <div class="contenedor_menu"> <!--Encabezado rojo-->
-                <div class="menu">
-                    <nav>
-                        <ul>
-                            <li><a href="../view/index_usuario.php">Inicio</a></li>
-                            <li><a href="../view/localesUsuario.php">Locales</a></li>
-                            <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+    <header>
+        <?php include('../view/header.php'); ?>
+    </header>
 
         <div>
 
@@ -64,7 +46,6 @@
                         </thead>
                         <tbody>
                             <?php
-                            session_start();
                             $reservas = $_SESSION['reservas_cliente'];
                             $estado = null;
                             $usuario = $_SESSION["usuarioLogueado"];
