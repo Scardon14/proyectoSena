@@ -25,4 +25,23 @@ class Servicio
         $result = $statement->fetchAll(PDO::FETCH_ASSOC); /*obtiene el conteo de usuarios en la tabla*/
         return $result;
     }
+    function actualizarServicio($idServicio,$servicio, $descripcion, $duracion, $precio){
+        $query = "UPDATE servicio set nombre='{$servicio}', detalle = '{$descripcion}',duracion='{$duracion}',precio='{$precio}' where idServicio = '{$idServicio}' ";
+        $statement = $this->conexionBD->prepare($query);
+        if($statement->execute()){
+            return ["success" => true, "message" => "Servicio actualizada correctamente"];
+        }
+        return ["success" => false, "message" => "No se ha podido actualizar el servicio"];
+
+    }
+    
+    function eliminarServicio($idServicio){
+        $query = "DELETE FROM servicio WHERE idServicio = '{$idServicio}'";
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        if($statement->rowCount() > 0){            
+            return ["success" => true, "message" => "Servicio eliminado correctamente"];
+        }
+        return ["success" => false, "message" => "No se ha podido eliminar el servicio"];
+    }
 }
