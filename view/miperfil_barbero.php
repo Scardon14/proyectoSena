@@ -30,26 +30,28 @@
             <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
 
             <div class="galeria">
-                <h3>Galeria de Fotos</h3><br>
-                <?php
-                $fotosTrabajo = $_SESSION['fotos-trabajo'];
-                foreach ($fotosTrabajo as $foto) { ?>
-                    <div class="foto">
-                        <img src="<?= $foto['foto1'] ?>" alt="Foto 1">
-                    </div>
-                    <div class="foto">
-                        <img src="<?= $foto['foto2'] ?>" alt="Foto 2">
-                    </div>
-                    <div class="foto">
-                        <img src="<?= $foto['foto3'] ?>" alt="Foto 3">
-                    </div>
-                    <div class="foto">
-                        <img src="<?= $foto['foto4'] ?>" alt="Foto 4">
-                    </div>
-                    <div class="foto">
-                        <img src="<?= $foto['foto5'] ?>" alt="Foto 5">
-                    </div>
-                <?php } ?>
+                <h3>Galería de Fotos</h3><br>
+                <div class="fotos-contenedor"> <!-- Contenedor para todas las fotos -->
+                    <?php
+                    $fotosTrabajo = $_SESSION['fotos-trabajo'];
+                    foreach ($fotosTrabajo as $foto) { ?>
+                        <div class="foto">
+                            <img src="<?= $foto['foto1'] ?>" alt="Foto 1">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto2'] ?>" alt="Foto 2">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto3'] ?>" alt="Foto 3">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto4'] ?>" alt="Foto 4">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto5'] ?>" alt="Foto 5">
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
             <script>
                 function guardarCambios() {

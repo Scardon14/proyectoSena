@@ -16,10 +16,22 @@
         ?>
     </header>
     <section id="presenta"> <!--Seccion de img con titulo-->
-        <h1 class="org">Style</h1>
         <div id="fotoPerfil">
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto perfil">
         </div>
+        <div class="nombreEstablecimiento">
+            <h1> <?= $usuario['nombreEstablecimiento']; ?> </h1>
+        </div>
+
+        <div class="infoPerfil">
+            <label id="informacion">Información</label><br>
+            <label>
+                Correo:
+                <?= $usuario['correoElectronico']; ?>
+            </label><br>
+            <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
+            <label>Contraseña:</label>
+            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
     </section>
 
     <section id="organizacion"> <!--Seccion de fondo blanco, img y texto-->
@@ -90,34 +102,36 @@
     </section>
 
     <!--Gleria de establecimiento-->
-     <div class="galeria">
-        <h3>Galeria de Fotos</h3><br>
-        <?php
-        $fotosTrabajo = $_SESSION['fotos-trabajo'];
-        foreach ($fotosTrabajo as $foto) { ?>
-            <div class="foto">
-                <img src="<?= $foto['foto1'] ?>" alt="Foto 1">
-            </div>
-            <div class="foto">
-                <img src="<?= $foto['foto2'] ?>" alt="Foto 2">
-            </div>
-            <div class="foto">
-                <img src="<?= $foto['foto3'] ?>" alt="Foto 3">
-            </div>
-            <div class="foto">
-                <img src="<?= $foto['foto4'] ?>" alt="Foto 4">
-            </div>
-            <div class="foto">
-                <img src="<?= $foto['foto5'] ?>" alt="Foto 5">
-            </div>
-        <?php } ?>
+    <div class="galeria">
+        <h3>Galería de Fotos</h3><br>
+        <div class="fotos-contenedor"> <!-- Contenedor para todas las fotos -->
+            <?php
+            $fotosTrabajo = $_SESSION['fotos-trabajo'];
+            foreach ($fotosTrabajo as $foto) { ?>
+                <div class="foto">
+                    <img src="<?= $foto['foto1'] ?>" alt="Foto 1">
+                </div>
+                <div class="foto">
+                    <img src="<?= $foto['foto2'] ?>" alt="Foto 2">
+                </div>
+                <div class="foto">
+                    <img src="<?= $foto['foto3'] ?>" alt="Foto 3">
+                </div>
+                <div class="foto">
+                    <img src="<?= $foto['foto4'] ?>" alt="Foto 4">
+                </div>
+                <div class="foto">
+                    <img src="<?= $foto['foto5'] ?>" alt="Foto 5">
+                </div>
+            <?php } ?>
         </div>
-        <script src="../js/servicios.js"></script>
+    </div>
+    <script src="../js/servicios.js"></script>
 
-        <footer>
-            <?php include('../view/footer.html'); ?>
-        </footer>
-        </div>
+    <footer>
+        <?php include('../view/footer.html'); ?>
+    </footer>
+    </div>
 </Body>
 
 </html>
