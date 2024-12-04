@@ -107,25 +107,26 @@
         <!--Gleria de establecimiento-->
         <h1 style="text-align: center;">Galeria de fotos </h1>
         <div class="container">
-
+        <?php
+        $fotosTrabajo = $_SESSION['fotos-trabajo'];
+        foreach( $fotosTrabajo as $foto) {?>
             <div class="box">
-                <img src="../img/barberia 1.png" alt="">
+                <img src="<?= $foto['foto1']?>" alt="">
             </div>
             <div class="box">
-                <img src="../img/barberia 2.png" alt="">
+                <img src="<?= $foto['foto2']?>" alt="">
             </div>
             <div class="box">
-                <img src="../img/barberia 3.png" alt="">
+                <img src="<?= $foto['foto3']?>" alt="">
             </div>
             <div class="box">
-                <img src="../img/barberia 4.png" alt="">
+                <img src="<?= $foto['foto4']?>" alt="">
             </div>
             <div class="box">
-                <img src="../img/barberia 5.png" alt="">
+                <img src="<?= $foto['foto5']?>" alt="">
             </div>
-            <div class="box">
-                <img src="../img/barberia 6.png" alt="">
-            </div>
+            <?php
+        }?>
         </div>
         <script src="../js/servicios.js"></script>
 

@@ -12,6 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
     $contraseña = $_POST['contraseña1']; /*Se capturan los valores que tienen los inputs del html*/
     $confirmarContraseña = $_POST['contraseña2']; /*Se capturan los valores que tienen los inputs del html*/
     $fotoPerfil = $_FILES['fotoPerfil'];
+    $foto1 = $_FILES['fotoTrabajo1'];
+    $foto2 = $_FILES['fotoTrabajo2'];
+    $foto3 = $_FILES['fotoTrabajo3'];
+    $foto4 = $_FILES['fotoTrabajo4'];
+    $foto5 = $_FILES['fotoTrabajo5'];
     $insertarFoto = new ProcesarFotos();
     $barbero = new RegistroBarbero(); /*Se crea objeto de RegistroBarbero y se podra acceder a los metodos de insersion*/
 
@@ -29,6 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
                                         el rol Barbero*/
         $insertarBarbero = $barbero->insertarDatos($query); /*Se invoca el metodo de crear barbero de la clase RegistroBarbero*/
         $a = $insertarFoto->guardarFotoPerfil($fotoPerfil, $obetenerUsuario);
+        $insertarFoto->guardarFotosTrabajo( $foto1, $foto2, 
+        $foto3, $foto4, $foto5, $obetenerUsuario);
       
         $mensaje = 'Registro Exitoso. ' . $obetenerUsuario; /*Se le asigna valor de exitoso, si el mismo lo fue*/
     } catch (PDOException $e) {

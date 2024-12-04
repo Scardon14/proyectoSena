@@ -13,8 +13,8 @@
 
 <body>
     <?php
-        session_start();
-        $negocios = $_SESSION['negocios'];
+    session_start();
+    $negocios = $_SESSION['negocios'];
     ?>
     <div class="main">
         <header>
@@ -147,12 +147,13 @@
                             <select name="id-negocio" name="id-negocio" class="formulario_grupo seeccionar-negocio">
                                 <option value=""> ----------Seleccionar Barberia---------- </option>
                                 <?php
-                                    foreach ($negocios as $negocio) {
-                                ?>
-                                    <option value="<?=$negocio['idNegocio']?>"><?=$negocio['nombreEstablecimiento']?></option>
-                                <?php
-                                    }
-                                    //session_abort();
+                                foreach ($negocios as $negocio) {
+                                    ?>
+                                    <option value="<?= $negocio['idNegocio'] ?>"><?= $negocio['nombreEstablecimiento'] ?>
+                                    </option>
+                                    <?php
+                                }
+                                //session_abort();
                                 ?>
                             </select>
                         </div>
@@ -208,11 +209,20 @@
                             <p class="formulario_input-error">Correo incorrecto.</p>
                         </div>
                         <!-- FOTO DE PERFIL -->
-                        <label> Foto de perfil </label>
-                        <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" required>
-                        <label> Fotografías <small>(5 min. De los servicios que haz
-                                prestado como Barbero)</small></label>
-                        <input type="file" name="fotos" accept="image/*" required>
+                        <div class="fotoPerfil">
+                            <label> Foto de perfil </label>
+                            <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" required>
+                        </div>
+                        <!-- FOTOS DEL TRABAJO  -->
+                        <div class="fotosTrabajo">
+                            <label> Inserte 5 fotografías de su trabajo como Barbero. </label>
+                            <input type="file" id="fotoTrabajo1" name="fotoTrabajo1" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo2" name="fotoTrabajo2" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo3" name="fotoTrabajo3" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo4" name="fotoTrabajo4" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo5" name="fotoTrabajo5" accept="image/*" required>
+                        </div>
+
                         <!-- CONTRASEÑA1 -->
                         <div class="formulario_grupo" id="grupo_contraseña">
                             <label for="contraseña1" class="formulario_label">Contraseña.</label>
@@ -261,10 +271,10 @@
                 </div>
 
                 <!-- FORMULARIO REGISTRO NEGOCIO -->
-                <!-- NOMBRE -->
                 <div class="formulario-registro ocultarDiv" id="registroNegocio">
                     <h2>Registro Negocio</h2>
                     <form action="../model/ProcesarNegocio.php" method="post" enctype="multipart/form-data">
+                        <!-- NOMBRE -->
 
                         <div class="formulario_grupo" id="grupo_nombre">
                             <label for="nombre" class="formulario_label">Nombre del Establecimiento</label>
@@ -329,12 +339,19 @@
                         </div>
 
                         <!-- FOTO DE PERFIL -->
-
-                        <label> Foto de perfil o logo del establecimiento </label>
-                        <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" required>
-                        <label> Fotografías del Establecimiento<small>(5 min. De los servicios que haz
-                                prestado como Barbero)</small></label>
-                        <input type="file" name="fotos" accept="image/*" required>
+                        <div class="fotoPerfil">
+                            <label> Foto de perfil </label>
+                            <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*" required>
+                        </div>
+                      <!-- FOTOS DEL TRABAJO  -->
+                      <div class="fotosTrabajo">
+                            <label> Inserte 5 fotografías de su trabajo como Barbero. </label>
+                            <input type="file" id="fotoTrabajo1" name="fotoTrabajo1" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo2" name="fotoTrabajo2" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo3" name="fotoTrabajo3" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo4" name="fotoTrabajo4" accept="image/*" required>
+                            <input type="file" id="fotoTrabajo5" name="fotoTrabajo5" accept="image/*" required>
+                        </div>
 
                         <!-- CONTRASEÑA1 -->
                         <div class="formulario_grupo" id="grupo_contraseña">

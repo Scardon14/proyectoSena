@@ -28,7 +28,29 @@
             <label>Celular: <?= $usuario['numeroCelular'];?></label><br>
             <label>Contraseña:</label>
             <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña'];?>"><br>
+           <div>
             <label>Galeria</label><br>
+            <?php
+        $fotosTrabajo = $_SESSION['fotos-trabajo'];
+        foreach( $fotosTrabajo as $foto) {?>
+            <div class="box">
+                <img src="<?= $foto['foto1']?>" alt="">
+            </div>
+            <div class="box">
+                <img src="<?= $foto['foto2']?>" alt="">
+            </div>
+            <div class="box">
+                <img src="<?= $foto['foto3']?>" alt="">
+            </div>
+            <div class="box">
+                <img src="<?= $foto['foto4']?>" alt="">
+            </div>
+            <div class="box">
+                <img src="<?= $foto['foto5']?>" alt="">
+            </div>
+            <?php
+        }?>
+        </div>
         </div>
         <script>
             function guardarCambios() {
