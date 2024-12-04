@@ -348,6 +348,7 @@ nav ul li{
    }
  /*construccion de boton  editar nombre de perfil*/
 .button-container {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -401,4 +402,7 @@ width: 30rem;
 
 #fotoPerfil img{
 width: 100%;
+}
+.ocultarDiv{
+    display: none;
 }
