@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
         $insertarBarbero = $barbero->insertarDatos($query); /*Se invoca el metodo de crear barbero de la clase RegistroBarbero*/
         $a = $insertarFoto->guardarFotoPerfil($fotoPerfil, $obetenerUsuario);
         $insertarFoto->guardarFotosTrabajo( $foto1, $foto2, 
-        $foto3, $foto4, $foto5, $obetenerUsuario);
+        $foto3, $foto4, $foto5, $obetenerUsuario);  
       
         $mensaje = 'Registro Exitoso. ' . $obetenerUsuario; /*Se le asigna valor de exitoso, si el mismo lo fue*/
     } catch (PDOException $e) {
