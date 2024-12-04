@@ -35,12 +35,6 @@
     </section>
 
     <section id="organizacion"> <!--Seccion de fondo blanco, img y texto-->
-        <!--Boton de perfil-->
-        <div class="button-container">
-            <span class="button-text" id="buttonText" class="centered-button">STYLE</span>
-            <span class="icon" id="editIcon">&#9998;</span> <!-- Icono de lápiz -->
-        </div>
-
         <!-- Formulario que aparece al hacer clic en el lápiz -->
         <div id="editForm" class="hidden">
             <input type="text" id="textInput" value="STYLE">
@@ -48,6 +42,9 @@
         </div>
         <script src="../js/negocio.js"></script>
     </section>
+    <!--informacion del perfil-->
+
+
 
     <!--Tabla de precio de servicios-->
     <section id="vision">
@@ -55,6 +52,37 @@
             <div class="casil"></div>
             <div class="tex">
                 <h1> Precios de servicios </h1>
+                <!--Boton de perfil-->
+                <div class="button-container button-crear-servicio">
+                    <span class="button-text" id="buttonText" class="centered-button">Crear Servicio</span>
+                    <span class="icon" id="editIcon">&#9998;</span> <!-- Icono de lápiz -->
+                </div>
+                <div class="formulario-servicio ocultarDiv">
+                    <form action="../model/ProcesarServicio.php" method="POST">
+                        <div>
+                            <label for="input-servicio">Servicio</label>
+                            <input id="input-servicio" type="text" name="input-servicio">
+                        </div>
+                        <div>
+                            <label for="input-detalle">Descripción</label>
+                            <input id="input-detalle" type="text" name="input-detalle">
+                        </div>
+                        <div>
+                            <label for="input-duracion">Duraciíon</label>
+                            <input id="input-duracion" type="text" name="input-duracion">
+                        </div>
+                        <div>
+                            <label for="input-precio">Precio</label>
+                            <input id="input-precio" type="text" name="input-precio">
+                        </div>
+                        <div>
+                            <button id="btn-cancelar" class="btn btn-small btn-danger btn-cancelar">
+                                <i class="bi bi-x-circle-fill">Cancelar</i> </button>
+
+                            </button> <button type="submit" class="btn btn-small btn-success">Crear</button>
+                        </div>
+                </div>
+
                 <table class="style-table">
                     <thead>
                         <tr>
@@ -65,7 +93,7 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="body-servicios">
                         <div id="usuario" usuario="<?= $usuario['idUsuario']; ?>" hidden></div>
                         <div id="perfil" perfil="<?= $usuario['idPerfil']; ?>" hidden></div>
                         <div id="negocio" negocio="<?= $usuario['idNegocio']; ?>" hidden></div>
@@ -74,21 +102,26 @@
                         foreach ($servicios as $servicio) {
                             ?>
                             <tr id="servicio-<?= $servicio['idServicio'] ?>">
-                                <td id="servicio" servicio="<?= $servicio['idServicio'] ?>"> <?= $servicio['nombre'] ?></td>
-                                <td id="detalle" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['detalle'] ?></td>
+                                <td id="servicio" servicio="<?= $servicio['idServicio'] ?>"> <?= $servicio['nombre'] ?>
+                                </td>
+                                <td id="detalle" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['detalle'] ?>
+                                </td>
                                 <td id="duracion" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['duracion'] ?>
                                     minutos</td>
-                                <td id="precio" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['precio'] ?></td>
+                                <td id="precio" servicio="<?= $servicio['idServicio'] ?>"><?= $servicio['precio'] ?>
+                                </td>
                                 <td id="accion" servicio="<?= $servicio['idServicio'] ?>">
-                                    <button servicio="<?= $servicio['idServicio'] ?>" class="btn btn-small btn-success"
-                                        type="submit"><i class="bi bi-pencil-square">Editar</i></button>
+                                    <button servicio="<?= $servicio['idServicio'] ?>"
+                                        class="btn btn-small btn-success btn-editar"><i
+                                            class="bi bi-pencil-square">Editar</i></button>
                                     <!--Boton editar-->
                                     <div class="idCliente" hidden>
                                         <input type="text" class="form-control" id="exampleInputname1" name="idCliente"
                                             aria-describedby="nameHelp" value="<?= $servicio['idServicio'] ?>" hidden>
                                     </div>
-                                    <button servicio="<?= $servicio['idServicio'] ?>" type="submit"
-                                        class="btn btn-small btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                    <button servicio="<?= $servicio['idServicio'] ?>"
+                                        class="btn btn-small btn-danger btn-eliminar"><i
+                                            class="bi bi-trash3-fill"></i></button>
                                     <!-- Boton eliminar-->
                                 </td>
                             </tr>

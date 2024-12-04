@@ -372,6 +372,7 @@ nav>ul>li>a:hover {
 
 /*construccion de boton  editar nombre de perfil*/
 .button-container {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -428,6 +429,9 @@ nav>ul>li>a:hover {
 
 }
 
+.ocultarDiv{
+    display: none;
+}
 #fotoPerfil img {
     width: 100%;
 }

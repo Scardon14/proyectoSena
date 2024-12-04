@@ -30,7 +30,11 @@ class Servicio
         return ["success" => false, "message" => "No se ha podido actualizar el servicio"];
 
     }
-    
+    function crearServicio($servicio,$detalle,$duracion,$precio,$idNegocio){
+        $query = "INSERT INTO servicio(nombre, detalle, precio, estado, duracion, idNegocio) values ('{$servicio}','{$detalle}','{$precio}','1','{$duracion}','{$idNegocio}')";
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+    }
     function eliminarServicio($idServicio){
         $query = "DELETE FROM servicio WHERE idServicio = '{$idServicio}'";
         $statement = $this->conexionBD->prepare($query);
