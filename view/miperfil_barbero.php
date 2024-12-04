@@ -13,60 +13,61 @@
     </header>
     <section id="perfil">
         <div id="fotoPerfil">
-            <img src="<?=$_SESSION['foto-perfil']['fotoPerfil_Logo'];?>" alt="foto perfil">
+            <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto perfil">
         </div>
         <div class="nombreBarbero">
-            <h2> <?= $usuario['nombres'];?> <?= $usuario['apellidos'];?></h2>
+            <h2> <?= $usuario['nombres']; ?> <?= $usuario['apellidos']; ?></h2>
         </div>
 
         <div class="infoPerfil">
             <label id="informacion">Información</label><br>
             <label>
-                Correo: 
-                <?= $usuario['correoElectronico'];?>
+                Correo:
+                <?= $usuario['correoElectronico']; ?>
             </label><br>
-            <label>Celular: <?= $usuario['numeroCelular'];?></label><br>
+            <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
             <label>Contraseña:</label>
-            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña'];?>"><br>
-           <div>
-            <label>Galeria</label><br>
-            <?php
-        $fotosTrabajo = $_SESSION['fotos-trabajo'];
-        foreach( $fotosTrabajo as $foto) {?>
-            <div class="box">
-                <img src="<?= $foto['foto1']?>" alt="">
-            </div>
-            <div class="box">
-                <img src="<?= $foto['foto2']?>" alt="">
-            </div>
-            <div class="box">
-                <img src="<?= $foto['foto3']?>" alt="">
-            </div>
-            <div class="box">
-                <img src="<?= $foto['foto4']?>" alt="">
-            </div>
-            <div class="box">
-                <img src="<?= $foto['foto5']?>" alt="">
-            </div>
-            <?php
-        }?>
-        </div>
-        </div>
-        <script>
-            function guardarCambios() {
-                const nuevaPassword = document.getElementById('contraseñaPerfil').value;
-                const nuevoPrecio = document.getElementById('precio').value;
+            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
 
-                // Aquí puedes hacer una llamada a tu backend (PHP, Node.js, etc.) para actualizar los valores en la base de datos.
-                console.log("Nueva contraseña: " + nuevaPassword);
-                console.log("Nuevo precio: " + nuevoPrecio);
+            <div class="galeria">
+                <h3>Galería de Fotos</h3><br>
+                <div class="fotos-contenedor"> <!-- Contenedor para todas las fotos -->
+                    <?php
+                    $fotosTrabajo = $_SESSION['fotos-trabajo'];
+                    foreach ($fotosTrabajo as $foto) { ?>
+                        <div class="foto">
+                            <img src="<?= $foto['foto1'] ?>" alt="Foto 1">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto2'] ?>" alt="Foto 2">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto3'] ?>" alt="Foto 3">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto4'] ?>" alt="Foto 4">
+                        </div>
+                        <div class="foto">
+                            <img src="<?= $foto['foto5'] ?>" alt="Foto 5">
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <script>
+                function guardarCambios() {
+                    const nuevaPassword = document.getElementById('contraseñaPerfil').value;
+                    const nuevoPrecio = document.getElementById('precio').value;
 
-                alert('Los cambios han sido guardados.');
-            }
-        </script>
+                    // Aquí puedes hacer una llamada a tu backend (PHP, Node.js, etc.) para actualizar los valores en la base de datos.
+                    console.log("Nueva contraseña: " + nuevaPassword);
+                    console.log("Nuevo precio: " + nuevoPrecio);
 
-        <!-- Botón para guardar cambios -->
-        <button onclick="guardarCambios()">Guardar Cambios</button>
+                    alert('Los cambios han sido guardados.');
+                }
+            </script>
+
+            <!-- Botón para guardar cambios -->
+            <button onclick="guardarCambios()">Guardar Cambios</button>
     </section>
     <footer>
         <?php include('../view/footer.html'); ?>

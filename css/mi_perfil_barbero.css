@@ -1,26 +1,29 @@
-#perfil{
+#perfil {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-    #fotoPerfil {
-        margin-top: 2rem;
+
+#fotoPerfil {
+    margin-top: 2rem;
     border-radius: 50%;
     background-size: cover;
     height: 150px;
     width: 150px;
-       
+
 }
 
-#fotoPerfil img{
+#fotoPerfil img {
     width: 100%;
     border-radius: 50%;
 }
+
 .nombreBarbero {
     margin-top: 20px;
-    font-size: 24px; /* Tamaño del texto del nombre */
+    font-size: 24px;
+    /* Tamaño del texto del nombre */
     color: #222222;
 }
 
@@ -29,18 +32,45 @@
     font-size: 1rem;
     color: #555;
 }
-#informacion{
+
+#informacion {
     text-align: center;
     margin-left: 6rem;
     color: hsl(0, 0%, 2%);
-    font-weight:bold;
+    font-weight: bold;
 }
 
 
-
-    
-
-
-
-
-
+.galeria {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
+  }
+  
+  .galeria h3 {
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  /*.fotos-contenedor {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 1rem; 
+  }*/
+  .fotos-contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espacio entre las fotos */
+    max-width: 100%; /* Asegúrate de que el contenedor no se desborde */
+  }
+  
+  .foto img {
+    width: 20rem; 
+    height: 20rem;
+    object-fit: cover; 
+    border-radius: 5px;  
+  }
