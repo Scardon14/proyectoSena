@@ -12,10 +12,6 @@ class Servicio
         $this->conexionBD = $this->conexionBD->conectarBD(); /*Invoca la funcion de conectar la BD*/
     }
 
-    /* function obtenerConexion()
-     {
-         return $this->conexionBD;
-     }*/
     /*Metodo de insetar datos, $query recibe el insert desde el archivo ProcesarBarbero.php para insertar el usuario en la BD*/
     function obtenerServicios($idNegocio) /* funcion que devuelte el total del valor de usuarios registrados como barbero*/
     {
