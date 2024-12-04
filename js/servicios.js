@@ -1,4 +1,4 @@
-let btn_editar = document.querySelectorAll(".btn-success");
+let btn_editar = document.querySelectorAll(".btn-editar");
 let servicio = document.querySelectorAll("#servicio");
 let detalle = document.querySelectorAll("#detalle");
 let duracion = document.querySelectorAll("#duracion");
