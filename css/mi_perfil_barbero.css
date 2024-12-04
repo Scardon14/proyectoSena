@@ -6,12 +6,17 @@
     align-items: center;
 }
     #fotoPerfil {
-    background-image: url(../img/Chico.png);
-    border-radius: 40%;
+        margin-top: 2rem;
+    border-radius: 50%;
     background-size: cover;
     height: 150px;
     width: 150px;
        
+}
+
+#fotoPerfil img{
+    width: 100%;
+    border-radius: 50%;
 }
 .nombreBarbero {
     margin-top: 20px;

@@ -1,6 +1,6 @@
 <?php
 require('clientes.php');
-require('ClienteModel.php');
+/*require('ClienteModel');*/
 $obtener = new Clientes(); /*Acceder a las acciones de la clase*/
 if($_SERVER["REQUEST_METHOD"] == "GET")      
 {

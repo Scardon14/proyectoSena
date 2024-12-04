@@ -1,6 +1,6 @@
 <?php
 /*Tiene las consultas que ejecutará la BD, llama la conexion para insertar los datos en la BD*/
-require("conexionBD.php"); /* Importa la coenxion de la BD */
+include_once "conexionBD.php"; /* Importa la coenxion de la BD */
 class ReservaCliente
 {
 
@@ -47,5 +47,22 @@ class ReservaCliente
             }
         }
         return ["success" => false, "message" => "No se pudo actualizar la reserva"];
+    }
+    function crearReserva($idEmpleado, $idCliente, $fechaReserva, $fechaFinReserva, $idServicio){
+        $query = "INSERT INTO reserva (idEmpleado, idCliente, estado, fechaReserva, fechaFinalizacion, idServicio) values ('{$idEmpleado}','{$idCliente}','2','{$fechaReserva}','{$fechaFinReserva}','{$idServicio}')";
+        $statement = $this->conexionBD->prepare($query);
+        if($statement->execute()){
+            return ["success" => true, "message" => "Reserva creada correctamente"];
+        }
+        return ["success" => false, "message" => "No se pudo crear la reserva"];
+    }
+    function eliminarReserva($idReserva){
+        $query = "DELETE FROM reserva WHERE idReserva = '{$idReserva}'";
+        $statement = $this->conexionBD->prepare($query);
+        $statement->execute();
+        if($statement->rowCount() > 0){            
+            return "Reserva Cancelada Exitosamente";
+        }
+        return "No se ha podido cancelar la reserva";
     }
 }

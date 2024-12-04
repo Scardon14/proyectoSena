@@ -36,7 +36,7 @@
                         if ($usuario['idPerfil']=== '3' || $usuario['idPerfil']=== 3){?>
                             <li><a href="../view/index_usuario.php">Inicio</a></li>
                          <li><a href="../view/LocalesUsuario.php">Locales</a></li>
-                         <li><a href="../view/miPerfil_usuario.php">Mi perfil</a></li>
+                         <li><a href="../model/ProcesarFotoPerfil.php?idPerfil=<?=$usuario['idPerfil'];?>&idUsuario=<?=$usuario['idUsuario'];?>">Mi perfil</a></li>
                          <li><a href="../view/historial_citas_usuario.php">Historial</a></li>
                          <li><a href="../model/ProcesarReservaCliente.php?idCliente=<?= $usuario['idCliente'];?>">Reservas</a></li>
                          <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
@@ -44,14 +44,14 @@
                         }else if($usuario['idPerfil']=== '2' || $usuario['idPerfil'] === 2){?>
                             <li><a href="../view/index_barbero.php">Inicio</a></li>
                             <li><a href="./agenda_barbero.php">Mi Agenda</a></li>
-                            <li><a href="../view/miPerfil_barbero.php">Mi perfil</a></li>
+                            <li><a href="../model/ProcesarFotoPerfil.php?idPerfil=<?=$usuario['idPerfil'];?>&idUsuario=<?=$usuario['idUsuario'];?>">Mi perfil</a></li>
                             <li><a href="../view/historial_citas.php">Historial Citas</a></li>
                             <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
                             <?php
                         }else if($usuario['idPerfil'] === '1'|| $usuario['idPerfil'] === 1){?>
                             <li><a href="../view/index_negocio.php">Inicio</a></li>
-                            <li><a href="../view/miBarberia_negocio.php">Mi barberia</a></li>
-                            <li><a href="../view/miPersonal_Negocio.php">Mi personal</a></li>
+                            <li><a href="../model/ProcesarFotoPerfil.php?idPerfil=<?=$usuario['idPerfil'];?>&idUsuario=<?=$usuario['idUsuario'];?>&idNegocio=<?=$usuario['idNegocio'];?>">Mi barberia</a></li>
+                            <li><a href="../model/ProcesarReservaBarbero.php?idNegocio=<?= $usuario['idNegocio'];?>&idCliente=<?= $usuario['idEmpleado'];?>">Mi personal</a></li>
                             <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
                         <?php
                         }                        

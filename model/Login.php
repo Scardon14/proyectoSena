@@ -32,12 +32,12 @@ class Login
         // Obtener el resultado como un arreglo asociativo
         $result = $statement->fetch();
         if($this->esEmpleado($result['idPerfil'])){
-            $query = "SELECT u.idPerfil, e.* FROM usuario u INNER JOIN empleado e ON u.idUsuario = e.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
+            $query = "SELECT u.contraseña ,u.idPerfil, e.* FROM usuario u INNER JOIN empleado e ON u.idUsuario = e.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
             //$query = "SELECT * FROM empleado WHERE idUsuario = '{$result['idUsuario']}'";
             return $this->ejecutarConsulta($query);
         }else{
             echo $this->esEmpleado($result['idPerfil']);
-            $query = "SELECT u.idPerfil, c.* FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
+            $query = "SELECT u.contraseña, u.idPerfil, c.* FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
             //$query = "SELECT * FROM cliente WHERE idUsuario = '{$result['idUsuario']}'";
             return $this->ejecutarConsulta($query);
         }

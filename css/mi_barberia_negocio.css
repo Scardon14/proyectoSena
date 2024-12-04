@@ -229,9 +229,8 @@ nav ul li{
                             }
 
                     
-    button{
-        width: 45%;
-        margin: 4%;
+    .btn{
+        width: 100%;
     }
     .contenedorContraseña {
         display: inline-flex;
@@ -398,4 +397,15 @@ nav ul li{
 }
 #logo2{
     width: 400px;
+}
+#fotoPerfil {
+    margin-top: 2rem;
+background-size: cover;
+height: 30rem;
+width: 30rem;
+   
+}
+
+#fotoPerfil img{
+width: 100%;
 }

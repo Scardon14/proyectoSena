@@ -12,22 +12,22 @@
         <?php include('../view/header.php'); ?>
     </header>
     <section id="perfil">
-        <div id="fotoPerfil"></div>
+        <div id="fotoPerfil">
+            <img src="<?=$_SESSION['foto-perfil']['fotoPerfil_Logo'];?>" alt="foto perfil">
+        </div>
         <div class="nombreBarbero">
-            <h2>Andres Padilla</h2>
+            <h2> <?= $usuario['nombres'];?> <?= $usuario['apellidos'];?></h2>
         </div>
 
         <div class="infoPerfil">
             <label id="informacion">Información</label><br>
             <label>
-                <?php
-                echo ("Correo: " . $usuarioLogueado['correoElectronico']);
-                ?></label><br>
-            <label>Celular: 3215648790</label><br>
-            <label>Contraseña: </label>
-            <input type="password" id="contraseñaPerfil" value="********" /><br>
-            <label>Precio del Corte: $ </label>
-            <input type="text" id="precio" value="30.000" /><br>
+                Correo: 
+                <?= $usuario['correoElectronico'];?>
+            </label><br>
+            <label>Celular: <?= $usuario['numeroCelular'];?></label><br>
+            <label>Contraseña:</label>
+            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña'];?>"><br>
             <label>Galeria</label><br>
         </div>
         <script>
