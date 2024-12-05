@@ -6,10 +6,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/modificar.css">
   <title>Document</title>
 </head>
 
 <body>
+<section class="formulario">
+<h1>Formulario modificacion</h1>
   <?php
   session_start();
   $cliente = $_SESSION['clienteActual'];
@@ -19,38 +22,27 @@
       <input type="text" class="form-control" id="exampleInputname1" name="idCliente" aria-describedby="nameHelp"
         value="<?= $cliente['idCliente'] ?>" hidden>
     </div>
-    <div class="nombres">
+    <div class="registro">
       <label for="exampleInputName1" class="nombre">Nombres</label>
       <input type="text" class="form-control" id="exampleInputname1" name="nombre" aria-describedby="nameHelp"
         value="<?= $cliente['nombres'] ?>">
     </div>
-    <div class="apellidos">
+    <div class="registro">
       <label for="exampleInputLastname1" class="apellido">Apellidos</label>
       <input type="text" class="form-control" id="exampleInputLastname1" name="apellido" aria-describedby="lastnameHelp"
         value="<?= $cliente['apellidos'] ?>">
     </div>
-    <div class="numeros">
+    <div class="registro">
       <label for="exampleInputPhone1" class="celular">Numero De Celular</label>
-      <input type="tel" class="form-control" id="exampleInputPhone1" aria-describedby="phoneHelp">
+      <input type="tel" class="form-control" id="exampleInputPhone1" name="numeroCelular" aria-describedby="phoneHelp" value="<?= $cliente['numeroCelular'] ?>">
     </div>
-    <div class="correos">
-      <label for="exampleInputEmail1" class="correo">Correro Electronico</label>
-      <input type="email" class="form-control" id="exampleInputEmail1">
-    </div>
-    <div class="estados">
-        <label for="lang">Estado</label>
-        <select name="estados" id="lang">
-          <option value="activo">1</option>
-          <option value="inactivo">2</option>
-        </select>
-    </div>
-    <div class="mb-3 form-check">
+    <div class="aceptar">
       <input type="checkbox" class="caja-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      <label class="form-check-label" for="exampleCheck1">Aceptar Cambios</label>
     </div>
     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
   </form>
-
+</section>
 </body>
 
 </html>

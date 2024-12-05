@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $obtener = new Negocios(); /*Acceder a las acciones de la clase*/
     $listanegocios = $obtener->listaNegocio($query);
     session_start();
-    $_SESSION['listaNegocios'] = $listanegocios;
+    $_SESSION['listanegocios'] = $listanegocios;
     header("Location: ../view/listaNegocio.php");
 }
 ?>

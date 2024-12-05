@@ -85,13 +85,13 @@ nav{
 nav > ul{
     min-height: 100%;
     display: flex;
+    list-style: none;
 }
 
 
 nav ul li{
     min-height: 100%;
-    list-style: none;
-    
+    text-decoration: none;
  }
  
  nav > ul > li > a{
@@ -103,10 +103,39 @@ nav ul li{
     color:black;
     font-size: 18px;
     transition: all 300ms ease;
+    text-decoration: none;
  }
 
  nav > ul > li > a:hover{
     transform: scale(1.1);
     background: #e63838;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
  }
+
+.table{
+    text-align:center;
+    margin: 25px 0;
+    font-size: 1em;
+    min-width: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.20);
+ }
+
+.table .titulos {
+    background-color: rgb(19, 30, 172);
+    color: #ffffff;
+ }
+
+.table tbody tr{       
+    border-bottom: 1px solid #dddddd;
+ }
+
+.table tbody tr:nth-of-type(even){ /*Este codigo sirve para que una celda quede un color mas oscuro*/
+    background-color: #f3f3f3;
+}
+
+.modificar{
+    display: flex;
+    margin-right: 15px;
+    margin-left: 20px;
+}
