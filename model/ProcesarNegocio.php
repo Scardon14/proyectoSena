@@ -18,6 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $foto4 = $_FILES['fotoTrabajo4'];
     $foto5 = $_FILES['fotoTrabajo5'];
     $insertarFoto = new ProcesarFotos();
+    //consulta para verificar que el registro no exista
+    $validar = "SELECT * FROM usuario WHERE correoElectronico ='$correo'";
+    $validando = $barbero->obtenerUsuario($validar);
+    if ($validando) {
+        $mensaje = "El correo electrónico ya se encuentra registrado";
+    } else {
 
     try {
         $query = "insert into usuario (idPerfil,correoElectronico,contraseña,estado, 
@@ -41,6 +47,7 @@ el rol Barbero*/
         $mensaje = 'Registro Exitoso.'; /*Se le asigna valor de exitoso, si el mismo lo fue*/
     } catch (PDOException $e) {
         $mensaje = 'Registro Fallido.' . $obetenerUsuario; /*Se envia un mensaje por si el registro es fallido*/
+    }
     }
     header(header: "Location: ../view/index.php?mensaje=" . urlencode($mensaje)); /*Se redirecciona al index y se envia el mensaje por parametro*/
     exit();

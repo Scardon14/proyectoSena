@@ -13,7 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
     $fotoPerfil = $_FILES['fotoPerfil'];
     $insertarFoto = new ProcesarFotos();
     $cliente = new RegistroUsuario(); /*Se crea objeto de RegistroBarbero y se podra acceder a los metodos de insersion*/
-
+    //consulta para verificar que el registro no exista
+    $validar = "SELECT * FROM usuario WHERE correoElectronico ='$correo'";
+    $validando = $barbero->obtenerUsuario($validar);
+    if ($validando) {
+        $mensaje = "El correo electrónico ya se encuentra registrado";
+    } else {
     try {
 
         $query = "insert into usuario (idPerfil,correoElectronico,contraseña,estado, 
@@ -33,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
     } catch (PDOException $e) {
         $mensaje = 'Registro Fallido.' . $obetenerUsuario; /*Se envia un mensaje por si el registro es fallido*/
     }
+}
 }
 header("Location: ../view/index.php?mensaje=" . urlencode($mensaje)); /*Se redirecciona al index y se envia el mensaje por parametro*/
 exit();

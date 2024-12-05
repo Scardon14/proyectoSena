@@ -8,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $barbero = $obtener->obtenerBarberoPorId($idEmpleado);
     session_start();
     $_SESSION['barberoActual'] = $barbero;
+    print_r($_SESSION['barberoActual']);
     header("Location: ../view/modificar_barberos.php");
 }
 if($_SERVER["REQUEST_METHOD"] == "POST")      
@@ -15,10 +16,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $idEmpleado = $_POST['idEmpleado'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
+    $numeroCelular = $_POST['numeroCelular'];
     //$cliente = new ClienteModel($idCliente,$nombre,$apellido,null,null,null,null);
     //$actualizarCliente = $obtener->actualziarCliente($cliente);
-    $actualizarBarbero = $obtener->actualziarBarbero($idEmpleado, $nombre, $apellido);
-    echo $actualizarBarbero;
+    $actualizarBarbero = $obtener->actualziarBarbero($idEmpleado, $nombre, $apellido, $numeroCelular);
      /*Esta variable llama la tabla cliente*/
     /*$obtener = new Clientes(); /*Acceder a las acciones de la clase*/
     /*$cliente = $obtener->obtenerClientePorId($idCliente);

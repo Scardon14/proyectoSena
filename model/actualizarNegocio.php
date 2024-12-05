@@ -13,11 +13,13 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 if($_SERVER["REQUEST_METHOD"] == "POST")      
 {
     $idNegocio = $_POST['idNegocio'];
-    $nombreNegocio = $_POST['nombreNegocio'];
-    $apellido = $_POST['apellido'];
+    $nombreEstablecimiento = $_POST['nombreEstablecimiento'];
+    $numeroCelular = $_POST['numeroCelular'];    
+    $direccion = $_POST['direccion'];
+    $nit = $_POST['nit'];
     //$negocio = new NegocioModel($idNegocio,$nombre,$apellido,null,null,null,null);
     //$actualizarNegocio = $obtener->actualziarNegocio($negocio);
-    $actualizarNegocio = $obtener->actualziarNegocio($idNegocio, $nombreNegocio, $apellido);
+    $actualizarNegocio = $obtener->actualziarNegocio($idNegocio, $nombreEstablecimiento, $numeroCelular, $direccion, $nit);
     echo $actualizarNegocio;
      /*Esta variable llama la tabla negocio*/
     /*$obtener = new Negocios(); /*Acceder a las acciones de la clase*/

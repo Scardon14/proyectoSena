@@ -16,9 +16,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $idCliente = $_POST['idCliente'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
+    $numeroCelular = $_POST['numeroCelular'];
     //$cliente = new ClienteModel($idCliente,$nombre,$apellido,null,null,null,null);
     //$actualizarCliente = $obtener->actualziarCliente($cliente);
-    $actualizarCliente = $obtener->actualziarCliente($idCliente, $nombre, $apellido);
+    $actualizarCliente = $obtener->actualziarCliente($idCliente, $nombre, $apellido, $numeroCelular);
     echo $actualizarCliente;
      /*Esta variable llama la tabla cliente*/
     /*$obtener = new Clientes(); /*Acceder a las acciones de la clase*/

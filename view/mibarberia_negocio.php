@@ -20,7 +20,7 @@
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto perfil">
         </div>
         <div class="nombreEstablecimiento">
-            <h1> <?= $usuario['nombreEstablecimiento']; ?> </h1>
+            <h1> <?= $usuario['nombres']; ?> </h1>
         </div>
 
         <div class="infoPerfil">
