@@ -15,6 +15,7 @@
         <?php include('../view/header.php'); ?>
     </header>
     <section id="perfil">
+        <div id="perfil-usuario" idPerfil="<?=$usuario['idPerfil']?>" idUsuario="<?=$usuario['idUsuario']?>" idNegocio="<?=$usuario['idNegocio']?>"></div>
         <div id="fotoPerfil">
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto perfil">
         </div>
