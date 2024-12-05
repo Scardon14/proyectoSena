@@ -7,7 +7,6 @@
         if(isset($idNegocio)){
             session_start();
             $resultado = $barbero->obtenerBarberosPorNegocio($idNegocio);
-            print_r($resultado);
             if(empty($resultado)){
                 header(header: "Location: ./ProcesarReservaCliente.php?idCliente=<?= $idCliente");
             }

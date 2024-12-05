@@ -2,6 +2,7 @@
 .perfil-usuario {
     background: linear-gradient(#285ba8, transparent);
     color: #333;
+    height: 60vh;
 }
 .perfil-usuario .sombra {
     position: absolute;
@@ -208,6 +209,11 @@ height: 230px;
     .perfil-usuario .icono-perfil {
         display: inline-block;
     }
+    .perfil-usuario { /* O el contenedor principal */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Altura mínima: 100% del viewport */
+    }
 }
 
 button{
@@ -226,6 +232,7 @@ button{
     margin: 5px;
     cursor: pointer;
 }
+
 
 
 
