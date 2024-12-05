@@ -14,6 +14,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     session_start();
     $_SESSION['negocioActual'] = $negocio;
     header("Location: ../view/modificar_negocios.php");*/
-    header("Location: ./listadoNegocios.php?mensaje={$actualizarNegocio}");
+    header("Location: ./listadoNegocio.php?mensaje={$actualizarNegocio}");
 }
 ?>

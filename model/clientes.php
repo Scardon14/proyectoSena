@@ -24,9 +24,9 @@ class Clientes
         $result = $statement->fetch();/*obtiene el conteo de usuarios en la tabla*/
         return $result;
     }
-    function actualziarCliente($idCliente, $nombre, $apellido){//ClienteModel $cliente){
+    function actualziarCliente($idCliente, $nombre, $apellido, $numeroCelular){//ClienteModel $cliente){
         //$query = " UPDATE cliente SET nombres = '{$cliente->getNombres()}', apellidos = '{$cliente->getApellidos()}' where idCliente = {$cliente->getIdCliente()}"; 
-        $query = " UPDATE cliente SET nombres = '{$nombre}', apellidos = '{$apellido}' where idCliente = {$idCliente}"; 
+        $query = " UPDATE cliente SET nombres = '{$nombre}', apellidos = '{$apellido}', numeroCelular = '{$numeroCelular}' where idCliente = {$idCliente}"; 
         $statement = $this->conexionBD->prepare($query); /*lo que prepara el query para ser ejecutado*/
          /*Se ejecuta la sentencia sql*/
         if($statement->execute()){

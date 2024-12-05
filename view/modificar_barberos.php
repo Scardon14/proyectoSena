@@ -28,12 +28,8 @@
     <label for="exampleInputLastname1" class="apellido">Apellidos</label>
   </div>
   <div class="registro">
-    <input type="tel" class="form-control" id="exampleInputPhone1" name="Telefono" aria-describedby="phoneHelp">
+    <input type="tel" class="form-control" id="exampleInputPhone1" name="numeroCelular" aria-describedby="phoneHelp" value="<?=$barbero['numeroCelular']?>">
     <label for="exampleInputPhone1" class="celular">Numero De Celular</label>
-  </div>
-  <div class="registro">
-    <input type="email" class="form-control" id="exampleInputEmail1">
-    <label for="exampleInputEmail1" class="correo">Correro Electronico</label>
   </div>
   <div class="aceptar">
     <input type="checkbox" class="caja-input" id="exampleCheck1">
