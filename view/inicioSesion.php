@@ -111,9 +111,6 @@
                 <label for="contraseña"><br>contraseña</br></label>
                 <input type="password" id="contraseña" placeholder="Ingresa tu contraseña"name="contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                 <input type="submit" value="Iniciar Sesion">
-                <div>
-                    <label for="forgot-password">¿Olvidaste tu contraseña?</label><input type="checkbox">
-                </div>
             </form> 
         </div>
         </div>
