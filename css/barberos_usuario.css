@@ -1,13 +1,19 @@
  /*Fondo de la seccion*/
+ html, body {
+    height: auto;
+    min-height: 100vh;
+}
+body {
+    overflow: auto;
+    min-height: 100vh;
+    display: block; /* Asegura que no se limite a flex */
 
- body {
-     margin: 0;
-     padding: 0;
-     min-height: 100vh;
-     display: flex;
-     flex-direction: column;
- }
-
+}
+.contenedor {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+}
  #presenta {
      flex: 1;
      display: flex;
@@ -15,7 +21,7 @@
      justify-content: center;
      text-align: center;
      flex-direction: column;
-     /*height: 100%;*/
+     height: 100%;
      width: 100%;
      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/Barberia.jpg);
      color: white;
@@ -23,6 +29,7 @@
      background-size: cover;
      background-position: center;
      overflow: hidden;
+     overflow-y: auto;
  }
 
  /*Division de tarjetas barberos*/
@@ -36,24 +43,26 @@
      /*A yuda a alinear los elementos*/
      padding: 40px;
      /* Es el especio desde adentro del contenido hacia todos los lados*/
-     width: 50%;
+     width: 30%;
      margin: 15px auto;
      /* 15 pixeles desde arriba, abajo y automatico de los lados*/
      border-radius: 20px;
      /*Redondea las puntas*/
      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
      /*Sombrea la parte de afuera del rectangulo*/
+     color: black;
  }
 
  .section img {
-     width: 250px;
-     border-radius: 30px;
+     width: 10rem;
+     border-radius: 2rem;
 
  }
 
  .section h1 {
      margin: 0;
      color: black;
+     text-align: center;
  }
 
  .section p {
@@ -72,46 +81,10 @@
      padding: 7px 19px;
  }
 
- .section {
-     background-color: grey;
-     /*Es el color del fondo de la tarjeta*/
-     display: flex;
-     /*Sirve para que los elementos se pongan de izquierda a derecha*/
-     justify-content: space-between;
-     /*A yuda a alinear los elementos*/
-     padding: 40px;
-     /* Es el especio desde adentro del contenido hacia todos los lados*/
-     width: 50%;
-     margin: 18px auto;
-     /* 15 pixeles desde arriba, abajo y automatico de los lados*/
-     border-radius: 20px;
-     /*Redondea las puntas*/
-     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-     /*Sombrea la parte de afuera del rectangulo*/
- }
-
  /*Division de tarjetas barberos*/
 
- .sectio {
-     background-color: grey;
-     /*Es el color del fondo de la tarjeta*/
-     display: flex;
-     /*Sirve para que los elementos se pongan de izquierda a derecha*/
-     justify-content: space-between;
-     /*A yuda a alinear los elementos*/
-     padding: 40px;
-     /* Es el especio desde adentro del contenido hacia todos los lados*/
-     width: 50%;
-     margin: 15px auto;
-     /* 15 pixeles desde arriba, abajo y automatico de los lados*/
-     border-radius: 20px;
-     /*Redondea las puntas*/
-     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-     /*Sombrea la parte de afuera del rectangulo*/
- }
-
  .sectio img {
-     width: 150px;
+     width: 10rem;
      border-radius: 30px;
      margin-right: 20px;
 
@@ -138,39 +111,18 @@
      padding: 7px 19px;
  }
 
- .sectio {
-     background-color: grey;
-     /*Es el color del fondo de la tarjeta*/
-     display: flex;
-     /*Sirve para que los elementos se pongan de izquierda a derecha*/
-     justify-content: space-between;
-     /*A yuda a alinear los elementos*/
-     padding: 40px;
-     /* Es el especio desde adentro del contenido hacia todos los lados*/
-     width: 50%;
-     margin: 18px auto;
-     /* 15 pixeles desde arriba, abajo y automatico de los lados*/
-     border-radius: 20px;
-     /*Redondea las puntas*/
-     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-     /*Sombrea la parte de afuera del rectangulo*/
- }
-
- button {
+ #button {
      width: 45%;
-     margin: 4%;
- }
-
- .contenedorContraseña {
-     display: inline-flex;
-     border: 2px solid #d6d6d6;
-     border-radius: 10px;
-     padding: 10 px;
-
+     background-color: #003399;
+     color: white;
+    
  }
 
  .icon {
      height: 1rem;
-     margin: 5px;
+     margin-bottom: 15rem;
      cursor: pointer;
+ }
+ #agendarParrafo{
+    margin-bottom: 1rem;
  }

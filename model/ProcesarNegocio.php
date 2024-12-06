@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insertarFoto = new ProcesarFotos();
     //consulta para verificar que el registro no exista
     $validar = "SELECT * FROM usuario WHERE correoElectronico ='$correo'";
-    $validando = $barbero->obtenerUsuario($validar);
+    $validando = $negocio->obtenerUsuario($validar);
     if ($validando) {
         $mensaje = "El correo electrónico ya se encuentra registrado";
     } else {

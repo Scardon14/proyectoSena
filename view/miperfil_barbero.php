@@ -32,6 +32,7 @@
             <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
             <label>Contraseña:</label>
             <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
+            </section>
 
             <div class="galeria">
                 <h3>Galería de Fotos</h3><br>
@@ -83,9 +84,9 @@
                 }
             </script>
 
-            <!-- Botón para guardar cambios -->
+          
             <button onclick="guardarCambios()">Guardar Cambios</button>
-    </section>
+    
     <script src="../js/fotos.js"></script>
 
     <footer>

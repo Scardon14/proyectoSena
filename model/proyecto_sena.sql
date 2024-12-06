@@ -81,4 +81,4 @@ BEGIN
 END//
 DELIMITER ;   
 
-INSERT INTO rol (perfil)VALUES ('negocio'),('barbero'),('cliente');
+INSERT INTO rol (perfil)VALUES ('negocio'),('barbero'),('cliente'),('administrador');

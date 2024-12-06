@@ -21,7 +21,7 @@
                     print_r($fila['idReserva']); // Muestra cada fila
                 }
             ?>
-                <div class="">12:00</div>
+                <div class=""></div>
             <?php
             }
             ?>

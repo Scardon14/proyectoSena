@@ -20,6 +20,7 @@
         <div id="foto">
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto ">
         </div>
+        <section id="informacion"> 
         <div class="nombreEstablecimiento">
             <h1> <?= $usuario['nombres']; ?> </h1>
         </div>
