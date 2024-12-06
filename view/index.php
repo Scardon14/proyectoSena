@@ -40,8 +40,7 @@
                          <li><a href="index.php">Inicio</a></li>
                          <li><a href="../model/ProcesarNegocio.php">Regristrate</a></li>
                          <li><a href="inicioSesion.php">Inicia sesion</a></li>
-                         <li><a href="quienessomos.php">Quienes somos?</a></li>
-                         <li><a href="../model/listadoClientes.php">administrador</a></li>
+                         <li><a href="quienes_somos.php">Quienes somos?</a></li>
                         </ul>
                     </nav>
                 </div>
