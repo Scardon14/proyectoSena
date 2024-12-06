@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../view/index_usuario.php");
         }else if ($usuario === '4'|| $usuario === 4) {
             echo("". $usuario);
-            header("Location: ../view/administrador2.php");
+            header("Location: ../model/listadoClientes.php");
         }
     } else {
         //header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
