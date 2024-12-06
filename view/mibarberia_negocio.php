@@ -33,7 +33,8 @@
             </label><br>
             <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
             <label>Contraseña:</label>
-            <input type="password" id="contraseña" value="<?= $usuario['contraseña']; ?>"><br>
+            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
+            </section>
     </section>
 
     <section id="organizacion"> <!--Seccion de fondo blanco, img y texto-->
