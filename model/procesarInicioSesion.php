@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contraseña = $_POST['contraseña']; /*Se capturan los valores que tienen los inputs del html*/
     $Login = new Login();
     $sesionActiva = $Login->login($correo, $contraseña);
+    echo'"Entree';
+    print_r( $sesionActiva);
     if (!empty($sesionActiva)) {
         echo "entre";
         session_start();
@@ -22,9 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else if ($usuario === '3'|| $usuario === 3) {
             echo("". $usuario);
             header("Location: ../view/index_usuario.php");
+        }else if ($usuario === '4'|| $usuario === 4) {
+            echo("". $usuario);
+            header("Location: ../view/administrador2.php");
         }
     } else {
-        header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
+        //header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
