@@ -16,19 +16,23 @@ header div:last-child{
    background-color: #1554b3;
 }
 h1{
+   font-size: 4rem;
    margin: 0;
    color: #ffffff;
-   font-size: 80px;
-   margin-left: 6rem;
+   font-size: 4rem;
+   margin-left: 4rem;
 }
-.logo {
+
+.logo{
    display: flex;
    align-items: center;
-   width: 10%;
+   left: 100px;
+   width: 14%;
    border-right: #ffffff 1px solid;
-   padding: 0 3rem;
+   padding: 0 1rem;
 }
-.logo img{
+
+.logo img {
    width: 100%;
 }
 .formulario-Inicio_de_sesion{
