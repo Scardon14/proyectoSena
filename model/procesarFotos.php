@@ -41,5 +41,26 @@ class ProcesarFotos
             return $registroFotos->insertarFotosTrabajo($query);
         }
     }
+    function actualizarFotos($fotoActual, $fotoNueva, $campo, $obtenerUsuario)
+    {
+        $fotoActual1 = str_replace("..","/proyectoSena",$fotoActual);
+        $fotoActual1 = $_SERVER['DOCUMENT_ROOT'] . $fotoActual1;
+        $registroFotos = new RegistroFotosTrabajo();
+        $directorio = '../imagenes-trabajo/' . $obtenerUsuario . "/";
+        $rutaFotoNueva = $directorio . basename($fotoNueva['name']);
+        //$rutaFotoActual = $directorio . basename($fotoNueva['name']);
+
+        if (!file_exists($rutaFotoNueva)) {
+            if(!is_dir($directorio)){
+                mkdir( $directorio, 0777, true);
+            }
+        }
+        if (move_uploaded_file($fotoNueva['tmp_name'], $rutaFotoNueva)) {
+            unlink( $fotoActual1);
+            $registroFotos->actualizarFotoTrabajo($fotoActual, $rutaFotoNueva, $campo, $obtenerUsuario);
+            return true;
+        }
+        return false;
+    }
 }
 ?>

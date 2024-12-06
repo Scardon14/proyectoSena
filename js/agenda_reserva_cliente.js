@@ -151,12 +151,12 @@ let mostrarHoras = (diaSeleccionado) => {
                 let horaFin = horaReservadaFin.getHours();
                 let compararHora = horaDiv.textContent.substring(0, 2);
                 let estado;
-                if (horaReserva.estado === 1){
+                if (horaReserva.estado === 1 || horaReserva.estado === '1') {
                     estado = 'Completado';
-                }else if(horaReserva.estado === 2){
+                } else if (horaReserva.estado === 2 || horaReserva.estado === '2') {
                     estado = 'Reservado';
                 }
-                else if(horaReserva.estado === 0){
+                else if (horaReserva.estado === 0 || horaReserva.estado === '0') {
                     estado = 'Pendiente';
                 }
                 if (compararHora >= horaInicio && compararHora <= horaFin) {
@@ -186,9 +186,9 @@ let mostrarHoras = (diaSeleccionado) => {
             let comprarHora = a.textContent.substring(0, 2);
             /*if(a.textContent.includes(`${horaInicio}`)
             || a.textContent.includes(`${horaFin}:`)){*/
-            if (comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 2) {
+            if (comprarHora >= horaInicio && comprarHora <= horaFin && (horaReserva.estado === 2 || horaReserva.estado === '2')) {
                 a.classList.add('ocultarDiv');
-            }else if(comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 1){
+            } else if (comprarHora >= horaInicio && comprarHora <= horaFin && (horaReserva.estado === 1 || horaReserva.estado === '1')) {
                 a.classList.add('completado');
             }
         });

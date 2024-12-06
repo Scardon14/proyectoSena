@@ -57,7 +57,7 @@ let escribirMes = (mes1, año1) => {
     } else if (mes1 === numeroMes && año1 === añoActual) {
 
         //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes//
-        console.log("Entre mes actual: ", mes1, " ", año1);
+
         for (let i = startDay(mes1, año1); i > 0; i--) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_dia-pasado" data-dia="${i}"> ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
         }
@@ -80,7 +80,7 @@ let escribirMes = (mes1, año1) => {
 
     } else if ((año1 < añoActual) || (mes1 < numeroMes && año1 === añoActual)) {
         //Muestra los dias de lunes a domingo y trae los ultimos dias del mes anterior si no llega a comenzar el lunes//
-        console.log("Entre mes actual: ", mes1, " ", año1);
+
         for (let i = startDay(mes1, año1); i > 0; i--) {
             fechas.innerHTML += `<div class="calendario_fechas calendario_item calendario_last-dias calendario_dia-pasado">
              ${getTotalDays(mes1 - 1) - (i - 1)}</div>`;
@@ -96,7 +96,7 @@ let escribirMes = (mes1, año1) => {
     diasFuturos.forEach(dia => {
         dia.addEventListener('click', async function () {
             let fecha = fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + dia.textContent;
-            console.log("Fecha: ", fecha);
+
             await reservaBarberoDia(usuario, fecha);
             calendario.classList.add("ocultarDiv");
             let diaSeleccionado = dia.getAttribute('data-dia');
@@ -132,6 +132,7 @@ let mostrarHoras = (diaSeleccionado) => {
         horaDiv.className = 'hora-item';
         horaDiv.textContent = hora;
 
+
         // Puedes agregar eventos de clic si necesitas seleccionar una hora
         horaDiv.addEventListener('click', () => {
             let diaSeleccionado = document.getElementById('dia-seleccionado').textContent;
@@ -146,15 +147,16 @@ let mostrarHoras = (diaSeleccionado) => {
                 let horaFin = horaReservadaFin.getHours();
                 let compararHora = horaDiv.textContent.substring(0, 2);
                 let estado;
-                if (horaReserva.estado === 1){
+                if (horaReserva.estado === 1 || horaReserva.estado === '1') {
                     estado = 'Completado';
-                }else if(horaReserva.estado === 2){
+                } else if (horaReserva.estado === 2 || horaReserva.estado === '2') {
                     estado = 'Reservado';
                 }
-                else if(horaReserva.estado === 0){
+                else if (horaReserva.estado === 0 || horaReserva.estado === '0') {
                     estado = 'Pendiente';
                 }
                 if (compararHora >= horaInicio && compararHora <= horaFin) {
+
                     detalleReserva.innerHTML = `
                     <p id="idReserva" hidden>${horaReserva.idReserva}</p>
                     <p><strong> Nombre: </strong> ${horaReserva.nombres} ${horaReserva.apellidos}</p>
@@ -176,14 +178,18 @@ let mostrarHoras = (diaSeleccionado) => {
         let horaReservadaFin = new Date(horaReserva.fechaFinalizacion);
         let horaFin = horaReservadaFin.getHours();
         let horaDivReservado = document.querySelectorAll('.hora-item'); //reservado
+
         horaDivReservado.forEach(a => {
             let comprarHora = a.textContent.substring(0, 2);
+
             /*if(a.textContent.includes(`${horaInicio}`)
             || a.textContent.includes(`${horaFin}:`)){*/
-            if (comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 2) {
+            if (comprarHora >= horaInicio && comprarHora <= horaFin && (horaReserva.estado === 2 || horaReserva.estado === '2')) {
                 a.classList.add('reservado');
-            }else if(comprarHora >= horaInicio && comprarHora <= horaFin && horaReserva.estado === 1){
+
+            } else if (comprarHora >= horaInicio && comprarHora <= horaFin && (horaReserva.estado === 1 || horaReserva.estado === '1')) {
                 a.classList.add('completado');
+
             }
         });
     });
@@ -205,7 +211,7 @@ let mes1 = numeroMes, año1 = añoActual;
 let lastMes = () => {
     if (mes1 > 0 && mes1 <= 11) {
         mes1 = mes1 - 1;
-        console.log("Entre", mes1);
+
     } else {
         mes1 = 11;
         año1 = año1 - 1;
@@ -221,15 +227,15 @@ let nextMes = () => {
     } else if (mes1 < 11 && mes1 >= 0) {
         mes1 = mes1 + 1;
     }
-    console.log("mes2: ", mes1, año1);
+
     setNewDate(mes1, año1);
 };
 
 // Función para establecer la nueva fecha y escribir el mes
 let setNewDate = (mes1, año1) => {
-    console.log("mes3: ", mes1);
+
     fechaActual.setFullYear(año1, mes1, 1);
-    console.log("fecha actual: ", fechaActual);
+
     mes.textContent = nombresMes[mes1];
     año.textContent = año1.toString();
     fechas.textContent = '';
@@ -274,15 +280,15 @@ btnCerrarRecuadro.addEventListener('click', () => {
 
 btnActualizarReserva.addEventListener('click', () => {
     let idReserva = document.getElementById("idReserva");
-    if(idReserva.textContent.trim !== ""){
-        finalizarReserva(idReserva.textContent,1);
+    if (idReserva.textContent.trim !== "") {
+        finalizarReserva(idReserva.textContent, 1);
         window.location.href = `agenda_barbero.php`;
     }
 });
 
-cancelarReserva.addEventListener('click', async () =>{
+cancelarReserva.addEventListener('click', async () => {
     let idReserva = document.getElementById("idReserva");
-    if(idReserva.textContent.trim !== ""){
+    if (idReserva.textContent.trim !== "") {
         await eliminarReserva(idReserva.textContent);
         window.location.href = `agenda_barbero.php`;
     }
@@ -321,13 +327,11 @@ async function reservaBarberoDia(idEmpleado, fecha) {
 
         // Espera a que la respuesta sea convertida a JSON
         reservas = await response.json(); // Ya se convierte en arreglo de objetos automáticamente
-        console.log("IDEMPLEADO:", idEmpleado);
 
-        console.log("Response:", reservas);
 
         // Puedes trabajar con "reservas" directamente como un arreglo
         reservas.forEach(reserva => {
-            console.log(`Reserva ID: ${reserva.idReserva}, Fecha: ${reserva.fechaReserva}`);
+
         });
 
         return reservas; // Devuelve el arreglo de objetos si es necesario
@@ -359,12 +363,12 @@ async function finalizarReserva(idReserva, nuevoEstado) {
 
         // Obtén el texto de la respuesta
         const responseText = await response.text();  // Usa text() en lugar de json()
-        console.log('Response text:', responseText);  // Muestra la respuesta como texto
+
 
         // Si la respuesta es un JSON válido, la convierte a JSON
         try {
             const respuestaActualizar = JSON.parse(responseText);
-            console.log("Response:", respuestaActualizar);
+
 
             // Verifica si la actualización fue exitosa
             if (respuestaActualizar.success) {
@@ -387,15 +391,15 @@ async function finalizarReserva(idReserva, nuevoEstado) {
 }
 
 let respuestaEliminar = null;
-async function eliminarReserva(idReserva){
+async function eliminarReserva(idReserva) {
     const data = {
         idReserva: idReserva
     };
 
-    console.log("DATA: " , data);
-    const response = await fetch('../model/ProcesarCalendarioBarbero.php',{
+
+    const response = await fetch('../model/ProcesarCalendarioBarbero.php', {
         method: 'DELETE',
-        headers:{
+        headers: {
             'Content-Type': 'Application/json'
         },
         body: JSON.stringify({
@@ -403,19 +407,19 @@ async function eliminarReserva(idReserva){
         })
     });
 
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error('Error en el consumo de la api');
     }
-    try{
-        console.log("Respouesta Eliminacion: " , response);
+    try {
+
 
         respuestaEliminar = JSON.parse((await response.text()));
-        if(respuestaEliminar.success){
+        if (respuestaEliminar.success) {
             alert(respuestaEliminar.message);
-        }else{
+        } else {
             alert("No se pudo eliminar la reserva")
         }
-    }catch(error){
+    } catch (error) {
         console.error('Error:', error);
         alert('Hubo un error al procesar la solicitud');
         return null;  // Devuelve null en caso de error
