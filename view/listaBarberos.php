@@ -34,7 +34,7 @@
                             <li><a href="../model/listadoClientes.php">Listado de Cliente</a></li>
                             <li><a href="../model/listadoBarbero.php">Listado de Barberos</a></li>
                             <li><a href="../model/listadoNegocio.php">Listado de Negocio</a></li>
-                            <li><a href="">Cerrar sesion</a></li>
+                            <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
                         </ul>
                     </nav>
                 </div>

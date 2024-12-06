@@ -34,7 +34,7 @@
                                 <li><a href="administrador2.php">Listado de Cliente</a></li>
                                 <li><a href="listaBarberos.php">Listado de Barberos</a></li>
                                 <li><a href="listaNegocio.php">Listado de Negocio</a></li>
-                                <li><a href="">Cerrar sesion</a></li>
+                                <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
                             </ul>
                         </nav>
                     </div>
