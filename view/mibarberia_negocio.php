@@ -20,6 +20,7 @@
         <div id="foto">
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto ">
         </div>
+        <section id="informacion"> 
         <div class="nombreEstablecimiento">
             <h1> <?= $usuario['nombres']; ?> </h1>
         </div>
@@ -32,7 +33,8 @@
             </label><br>
             <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
             <label>Contraseña:</label>
-            <input type="password" id="contraseña" value="<?= $usuario['contraseña']; ?>"><br>
+            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
+            </section>
     </section>
 
     <section id="organizacion"> <!--Seccion de fondo blanco, img y texto-->
