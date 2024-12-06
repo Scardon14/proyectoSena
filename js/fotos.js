@@ -1,9 +1,8 @@
+let btn_editar_1 = document.querySelectorAll(".btn-editar-1");
+let idUsuario = document.getElementById("usuario");
+let perfil1 = document.getElementById("perfil-usuario");
 
-let btn_editar = document.querySelectorAll(".btn-editar");
-let idUsuario = document.getElementById("idUsuario");
-let perfil = document.getElementById("perfil-usuario");
-
-btn_editar.forEach(btn => {
+btn_editar_1.forEach(btn => {
     btn.addEventListener("click", (event) => {
         event.preventDefault();
 
@@ -14,7 +13,7 @@ btn_editar.forEach(btn => {
 
         console.log(`Clic en botón con idFoto: ${idFoto}, campo: ${campo}`);
 
-        if (btn.classList.contains("btn-editar")) {
+        if (btn.classList.contains("btn-editar-1")) {
             convertirFilaEnInputs(fotoFront, idFoto, foto, campo, btn);
         } else {
             actualizarFila(fotoFront, idFoto, foto, campo, btn);
@@ -27,7 +26,7 @@ function convertirFilaEnInputs(fotoFront, idFoto, foto, campo, boton) {
 
     // Ocultar todas las fotos e inputs dentro del contenedor
     const fotos = fotoFront.querySelectorAll(".foto img");
-    const botonesEditar = fotoFront.querySelectorAll(".btn-editar");
+    const botonesEditar = fotoFront.querySelectorAll(".btn-editar-1");
 
     fotos.forEach(img => {
         img.style.display = "none";
@@ -42,7 +41,7 @@ function convertirFilaEnInputs(fotoFront, idFoto, foto, campo, boton) {
     // Mostrar solo el botón actual y convertirlo a "Guardar"
     boton.style.display = "block";
     boton.innerHTML = `<i class="bi bi-save"></i> `;
-    boton.classList.remove("btn-editar", "btn-success");
+    boton.classList.remove("btn-editar-1", "btn-success");
     boton.classList.add("btn-guardar", "btn-primary");
 
     // Crear input para cargar archivos
@@ -72,7 +71,7 @@ async function actualizarFila(fotoFront, idFoto, foto, campo, boton) {
 
     // Restaurar el estado inicial: mostrar fotos y botones "Editar"
     const fotos = fotoFront.querySelectorAll(".foto img");
-    const botonesEditar = fotoFront.querySelectorAll(".btn-editar");
+    const botonesEditar = fotoFront.querySelectorAll(".btn-editar-1");
 
     fotos.forEach(img => (img.style.display = "block"));
     botonesEditar.forEach(btn => (btn.style.display = "block"));
@@ -80,16 +79,18 @@ async function actualizarFila(fotoFront, idFoto, foto, campo, boton) {
     // Cambiar el botón a modo "Editar"
     boton.innerHTML = `<i class="bi bi-pencil-square"></i> Editar`;
     boton.classList.remove("btn-guardar", "btn-primary");
-    boton.classList.add("btn-editar", "btn-success");
+    boton.classList.add("btn-editar-1", "btn-success");
 
     // Eliminar el input después de guardar
     inputFile.remove();
 
     // Llamar a la función para actualizar en el servidor
     await actualizarFoto(idFoto, foto, files[0], campo);
+    let idperfil = perfil1.getAttribute("idPerfil");
     window.location.href = '../model/ProcesarFotoPerfil.php?idPerfil=' +
-                    perfil.getAttribute("idPerfil") + '&idUsuario=' + perfil.getAttribute("idUsuario")
-                    + '&idNegocio=' + perfil.getAttribute("idNegocio");
+        idperfil + '&idUsuario=' + perfil1.getAttribute("idUsuario")
+        + '&idNegocio=' + perfil.getAttribute("idNegocio");
+
 }
 
 async function actualizarFoto(id, fotoActual, archivo, campo) {
