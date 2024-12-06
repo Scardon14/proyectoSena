@@ -22,5 +22,10 @@ class RegistroFotosTrabajo{
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+    function actualizarFotoTrabajo($fotoActual, $fotoNueva, $campo, $obtenerUsuario){
+        $query = "UPDATE fotografia SET $campo = '$fotoNueva' WHERE idUsuario = '$obtenerUsuario' AND $campo = '$fotoActual'";
+        $statement = $this->conexion->prepare($query);
+        $statement->execute();
+    }      
 }
 ?>

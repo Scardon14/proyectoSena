@@ -29,3 +29,19 @@ footer .icono-footer{
 .icono-footer img{
     height: 50%;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+main { /* El contenido principal */
+    flex: 1; /* Toma el espacio restante */
+}
+
+footer {
+    background-color: #003399;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+}

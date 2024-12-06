@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { /*Verificamos que la peticion que se
     $cliente = new RegistroUsuario(); /*Se crea objeto de RegistroBarbero y se podra acceder a los metodos de insersion*/
     //consulta para verificar que el registro no exista
     $validar = "SELECT * FROM usuario WHERE correoElectronico ='$correo'";
-    $validando = $barbero->obtenerUsuario($validar);
+    $validando = $cliente->obtenerUsuario($validar);
     if ($validando) {
         $mensaje = "El correo electrónico ya se encuentra registrado";
     } else {

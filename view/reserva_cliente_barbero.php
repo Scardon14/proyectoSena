@@ -20,7 +20,6 @@
         ?>
         <div>
             <div id="sessionData" data-usuario="<?php echo $_GET['idEmpleado']; ?>"></div>
-            <div class="">12:00</div>
             <h1 class="titulo_MiAgenda">Mi Agenda Barbero</h1>
             <div class="contenedor-">
                 <div class="calendario">
