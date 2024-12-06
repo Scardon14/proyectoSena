@@ -108,7 +108,7 @@
                 <h2>Inicia Sesion</h2>
                 <label for="correo o numero de celular">Correo electrónico o Numero de celular</label>
                 <input type="text" id="correo o numero de celular" name="correo" placeholder="Ingresa tu correo electronico o Numero de celular">
-                <label for="contraseña"><br>contraseña</br></label>
+                <label for="contraseña"><br>Contraseña</br></label>
                 <input type="password" id="contraseña" placeholder="Ingresa tu contraseña"name="contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                 <input type="submit" value="Iniciar Sesion">
             </form> 

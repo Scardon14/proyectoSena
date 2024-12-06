@@ -9,6 +9,7 @@ function mostrarForm() {
     const opcionRegistro = document.getElementById("opcionRegistro");
     const mensajesError = document.querySelectorAll("p.formulario_input-error");
     const checkInput = document.querySelectorAll(`i.formulario_validacion-estado`)
+    const input = document.querySelectorAll("input");
     let registroSeleccionado = opcionRegistro.options[opcionRegistro.selectedIndex].value;
     mensajesError.forEach((element) => {
         element.classList.add("ocultarDiv");
@@ -16,6 +17,12 @@ function mostrarForm() {
     checkInput.forEach((element) => {
         element.style.display = "none";
 
+    });
+    input.forEach(input => {
+        input.addEventListener('paste', (event) => {
+            event.preventDefault(); // Prevenir la acción de pegar
+            alert("Pegar texto no está permitido en este campo.");
+        });
     });
 
     /*AYUDA A QUE LOS FORMULARIOS TENGAN EL TAMAÑO ESTANDAR*/
