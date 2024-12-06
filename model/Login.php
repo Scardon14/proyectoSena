@@ -22,29 +22,26 @@ class Login
         // Usar un marcador de posición para prevenir inyección SQL
         $query = "SELECT * FROM usuario WHERE correoElectronico = :correo AND contraseña = :clave AND estado = :estado ";
         $statement = $this->conexionBD->prepare($query); // Preparar la consulta
-
+        
         // Vincular parámetros
         $statement->bindParam(':correo', $correo);
         $statement->bindParam(':clave', $clave);
         $statement->bindValue(':estado', '1');
-
         $statement->execute(); // Ejecutar la consulta
         // Obtener el resultado como un arreglo asociativo
         $result = $statement->fetch();
-        if($this->esEmpleado($result['idPerfil'])){
+
+        if($result['idPerfil'] == 1 || $result['idPerfil'] == '1' || $result['idPerfil'] == 2 || $result['idPerfil'] == '2'){
             $query = "SELECT u.contraseña ,u.idPerfil, e.* FROM usuario u INNER JOIN empleado e ON u.idUsuario = e.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
             //$query = "SELECT * FROM empleado WHERE idUsuario = '{$result['idUsuario']}'";
             return $this->ejecutarConsulta($query);
-        }else{
-            echo $this->esEmpleado($result['idPerfil']);
+        }else if($result['idPerfil'] == 3 ||$result['idPerfil'] == '3'){
             $query = "SELECT u.contraseña, u.idPerfil, c.* FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idUsuario where u.idUsuario = '{$result['idUsuario']}'";
             //$query = "SELECT * FROM cliente WHERE idUsuario = '{$result['idUsuario']}'";
             return $this->ejecutarConsulta($query);
+        }else if($result['idPerfil'] == 4 ||$result['idPerfil'] == '4'){
+            return $result;
         }
-    }
-
-    private function esEmpleado($rol){
-        return $rol != 3; 
     }
 
     private function ejecutarConsulta($query){
