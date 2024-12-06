@@ -40,7 +40,6 @@
                 <nav>
                     <ul>
                         <?php
-                        echo'Perfil: '. $usuario['idPerfil'];
                         if ($usuario['idPerfil'] === '3' || $usuario['idPerfil'] === 3) { ?>
                             <li><a href="../view/index_usuario.php">Inicio</a></li>
                             <!--<li><a href="../view/LocalesUsuario.php">Locales</a></li>-->
@@ -73,7 +72,6 @@
                                     <li><a href="../model/procesarInicioSesion.php">Cerrar Sesión</a></li>
                         <?php 
                             } else if ($usuario['idPerfil'] === '4' || $usuario['idPerfil'] === 4) { 
-                                echo'Perfil: '. $usuario['idPerfil'];
                                 ?>
                             
                                     <li><a href="./administrador2.php">Inicio</a></li>
