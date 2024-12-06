@@ -8,10 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contraseña = $_POST['contraseña']; /*Se capturan los valores que tienen los inputs del html*/
     $Login = new Login();
     $sesionActiva = $Login->login($correo, $contraseña);
-    echo'"Entree';
     print_r( $sesionActiva);
     if (!empty($sesionActiva)) {
-        echo "entre";
         session_start();
         $_SESSION['usuarioLogueado'] = $sesionActiva;
         $usuario = $sesionActiva['idPerfil'];
@@ -29,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../model/listadoClientes.php");
         }
     } else {
-        //header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
+        header("Location: ../view/inicioSesion.php?mensaje=" . urlencode("Usuario y/o contraseña invalida")); /*Se redirecciona al index y se envia el mensaje por parametro*/
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "GET") {

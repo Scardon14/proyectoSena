@@ -17,7 +17,7 @@
     </header>
     <section id="presenta"> <!--Seccion de img con titulo-->
     <div id="perfil-usuario" idPerfil="<?=$usuario['idPerfil']?>" idUsuario="<?=$usuario['idUsuario']?>" idNegocio="<?=$usuario['idNegocio']?>"></div>
-        <div id="foto">
+        <div id="fotoPerfil">
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto ">
         </div>
         <section id="informacion"> 
@@ -32,8 +32,6 @@
                 <?= $usuario['correoElectronico']; ?>
             </label><br>
             <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
-            <label>Contraseña:</label>
-            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
             </section>
     </section>
 
@@ -71,7 +69,7 @@
                             <input id="input-detalle" type="text" name="input-detalle">
                         </div>
                         <div>
-                            <label for="input-duracion">Duraciíon</label>
+                            <label for="input-duracion">Duración</label>
                             <input id="input-duracion" type="text" name="input-duracion">
                         </div>
                         <div>

@@ -13,7 +13,7 @@
             $_SESSION['idServicio'] = $_GET['idServicio'];
             $_SESSION['duracion'] = $_GET['duracion'];
             $_SESSION['barberos'] = $resultado;
-            header(header: "Location: ../view/MiPersonal_negocio.php");
+            header(header: "Location: ../view/Mipersonal_negocio.php");
         }
     }
 ?>

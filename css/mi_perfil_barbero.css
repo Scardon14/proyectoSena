@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
 }
 
 #fotoPerfil {
@@ -16,12 +17,13 @@
 }
 
 #fotoPerfil img {
-    width: 100%;
-    border-radius: 50%;
+  height: 12rem;
+  width: 8rem; 
+  border-radius: 50%;
 }
 
 .nombreBarbero {
-    margin-top: 20px;
+    margin-top: 5%;
     font-size: 24px;
     /* Tamaño del texto del nombre */
     color: #222222;

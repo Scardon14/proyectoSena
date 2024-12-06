@@ -307,8 +307,8 @@ body{
     margin-top: 2rem;
     margin-bottom: 4rem;
     background-size: cover;
-    height: 25rem;
-    width: 25rem;
+    height: 18rem;
+    width: 18rem;
 
 }
 #informacion{
@@ -320,8 +320,8 @@ body{
     display: none;
 }
 #fotoPerfil img {
-    width: 25rem;
-    height: 25rem;
+    width: 18rem;
+    height: 18rem;
 }
 
 .galeria {

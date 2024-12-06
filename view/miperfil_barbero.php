@@ -31,8 +31,6 @@
                 <?= $usuario['correoElectronico']; ?>
             </label><br>
             <label>Celular: <?= $usuario['numeroCelular']; ?></label><br>
-            <label>Contraseña:</label>
-            <input type="password" id="contraseñaPerfil" value="<?= $usuario['contraseña']; ?>"><br>
     </section>
 
     <div class="galeria">
