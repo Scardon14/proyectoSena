@@ -15,7 +15,7 @@
         <?php include('../view/header.php'); ?>
     </header>
     <section id="perfil">
-        <div id="perfil-usuario" idPerfil="<?=$usuario['idPerfil']?>" idUsuario="<?=$usuario['idUsuario']?>" idNegocio="<?=$usuario['idNegocio']?>"></div>
+    <div id="perfil-usuario" idPerfil="<?=$usuario['idPerfil']?>" idUsuario="<?=$usuario['idUsuario']?>" idNegocio="<?=$usuario['idNegocio']?>"></div>
         <div id="fotoPerfil">
             <img src="<?= $_SESSION['foto-perfil']['fotoPerfil_Logo']; ?>" alt="foto perfil">
         </div>
@@ -35,7 +35,7 @@
 
             <div class="galeria">
                 <h3>Galería de Fotos</h3><br>
-                <div idUsuario="<?= $usuario['idUsuario']; ?>" id="idUsuario"></dividU>
+                <div idUsuario="<?= $usuario['idUsuario']; ?>" id="usuario"></dividU>
                 <?php
                 $fotosTrabajo = $_SESSION['fotos-trabajo'];
                 foreach ($fotosTrabajo as $foto) { ?>
@@ -43,27 +43,27 @@
 
                         <div class="foto">
                             <button idFoto="<?= $foto['idFotografia'] ?>" foto="<?= $foto['foto1'] ?>" campo="foto1"
-                                class="btn btn-small btn-success btn-editar"><i class="bi bi-pencil-square"></i></button>
+                                class="btn btn-small btn-success btn-editar-1"><i class="bi bi-pencil-square"></i></button>
                             <img src="<?= $foto['foto1'] ?>" alt="Foto 1">
                         </div>
                         <div class="foto">
                             <button idFoto="<?= $foto['idFotografia'] ?>" foto="<?= $foto['foto2'] ?>" campo="foto2"
-                                class="btn btn-small btn-success btn-editar"><i class="bi bi-pencil-square"></i></button>
+                                class="btn btn-small btn-success btn-editar-1"><i class="bi bi-pencil-square"></i></button>
                             <img src="<?= $foto['foto2'] ?>" alt="Foto 2">
                         </div>
                         <div class="foto">
                             <button idFoto="<?= $foto['idFotografia'] ?>" foto="<?= $foto['foto3'] ?>" campo="foto3"
-                                class="btn btn-small btn-success btn-editar"><i class="bi bi-pencil-square"></i></button>
+                                class="btn btn-small btn-success btn-editar-1"><i class="bi bi-pencil-square"></i></button>
                             <img src="<?= $foto['foto3'] ?>" alt="Foto 3">
                         </div>
                         <div class="foto">
                             <button idFoto="<?= $foto['idFotografia'] ?>" foto="<?= $foto['foto4'] ?>" campo="foto4"
-                                class="btn btn-small btn-success btn-editar"><i class="bi bi-pencil-square"></i></button>
+                                class="btn btn-small btn-success btn-editar-1"><i class="bi bi-pencil-square"></i></button>
                             <img src="<?= $foto['foto4'] ?>" alt="Foto 4">
                         </div>
                         <div class="foto">
                             <button idFoto="<?= $foto['idFotografia'] ?>" foto="<?= $foto['foto5'] ?>" campo="foto5"
-                                class="btn btn-small btn-success btn-editar"><i class="bi bi-pencil-square"></i></button>
+                                class="btn btn-small btn-success btn-editar-1"><i class="bi bi-pencil-square"></i></button>
                             <img src="<?= $foto['foto5'] ?>" alt="Foto 5">
                         </div>
 
