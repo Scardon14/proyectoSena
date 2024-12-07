@@ -1,6 +1,6 @@
 <?php
 include_once("FotosTrabajo.php");
-include_once("ProcesarFotos.php");
+include_once("procesarFotos.php");
 $fotosTrabajo = new FotosTrabajo();
 $insertarFoto = new ProcesarFotos();
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {

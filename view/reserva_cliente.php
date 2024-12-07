@@ -40,7 +40,6 @@
                             foreach ($reservas as $reserva) {
                                 if ($reserva['estado'] === 2) {
                                     $estado = 'Pendiente';
-                                }
                                 ?>
 
                                 <tr> <!-- Fila de datos de la persona-->
@@ -63,6 +62,9 @@
                                     </td>
                                 </tr>
                                 <?php
+                                }else if($reserva['estado'] === 1) {
+                                    $estado = 'Completado';
+                                }
                             }
                             ?>
                         </tbody>

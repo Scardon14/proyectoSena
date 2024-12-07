@@ -278,10 +278,10 @@ btnCerrarRecuadro.addEventListener('click', () => {
     recuadroHoras.style.display = 'none';
 });
 
-btnActualizarReserva.addEventListener('click', () => {
+btnActualizarReserva.addEventListener('click', async() => {
     let idReserva = document.getElementById("idReserva");
     if (idReserva.textContent.trim !== "") {
-        finalizarReserva(idReserva.textContent, 1);
+        await finalizarReserva(idReserva.textContent, 1);
         window.location.href = `agenda_barbero.php`;
     }
 });

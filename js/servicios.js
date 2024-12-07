@@ -12,7 +12,7 @@ let formulario_servicio = document.querySelector(".formulario-servicio");
 let idServicio = null;
 let btn_eliminar_servicio = document.querySelectorAll(".btn-eliminar");
 let btn_cancelar = document.getElementById("btn-cancelar");
-
+console.log(usuario.getAttribute('idUsuario'));
 btn_cancelar.addEventListener('click', (event) => {
     event.preventDefault();
     formulario_servicio.classList.add("ocultarDiv");
@@ -41,15 +41,15 @@ btn_editar.forEach(btn => {
 
         // Verificamos si el botón está en modo "Guardar" o "Editar"
         if (btn.textContent.trim() === "Editar") {
-            convertirFilaEnInputs(fila, btn);
+            convertirFilaEnInputs1(fila, btn);
         } else {
-            actualizarFila(fila, btn, idServicio);
+            actualizarFila1(fila, btn, idServicio);
         }
     });
 });
 
 // Función para convertir una fila en campos de entrada
-function convertirFilaEnInputs(fila, boton) {
+function convertirFilaEnInputs1(fila, boton) {
     const celdas = fila.querySelectorAll("td");
     const [servicio, detalle, duracion, precio, accion] = celdas;
 
@@ -65,7 +65,7 @@ function convertirFilaEnInputs(fila, boton) {
 }
 
 // Función para actualizar los valores de una fila
-async function actualizarFila(fila, boton, idServicio) {
+async function actualizarFila1(fila, boton, idServicio) {
     const servicioInput = fila.querySelector(".servicio-input").value.trim();
     const detalleInput = fila.querySelector(".detalle-input").value.trim();
     const duracionInput = fila.querySelector(".duracion-input").value.trim();
@@ -93,9 +93,12 @@ async function actualizarFila(fila, boton, idServicio) {
         duracion: duracionInput,
         precio: precioInput
     });
+    console.log('ruta actualizar servicio: '+ '../model/ProcesarFotoPerfil.php?idPerfil=' +
+                    perfil.getAttribute("perfil") + '&idUsuario=' + usuario.getAttribute('idUsuario')
+                    + '&idNegocio=' + negocio.getAttribute("negocio"));
     await actualizarServicio(idServicio,servicioInput, detalleInput, duracionInput, precioInput);
                 window.location.href = '../model/ProcesarFotoPerfil.php?idPerfil=' +
-                    perfil.getAttribute("perfil") + '&idUsuario=' + usuario.getAttribute("usuario")
+                    perfil.getAttribute("perfil") + '&idUsuario=' + usuario.getAttribute('idUsuario')
                     + '&idNegocio=' + negocio.getAttribute("negocio");
 }
 
@@ -164,3 +167,4 @@ async function eliminarServicio(idServicio) {
         alert('Hubo un problema al procesar la respuesta');
     }
 }
+

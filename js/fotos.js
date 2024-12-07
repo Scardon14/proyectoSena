@@ -2,6 +2,8 @@ let btn_editar_1 = document.querySelectorAll(".btn-editar-1");
 let idUsuario = document.getElementById("usuario");
 let perfil1 = document.getElementById("perfil-usuario");
 
+console.log(perfil1.getAttribute("idnegocio"));
+
 btn_editar_1.forEach(btn => {
     btn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -87,9 +89,12 @@ async function actualizarFila(fotoFront, idFoto, foto, campo, boton) {
     // Llamar a la función para actualizar en el servidor
     await actualizarFoto(idFoto, foto, files[0], campo);
     let idperfil = perfil1.getAttribute("idPerfil");
+    console.log('ruta actualizar servicio: '+ '../model/ProcesarFotoPerfil.php?idPerfil=' +
+        perfil1.getAttribute("idPerfil") + '&idUsuario=' + usuario.getAttribute("idUsuario")
+        + '&idNegocio=' + perfil1.getAttribute("idnegocio"));
     window.location.href = '../model/ProcesarFotoPerfil.php?idPerfil=' +
         idperfil + '&idUsuario=' + perfil1.getAttribute("idUsuario")
-        + '&idNegocio=' + perfil.getAttribute("idNegocio");
+        + '&idNegocio=' + perfil1.getAttribute("idnegocio");
 
 }
 

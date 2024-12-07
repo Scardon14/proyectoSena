@@ -42,8 +42,10 @@ class ProcesarFotos
         }
     }
     function actualizarFotos($fotoActual, $fotoNueva, $campo, $obtenerUsuario)
-    {
-        $fotoActual1 = str_replace("..","/proyectoSena",$fotoActual);
+    {   
+        //Descomentarear linea para consumo local
+        //$fotoActual1 = str_replace("..","/proyectoSena",$fotoActual);
+        $fotoActual1 = str_replace("..","",$fotoActual);
         $fotoActual1 = $_SERVER['DOCUMENT_ROOT'] . $fotoActual1;
         $registroFotos = new RegistroFotosTrabajo();
         $directorio = '../imagenes-trabajo/' . $obtenerUsuario . "/";
@@ -56,7 +58,7 @@ class ProcesarFotos
             }
         }
         if (move_uploaded_file($fotoNueva['tmp_name'], $rutaFotoNueva)) {
-            unlink( $fotoActual1);
+            unlink( filename: $fotoActual1);
             $registroFotos->actualizarFotoTrabajo($fotoActual, $rutaFotoNueva, $campo, $obtenerUsuario);
             return true;
         }

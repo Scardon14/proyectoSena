@@ -186,7 +186,7 @@ let mostrarHoras = (diaSeleccionado) => {
             let comprarHora = a.textContent.substring(0, 2);
             /*if(a.textContent.includes(`${horaInicio}`)
             || a.textContent.includes(`${horaFin}:`)){*/
-            if (comprarHora >= horaInicio && comprarHora <= horaFin && (horaReserva.estado === 2 || horaReserva.estado === '2')) {
+            if (comprarHora >= horaInicio && comprarHora <= horaFin && ((horaReserva.estado === 2 || horaReserva.estado === '2') ||(horaReserva.estado === 1 || horaReserva.estado === '1'))) {
                 a.classList.add('ocultarDiv');
             } else if (comprarHora >= horaInicio && comprarHora <= horaFin && (horaReserva.estado === 1 || horaReserva.estado === '1')) {
                 a.classList.add('completado');
