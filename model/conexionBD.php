@@ -3,9 +3,13 @@ class conexionBD{
     //Funcion que permite hacer la conexion a la BD
     function conectarBD(){
         //Parametros que requiere para la conexion 
-        $servername = "mysql-proyecto.alwaysdata.net";
-        $username = "proyecto";
-        $password = "Salem202B.";
+        //$servername = "mysql-proyecto.alwaysdata.net";
+        //$username = "proyecto";
+        //$password = "Salem202B.";
+        //Configuración local
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
         //Permite el manejo de error que puede alujar la conexion 
         try {  /* Se hace la conexion a la BD*/
             $conn = new PDO("mysql:host=$servername;dbname=proyecto_sena", $username, $password); /* Pasa parametros para hacer la conexion a la BD*/
